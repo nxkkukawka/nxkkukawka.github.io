@@ -1,0 +1,2146 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)http://csr-templates.nxlink.com/tickets/ -->
+<html lang="en" data-theme="light"><!-- **************************** Bob, Wihl, Bryan, & J created this page & editted by Kyle for Nextlink ****************************--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <link rel="shortcut icon" type="image/x-icon" href="http://csr-templates.nxlink.com/tickets/favicon.png">
+    <script src="chrome-extension://hecgknieibccghjmmhhckdfeobjoffdf/script.js"></script></head><body onload="timer.reset();"><img href="/images/NextlinkNIcon2.ico">
+
+    <title>Tickets (v6.0)</title>
+
+<!-- Timer jQuery -->
+    <script src="./ct2_files/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="./ct2_files/jquery-1.7.2.min.js"></script>
+
+<!-- Bob's MAC Lookup Database -->
+    <script type="text/javascript" src="./ct2_files/manuf.js"></script>
+    <script src="./ct2_files/maclookup.js"></script>
+
+<!-- Date Picker jQuery -->
+    <script type="text/javascript" src="./ct2_files/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="./ct2_files/jquery-ui.css">
+    <script src="./ct2_files/jquery-1.12.4.js"></script>
+    <script src="./ct2_files/jquery-ui.js"></script>
+
+    <script>
+//Date Textbox to Datepicker jQuery
+      $( function() {
+        $( "#scDate" ).datepicker({dateFormat: "m-d-y", changeMonth: true, changeYear: true,});
+        $( "#billingSCDate" ).datepicker({dateFormat: "m-d-y", changeMonth: true, changeYear: true,});
+        $( "#crReportedDate" ).datepicker({dateFormat: "m-d-y", changeMonth: true, changeYear: true,});
+        $( "#crResolvedDate" ).datepicker({dateFormat: "m-d-y", changeMonth: true, changeYear: true,});
+        $( "#ssServiceDate" ).datepicker({dateFormat: "m-d-y", changeMonth: true, changeYear: true,});
+        $( "#rsDate" ).datepicker({dateFormat: "m-d-y", changeMonth: true, changeYear: true,});
+
+        $( "#scDate" ).datepicker( "option","showAnim","clip");
+        $( "#billingSCDate" ).datepicker( "option","showAnim","clip");
+        $( "#crReportedDate" ).datepicker( "option","showAnim","clip");
+        $( "#crResolvedDate" ).datepicker( "option","showAnim","clip");
+        $( "#ssServiceDate" ).datepicker( "option","showAnim","clip");
+        $( "#rsDate" ).datepicker( "option","showAnim","clip");
+      } );
+
+    </script>
+
+<!-- Update the v=Number anytime you make changes, so there is no cache issues -->
+    <link rel="stylesheet" href="./ct2_files/styles.css"> <!-- CSS for all pages-->
+    <script type="text/javascript" src="./ct2_files/functions.js"></script> <!-- JS for copy buttons and dropdown scrips -->
+    <script type="text/javascript" src="./ct2_files/main.js"></script> <!-- JS scripts for all pages-->
+    <script src="https://kit.fontawesome.com/8e8a3970ce.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./ct2_files/all.css"> <!-- CSS for link icons -->
+
+
+<!-- This loads/resets the timer on the tickets page -->
+<!-- **************************** Main Navigation Menu **************************** -->
+
+<section style="margin-left:-130px;">
+  <div class="mainMenu">
+    <nav>
+
+      <a href="https://nextlinkinternet.com/legal-and-regulatory/open-internet/" accesskey="N" target="_blank"><center><img src="./ct2_files/better-tickets.png" alt="Nextlink" height="75px"></center> </a>
+      <button class="tablinks buttonMenu" onclick="openTab3(&#39;EveryTicket&#39;)" id="defaultOpen"><i class="fas fa-clipboard-check"></i>  Every Ticket</button>
+      <button class="tablinks buttonMenu" onclick="openTab3(&#39;ServiceCall&#39;)"><i class="fas fa-truck"></i>  Service Call</button>
+      <button class="tablinks buttonMenu" onclick="openTab3(&#39;createBillingTicket&#39;)"><i class="fas fa-money-check-alt"></i>  Billing Ticket</button>
+      <button class="tablinks buttonMenu" onclick="openTab3(&#39;Outage&#39;)"><i class="fas fa-exclamation-triangle"></i>  Outage</button>
+      <button class="tablinks buttonMenu" onclick="openTab3(&#39;CreditRequest&#39;)"><i class="fas fa-money-check-alt"></i>  Credit Request</button>
+      <button class="tablinks buttonMenu" onclick="openTab3(&#39;VoIP&#39;)"><i class="fas fa-phone-volume"></i>  VoIP Ticket</button>
+      <button class="tablinks buttonMenu" onclick="openTab3(&#39;SoonerService&#39;)"><i class="far fa-calendar-alt"></i>  Sooner Service</button>
+      <button class="tablinks buttonMenu" onclick="openTab3(&#39;StaticIP&#39;)"><i class="fas fa-globe"></i>  Static IP Request</button>
+      <button class="tablinks buttonMenu" onclick="openTab3(&#39;PortForwarding&#39;)"><i class="fas fa-upload"></i>  Port Forwarding</button>
+      <button class="tablinks buttonMenu" onclick="openTab3(&#39;RouterShipment&#39;)"><i class="fas fa-box-open"></i>  Pick-up/Ship EQ </button>
+      <button class="tablinks buttonMenu" onclick="openTab3(&#39;supRequest&#39;)"><i class="fas fa-user-friends"></i>  McGuffss Tab </button>
+      <button id="flButton" class="tablinks buttonMenu" onclick="openTab(event, &#39;FastLane&#39;)"><i class="fas fa-fighter-jet"></i>  FastLane</button>
+      <center><hr></center>
+      <button id="flButton" class="tablinks buttonMenu" onclick="openTab(event, &#39;EmailTemplate&#39;)"><i class="fas fa-envelope"></i>  Email Templates</button>
+      <center><hr></center>
+      <button id="flButton" class="tablinks buttonMenu" onclick="openTab(event, &#39;Recovery&#39;)"><i class="fas fa-magnet"></i>  Sub Recovery</button>
+      <button id="flButton" class="tablinks buttonMenu" onclick="openTab(event, &#39;Spectrum&#39;)"><i class="fas fa-magnifying-glass-chart"></i>  Spectrum</button>
+      <center><hr></center>
+      <button class="tablinks menuEraseButton" onclick="eraseEverything()" value="Erase Everything"><i class="fas fa-times-circle"></i>  Erase Everything</button>
+      <br>
+
+    <center>
+      <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+        <input type="checkbox" id="checkbox">
+          <div class="slider round"></div>
+        </label><br>
+        <em>Enable Light Mode!</em>
+      </div>
+    </center>
+    <br>
+
+<!-- **************************** Kachow Mode **************************** -->
+
+    <center> 
+      <audio id="kachowMode" src="http://docs.google.com/uc?export=open&id=1kjeixLt-9P92u9TV84_Q2xWq33x3qonq" preload="auto">
+      </audio>
+      <a onClick="togglePlay()"><img src="./ct2_files/kachow-button.png" height="45px"></a>
+      <script>
+        var audio = document.getElementById("kachowMode");
+        audio.volume = 0.02;
+      </script>
+    </center>
+    <br>
+
+<!-- **************************** Timer **************************** -->
+
+    <center>
+      <div class="timer">
+        <span class="minute">02</span>:<span class="second">00</span>
+      </div>
+      <div class="control">
+          <button class="btn-timer" onclick="timer.start(1000)">Start</button>
+          <button class="btn-timer" onclick="timer.stop()">Stop</button><br>
+          <button class="btn-timer" onclick="timer.reset(30)">30 sec</button>
+          <button class="btn-timer" onclick="timer.reset(60)">1 min</button><br>
+          <button class="btn-timer" onclick="timer.reset(120)">2 min</button>
+          <button class="btn-timer" onclick="timer.reset(150)">3 min</button><br>
+      </div>
+
+<!-- **************************** Timer **************************** -->
+
+    <center>
+      <div class="macLookUp"></div>
+        <nav>
+          <button class="tablinks buttonMenu" onclick="openTab3(&#39;MacLookup&#39;)"><i class="fas fa-server"></i>  MAC Lookup</button>
+        </nav>
+      </div>
+  
+<!-- **************************** Ticket Templates **************************** -->
+<article style="width: 130%">
+
+<!-- **************************** Every Ticket **************************** -->
+<br>
+  <div id="EveryTicket" class="tabcontent" style="display: block;">
+    <fieldset class="fieldsetTop">
+      <legend><i class="fas fa-clipboard-check"></i>  EVERY TICKET</legend>
+        <input type="text" id="etName" accesskey="E" placeholder="Who is calling?" name="cxName" class="mainInputBox" autocomplete="off">
+        <input type="text" id="etCallID" placeholder="Call ID:" name="cxCallID" class="mainInputBox4" autocomplete="off">
+        <input type="text" id="etNumber" placeholder="Best Callback?" name="cxNumber" class="mainInputBox4" autocomplete="off" style="margin-right: 10px">
+
+<br><br>
+          <select id="etAccount" class="dropdown" autocomplete="off">
+            <option value="">-- Account Type --</option>
+            <option value="Res">Residential</option>
+            <option value="Bus">Business</option>
+            <option value="Com">Commercial</option>
+            <option value="Ent">Enterprise</option>
+            <option value="Tower Host">Tower Host</option>
+          </select>
+
+           <input type="text" id="etSMIP" class="mainInputBox" placeholder="SM IP:" style="display:none" autocomplete="off">  
+           <input type="text" id="etAPIP" class="mainInputBox2" placeholder="AP IP:" style="display:none" autocomplete="off">  
+           <input type="text" id="etAPSSID" class="mainInputBox" placeholder="AP SSID:" style="display:none" autocomplete="off">  
+           <input type="text" id="etRouterIP" class="mainInputBox2" placeholder="Customer Router IP:" style="display:none" autocomplete="off">
+
+        
+            <input type="text" id="etSMIP" class="mainInputBox" placeholder="SM IP:" autocomplete="off">
+            <input type="text" id="etAPIP" class="mainInputBox2" placeholder="AP IP:" autocomplete="off">
+            <input type="text" id="etAPSSID" class="mainInputBox" placeholder="AP SSID:" autocomplete="off">
+            <input type="text" id="etRouterIP" class="mainInputBox2" placeholder="Customer Router IP:" autocomplete="off">
+
+        <select id="etRouterType" onchange="checkval(&#39;Zyxel&#39;,this.value,&#39;etZyxelPW&#39;)" class="dropdownLeft" autocomplete="off">
+          <option value="">-- Router Type --</option>
+          <option value="Calix">Calix</option>
+          <option value="MikroTik">MikroTik</option>
+          <option value="Zyxel">Zyxel</option>
+          <option value="Velop">Linksys Velop</option>
+          <option value="Personal">Personal</option>
+          <option value="MikroTik hAP ac2 -&gt; Calix">MikroTik hAP ac2 + Calix</option>
+          <option value="MikroTik hAP ac2 -&gt; Personal Router">MikroTik hAP ac2 + Personal Router</option>
+          <option value="NE - Personal Router">NE - Personal Router</option>
+          <option value="NE - Provided Router">NE - Provided Router</option>
+        </select>
+
+        <select id="etIssue" class="dropdownRight" onchange="checkvals(&#39;Peak Time Issue: Intermittent Connection&#39;,&#39;Peak Time Issue: Slow Speeds&#39;,&#39;Peak Time Issue: No Connection&#39;,this.value,&#39;etTimeFrame&#39;)" autocomplete="off">
+          <option value="">-- Customer Issue --</option>
+          <option value="Add Authorized User">Add Authorized User</option>
+          <option value="Customer Requests Info">Customer Requests Info</option>
+          <option value="Customer Portal Login">Customer Portal Login</option>
+          <option value="Fiber Issues (Internet Down)">Fiber Issues (Internet Down)</option>
+          <option value="Intermittent Connection">Intermittent Connection</option>
+          <option value="Website/Streaming Services Issues">Website/Streaming Services Issues</option>
+          <option value="Peak Time Issue: Intermittent Connection">Peak Time Issue: Intermittent Connection</option>
+          <option value="Peak Time Issue: Slow Speeds">Peak Time Issue: Slow Speeds</option>
+          <option value="Peak Time Issue: No Connection">Peak Time Issue: No Connection</option>
+          <option value="Line drop request">Line drop request</option>
+          <option value="Router Shipment">Router Shipment</option>
+          <option value="LTE Issues (Internet Down)">LTE Issues (Internet Down)</option>
+          <option value="No Connection (Internet Down)">No Connection (Internet Down)</option>
+          <option value="No Connection (CPE Down)">No Connection (CPE Down)</option>
+          <option value="No Connection (AP Down)">No Connection (AP Down)</option>
+          <option value="Pairing MESH Unit">Pairing MESH Unit</option>
+          <option value="Plan Downgrade">Plan Downgrade</option>
+          <option value="Plan Upgrade">Plan Upgrade</option>
+          <option value="Port Forwarding Request">Port Forwarding Request</option>
+          <option value="Router Authentication">Router Authentication</option>
+          <option value="Slow Speeds">Slow Speeds</option>
+          <option value="Static IP Request">Static IP Request</option>
+          <option value="Static IP Removal">Static IP Removal</option>
+          <option value="UPS Issues">UPS Issues</option>
+          <option value="WiFi Password Change/Request">WiFi Password Change/Request</option>
+          <option value="WiFi Issues">WiFi Issues</option>
+          <option value="VoIP Issue">VoIP Issue</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <input type="text" id="etZyxelPW" class="mainInputBox" placeholder="Zyxel Password" style="display:none" autocomplete="off">
+
+        <input type="text" id="etTimeFrame" class="mainInputBox2" placeholder="What time frame is the Peak Issue happening?" style="display:none" autocomplete="off">
+
+        <select id="etTCSMethod" class="dropdown" autocomplete="off">
+          <option value="">-- Contact Method (TCS only) --</option>
+          <option value="Five9">Five9</option>
+          <option value="Email">Email</option>
+          <option value="Web Ticket">Web Ticket</option>
+        </select>
+
+
+    </fieldset>
+
+  <fieldset class="fieldsetTop">
+    <legend>Summary &amp; Troubleshooting</legend><br>
+      Short summary of customers issue:
+        <textarea id="etSummary" accesskey="S" class="textarea200" placeholder="What issue are you experiencing? 
+
+How long has it been going on? 
+
+Does this mainly happen in the evenings/prime time?" autocomplete="off"></textarea>
+         <div id="tsCheckboxes">
+            <ul id="tsCheckbox" class="checkbox-grid">
+              Select all of the following steps YOU completed during troubleshooting:<br><br>
+              Basic troubleshooting:<br>
+             <label><input type="checkbox" id="etSMGoodCOM" autocomplete="off" onclick="toggleCheckboxes(&#39;etSMBadCOM&#39;)"><font color="#bbff96"> CPE is accessible</font></label>
+             <label><input type="checkbox" id="etSMBadCOM" autocomplete="off" onclick="toggleCheckboxes(&#39;etSMGoodCOM&#39;)"><font color="#fa5252"> CPE is not accessible</font></label><br>
+             <label><input type="checkbox" id="etSMAPCOM" autocomplete="off" onclick="toggleCheckboxes(&#39;etSMAP2COM&#39;)"><font color="#bbff96"> CPE is on AP Station List</font></label>
+             <label><input type="checkbox" id="etSMAP2COM" autocomplete="off" onclick="toggleCheckboxes(&#39;etSMAPCOM&#39;)"><font color="#fa5252"> CPE is not on AP Station List</font></label><br>
+             <label><input type="checkbox" id="etCabling" autocomplete="off" onclick="toggleCheckboxes(&#39;etCabling2&#39;)"><font color="#bbff96"> Verified cabling</font></label>
+             <label><input type="checkbox" id="etCabling2" autocomplete="off" onclick="toggleCheckboxes(&#39;etCabling&#39;)"><font color="#fa5252"> Verified and corrected cabling</font></label><br>
+             <label><input type="checkbox" id="etPOELight" autocomplete="off" onclick="toggleCheckboxes(&#39;etPOELight2&#39;)"><font color="#bbff96"> Verified POE light (On/Solid)</font></label>
+             <label><input type="checkbox" id="etPOELight2" autocomplete="off" onclick="toggleCheckboxes(&#39;etPOELight&#39;)"><font color="#fa5252"> Verified POE light is Blinking/Off</font></label><br>
+             <label><input type="checkbox" id="etAuthenticated" autocomplete="off" onclick="toggleCheckboxes(&#39;etAuthenticated2&#39;)"><font color="#bbff96"> RTR is on CPE Bridge Table</font></label>
+             <label><input type="checkbox" id="etAuthenticated2" autocomplete="off" onclick="toggleCheckboxes(&#39;etAuthenticated&#39;)"><font color="#fa5252"> RTR is not on CPE Bridge Table</font></label><br>
+             <label><input type="checkbox" id="etPOE" autocomplete="off"><font color="#bbff96"> Power-cycled POE</font></label><br>
+             <label><input type="checkbox" id="etRouter" autocomplete="off"><font color="#bbff96"> Power-cycled Router</font></label><br>
+             <label><input type="checkbox" id="etReseated" autocomplete="off"><font color="#bbff96"> Reseated cables</font></label><br>
+             <label><input type="checkbox" id="etRemote" autocomplete="off"><font color="#fcf092"> Remotely Rebooted CPE</font></label><br>
+             <label><input type="checkbox" id="etKicked" autocomplete="off"><font color="#fcf092"> Kicked CPE from AP</font></label><br>
+             <label><input type="checkbox" id="etSwapped" autocomplete="off"><font color="#fcf092"> Swapped POE to Router Cabling</font></label><br>
+             <label><input type="checkbox" id="etSwapped2" autocomplete="off" onclick="toggleCheckboxes(&#39;etSMeth&#39;)"><font color="#fcf092"> Swapped CPE to POE Cabling</font></label>
+             <label><input type="checkbox" id="etSMeth" autocomplete="off" onclick="toggleCheckboxes(&#39;etSwapped2&#39;)"><font color="#fa5252"> CPE Ethernet Goes Through Wall</font></label><br>
+             <label><input type="checkbox" id="etBypassed" autocomplete="off" onclick="toggleCheckboxes(&#39;etBypassed2&#39;)"><font color="#fcf092"> Bypassed router / Internet works</font></label>
+             <label><input type="checkbox" id="etBypassed2" autocomplete="off" onclick="toggleCheckboxes(&#39;etBypassed&#39;)"><font color="#fa5252"> Bypassed router / No internet</font></label><br>
+             <div>
+             <input type="checkbox" value="etSiteText" id="etSurvey2" onclick="toggleCheckbox(this)" autocomplete="off"><font color="#fcf092"> Site Survey / Better AP</font>
+             <label><input type="checkbox" value="etSiteText2" id="etSurvey" onclick="toggleCheckbox(this)" autocomplete="off"><font color="#fa5252"> Site Survey / No Better AP</font></Site></label>
+                  <div id="etSiteText" style="display:none;">
+                    <br>
+                    <input type="text" class="mainInputBox" placeholder="AP SSID:" id="etSiteSSID" autocomplete="off">
+                    <input type="text" class="mainInputBox2" placeholder="AP IP:" id="etSiteIP" autocomplete="off">
+                    <br></div>
+                    <div id="etSiteText2" style="display:none;">
+                    <br>
+                    <br>
+                    <textarea id="etAttemptedAP" rows="4" cols="50" autocomplete="off" placeholder="Attempted AP&#39;s (if any):"></textarea>
+                    <br></div>
+                    <br><br>
+                    CPE Stats:<br>
+                    <select id="etLanStatus" class="dropdownLeft" autocomplete="off">
+                      <option value="">-- Lan0 Status --</option>
+                      <option value="Lan0 status: 1000 full">1000 full</option>
+                      <option value="Lan0 status: 1000 half">1000 half</option>
+                      <option value="Lan0 status: 100 full">100 full</option>
+                      <option value="Lan0 status: 100 half">100 half</option>
+                      <option value="Lan0 status: 10 full">10 full</option>
+                      <option value="Lan0 status: 10 half">10 half</option>
+                      <option value="Lan0 status: Down/unplugged">Down/unplugged</option>
+                      <option value="Lan0 status: Plugged">Plugged</option>
+                      <option value="Lan0 status: Down/unplugged">Multiple Lan0s</option>
+                    </select><br><br><br><br>
+    
+    
+    
+                <input type="text" class="mainInputBox" id="etPCMAC" placeholder="Authenticated Computer MAC" autocomplete="off">
+                <input type="text" class="mainInputBox2" id="etRTRMAC" placeholder="Authenticated Router MAC" autocomplete="off">
+    
+                <input type="text" id="etSMUptime" class="mainInputBox" placeholder="CPE Up Time: i.e. 14days, 8hrs" autocomplete="off">
+                <input type="text" id="etAPUptime" class="mainInputBox2" placeholder="AP Up Time: i.e. 14days, 8hrs" autocomplete="off">
+    
+                <input type="text" id="etSMSignal" class="mainInputBox" placeholder="Signal: i.e. -68" autocomplete="off">
+                <input type="text" id="etAPSignal" class="mainInputBox2" placeholder="AP Signal: i.e. -68" autocomplete="off">
+                <input type="text" id="etSMSplits" class="mainInputBox" placeholder="Splitchains: i.e. -8 (If Needed)" autocomplete="off">
+                    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <button class="accordion"><i class="fas fa-plus-circle"></i> &nbsp; Advanced Troubleshooting</button>
+                  <div class="panel"><br>
+    
+                    Advanced Troubleshooting:<br>
+                    <label><input type="checkbox" id="etRouterGood" autocomplete="off" onclick="toggleCheckboxes(&#39;etRouterBad&#39;)"><font color="#ff007f0"> Router speeds set correct in BM</font></label>
+                    <label><input type="checkbox" id="etRouterBad" autocomplete="off" onclick="toggleCheckboxes(&#39;etRouterGood&#39;)"> Router speeds incorrect in BM</label><br>
+                    <label><input type="checkbox" id="etQueuesGood" autocomplete="off" onclick="toggleCheckboxes(&#39;etQueuesBad&#39;)"><font color="#ff007f0"> Checked queues / Correct</font></label>
+                    <label><input type="checkbox" id="etQueuesBad" autocomplete="off" onclick="toggleCheckboxes(&#39;etQueuesGood&#39;)"> Checked queues / Incorrect</label><br>
+                    <label><input type="checkbox" id="etDHCPcpe2" autocomplete="off" onclick="toggleCheckboxes(&#39;etDHCPcpe&#39;)"><font color="#ff007f0"> DHCP Server / Shows CPE</font></label>
+                    <label><input type="checkbox" id="etDHCPcpe" autocomplete="off" onclick="toggleCheckboxes(&#39;etDHCPcpe2&#39;)"> DHCP Server / No CPE</label><br>
+                    <label><input type="checkbox" id="etDHCProuter2" autocomplete="off" onclick="toggleCheckboxes(&#39;etDHCProuter&#39;)"><font color="#ff007f0"> DHCP Server / Shows Router</font></label>
+                    <label><input type="checkbox" id="etDHCProuter" autocomplete="off" onclick="toggleCheckboxes(&#39;etDHCProuter2&#39;)"> DHCP Server / No Router</label><br>
+                    <label><input type="checkbox" id="etVerifiedSpeeds" autocomplete="off" onclick="toggleCheckboxes(#39;etVerifiedSpeeds)"> Verified speedstest speeds through CPE</label><br> 
+                    <label><input type="checkbox" id="etVerifiedSpeeds2" autocomplete="off" onclick="toggleCheckboxes(#39;etVerifiedSpeeds2)"> Verified speedtest speeds through TR -> Queues -> Traffic</label><br> 
+                    <label><input type="checkbox" id="etPushing" autocomplete="off" onclick="toggleCheckboxes(&#39;etPushing2&#39;)"><font color="#ff007f0"> Pushed 100mbps on CPE / Successful</font></label>
+                    <label><input type="checkbox" id="etPushing2" autocomplete="off" onclick="toggleCheckboxes(&#39;etPushing&#39;)"> 100mbps / Unsuccessful</label><br>
+                    <label><input type="checkbox" id="etLAN" autocomplete="off" onclick="toggleCheckboxes(&#39;etLAN2&#39;)"><font color="#ff007f0"> LAN Trick / Successful</font></label>
+                    <label><input type="checkbox" id="etLAN2" autocomplete="off" onclick="toggleCheckboxes(&#39;etLAN&#39;)"> LAN Trick / Unsuccessful</label><br>
+                    <label><input type="checkbox" id="etFirmwareCOM" autocomplete="off" onclick="toggleCheckboxes(&#39;etFirmware2COM&#39;)"><font color="#ff007f0"> CPE/AP Firmware Match</font></label>
+                    <label><input type="checkbox" id="etFirmware2COM" autocomplete="off" onclick="toggleCheckboxes(&#39;etFirmwareCOM&#39;)"> CPE/AP Firmware Different</label><br>
+                    <label><input type="checkbox" id="etFirmware3COM" autocomplete="off" onclick="toggleCheckboxes(&#39;etFirmware4COM&#39;)"><font color="#ff007f0"> CPE Firmware Up To Date</font></label>
+                    <label><input type="checkbox" id="etFirmware4COM" autocomplete="off" onclick="toggleCheckboxes(&#39;etFirmware3COM&#39;)"> CPE Firmware Needs Update</label><br><br>
+                    Cambium Troubleshooting:<br>
+                    <label><input type="checkbox" id="etPreferredAPCOM" autocomplete="off" onclick="toggleCheckboxes(&#39;etPreferredAP2COM&#39;)"><font color="#ff007f0"> CPE Has Preferred AP</font></label>
+                    <label><input type="checkbox" id="etPreferredAP2COM" autocomplete="off" onclick="toggleCheckboxes(&#39;etPreferredAPCOM&#39;)"> CPE Does Not Have Preferred AP</label><br>
+                    <label><input type="checkbox" id="etMhzSelectedCOM" autocomplete="off" onclick="toggleCheckboxes(&#39;etMhzSelected2COM&#39;)"><font color="#ff007f0"> All 20/40 Mhz Selected</font></label>
+                    <label><input type="checkbox" id="etMhzSelected2COM" autocomplete="off" onclick="toggleCheckboxes(&#39;etMhzSelectedCOM&#39;)"> All 20/40 Mhz Not Selected</label><br>
+                    <label><input type="checkbox" id="etFraming3COM" autocomplete="off" onclick="toggleCheckboxes(&#39;etFraming4COM&#39;)"><font color="#ff007f0"> AP Framing 50/50</font></label>
+                    <label><input type="checkbox" id="etFraming4COM" autocomplete="off" onclick="toggleCheckboxes(&#39;etFraming3COM&#39;)"> AP Framing 75/25</label><br>
+                    <label><input type="checkbox" id="etPresub" autocomplete="off"><font color="#ff007f0"> Scheduled presub</font></label><br><br>
+    
+    
+              </div>
+            </ul></div>
+    
+                <button class="accordion"><i class="fas fa-plus-circle"></i> &nbsp; Speed Tests</button>
+                  <div class="panel" id="speedTestPanel">
+                    <hr>
+                    <center>
+                      <h3>** Avoid cable company servers available on speedtest servers<br>
+                        Choose a server local to the customer like a <font color="#ff007f0">Dallas/Fort Worth</font> server for a <br>fort worth customer,that is not <font color="#ff007f0">Sprint, CableOne, etc.</font> **</h3>
+                        <br><br>
+                        <div id="tsCheckboxes">
+                          <label><input type="checkbox" id="etBypassedYes1" autocomplete="off" onclick="toggleCheckboxes(&#39;etBypassedNo1&#39;)"><font color="#ff007f0"> Ran bypassed speedtests</font></label>
+                          <label><input type="checkbox" id="etBypassedNo1" autocomplete="off" onclick="toggleCheckboxes(&#39;etBypassedYes1&#39;)"> No bypass device available</label><br>
+                        </div>
+                    </center>
+                    <hr>
+    
+                          <h2>SpeedTests:</h2>
+                          <hr>
+                          <h4><i><center><strong><font color="#ff007f0">***Be advised STS requires at least 3 seperate bypass speed tests to escalate for issues***</font></strong></center></i></h4>
+                          <br>
+                          <div id="additionalSpeedTestsButton">
+                              <button class="tablinks buttonMenu" onclick="createSpeedTests()"> &nbsp; <i class="fas fa-tachometer-alt"></i> &nbsp; Add Additional Tests &nbsp; </button>
+                          </div>
+                          <div id="speedTest1">
+                          <br><hr><br>
+                            Speed Test 1: &nbsp;
+                            <select id="byspeedtestSite1" class="smallDropdown" autocomplete="off">
+                              <option value="">--- Choose an option ---</option>
+                              <option value="">--- Bypass options ---</option>
+                              <option value="wifiman.com: (Bypassed)">wifiman.com (Bypassed)</option>
+                              <option value="Speedtest.GoogleFiber.net: (Bypassed)">Speedtest.GoogleFiber.net (Bypassed)</option>
+                              <option value="Speedtest.Xfinity.com: (Bypassed)">Speedtest.Xfinity.com (Bypassed)</option>
+                              <option value="Speedtest.net:">Speedtest.net (Bypassed)</option>
+                              <option value="nperf.com:">Nperf.com (Bypassed)</option>
+                              <option value="Other: (Bypassed)">Other (Bypassed)</option>
+                              <option value="">--- Wireless options ---</option>
+                              <option value="Speedtest.GoogleFiber.net:">Speedtest.GoogleFiber.net (Wireless)</option>
+                              <option value="Speedtest.Xfinity.com:">Speedtest.Xfinity.com (Wireless)</option>
+                              <option value="wifiman.com:">wifiman.com (Wireless)</option>
+                              <option value="Speedtest.net:">Speedtest.net (Wireless)</option>
+                              <option value="nperf.com:">Nperf.com (Wireless)</option>
+                              <option value="Other: (Wireless)">Other (Wireless)</option>
+                              <option value="">--- Special options ---</option>
+                              <option value="LTE Speed Test (BEC website):">LTE speed Test</option>
+                              <option value="MikroTik Bandwidth Test:">MikroTik Bandwidth Test</option>
+                              <option value="Wireless Link Test:">Wireless Link Test</option>
+                              <option value="NISC Router speed test">NISC Router speed test</option>
+                            </select>
+                                <input type="text" class="smallTextbox" id="byPing1" placeholder="Ping" autocomplete="off"> -
+                                <input type="text" class="smallTextbox" id="byJitter1" placeholder="U/L" autocomplete="off"> -
+                                <input type="text" class="smallTextbox" id="byDownload1" placeholder="D/L" autocomplete="off"> -
+                                <input type="text" class="smallTextbox" id="byUpload1" placeholder="U/L" autocomplete="off"> 
+    
+                                <button class="tablinks buttonMenu" onclick="removeElement(&#39;speedTest1&#39;)"> &nbsp; Remove &nbsp; </button><br>
+                                <input type="text" class="mainInputBox6" id="byLocation1" placeholder=" Speedtest server location" autocomplete="off">
+                              </div>
+    
+                            <div id="additionalSpeedTests">
+    
+    
+                            </div>
+    <br><br>
+    
+    
+                  </div>
+    <br><br>
+                <button class="accordion"><i class="fas fa-plus-circle"></i> &nbsp; CPE, AP, MTR, &amp; RTR Pings</button>
+                  <div class="panel">
+                    <div id="tsCheckboxes">
+    <br><br>
+                      CPE Pings:
+                      <label><input type="checkbox" id="etSMgood" autocomplete="off" onclick="toggleCheckboxes(&#39;etSMbad&#39;)"><font color="#ff007f0"> CPE Pings Within Spec</font></label>
+                      <label><input type="checkbox" id="etSMbad" autocomplete="off" onclick="toggleCheckboxes(&#39;etSMgood&#39;)"> CPE Pings Not Within Spec</label><br>
+                      <textarea id="etSMPing" rows="4" cols="50" autocomplete="off"></textarea>
+    
+                      AP Pings:
+                      <label><input type="checkbox" id="etAPgood" autocomplete="off" onclick="toggleCheckboxes(&#39;etAPbad&#39;)"><font color="#ff007f0"> AP Pings Within Spec</font></label>
+                      <label><input type="checkbox" id="etAPbad" autocomplete="off" onclick="toggleCheckboxes(&#39;etAPgood&#39;)"> AP Pings Not Within Spec</label><br>
+                      <textarea id="etAPPing" rows="4" cols="50" autocomplete="off"></textarea>
+    
+                      MTR:
+                      <label><input type="checkbox" id="etMTRgood" autocomplete="off" onclick="toggleCheckboxes(&#39;etMTRbad&#39;)"><font color="#ff007f0"> MTR Within Spec</font></label>
+                      <label><input type="checkbox" id="etMTRbad" autocomplete="off" onclick="toggleCheckboxes(&#39;etMTRgood&#39;)"> MTR Not Within Spec</label>
+                      <textarea id="etMTRPing" rows="4" cols="50" autocomplete="off"></textarea>
+    
+                      RTR Pings:
+                      <label><input type="checkbox" id="etRTRgood" autocomplete="off" onclick="toggleCheckboxes(&#39;etRTRbad&#39;)"><font color="#ff007f0"> RTR Pings Within Spec</font></label>
+                      <label><input type="checkbox" id="etRTRbad" autocomplete="off" onclick="toggleCheckboxes(&#39;etRTRgood&#39;)"> RTR Pings Not Within Spec</label><br>
+                      <textarea id="etRTRPing" rows="4" cols="50" placeholder="***These are just for t/s not to be used for sending tickets up***" autocomplete="off"></textarea>
+                    </div>
+                  </div>
+    <br><br>
+            <button class="accordion"><i class="fas fa-plus-circle"></i> &nbsp; Commercial Accounts</button>
+              <div class="panel"><br>
+                <div id="tsCheckboxes">
+                  Commercial Accounts Troubleshooting:<br>
+                  <label><input type="checkbox" id="etCOMSMGoodCOM" autocomplete="off" onclick="toggleCheckboxes(&#39;etCOMSMBadCOM&#39;)"><font color="#ff007f0"> CPE is accessible</font></label>
+                  <label><input type="checkbox" id="etCOMSMBadCOM" autocomplete="off" onclick="toggleCheckboxes(&#39;etCOMSMGoodCOM&#39;)"> CPE is not accessible</label><br>
+                  <label><input type="checkbox" id="etCOMSMAPCOM" autocomplete="off" onclick="toggleCheckboxes(&#39;etCOMSMAP2COM&#39;)"><font color="#ff007f0"> CPE is on AP Station List</font></label>
+                  <label><input type="checkbox" id="etCOMSMAP2COM" autocomplete="off" onclick="toggleCheckboxes(&#39;etCOMSMAPCOM&#39;)"> CPE is not on AP Station List</label><br>
+                  <label><input type="checkbox" id="etCOMAuthenticatedCOM" autocomplete="off" onclick="toggleCheckboxes(&#39;etCOMAuthenticated2COM&#39;)"><font color="#ff007f0"> RTR is on CPE Bridge Table</font></label>
+                  <label><input type="checkbox" id="etCOMAuthenticated2COM" autocomplete="off" onclick="toggleCheckboxes(&#39;etCOMAuthenticatedCOM&#39;)"> RTR is not on CPE Bridge Table</label><br><br>
+    
+                    <button class="accordion"><i class="fas fa-plus-circle"></i> &nbsp; Advanced Commercial Troubleshooting</button>
+                      <div class="panel"><br>
+    
+                      <center><font color="red">**Do not use this section without prior commercial up training**</font></center><br>
+    
+                      Advanced Commercial Troubleshooting:<br>
+                      <label><input type="checkbox" id="etPermissionCOM" autocomplete="off" onclick="toggleCheckboxes(&#39;etPermission2COM&#39;)"><font color="#ff007f0"> Permission To Power-Cycle</font></label>
+                      <label><input type="checkbox" id="etPermission2COM" autocomplete="off" onclick="toggleCheckboxes(&#39;etPermissionCOM&#39;)"> Denied Power-Cycle</label><br>
+                      <label><input type="checkbox" id="etFirewallCOM" autocomplete="off" onclick="toggleCheckboxes(&#39;etFirewall2COM&#39;)"><font color="#ff007f0"> AP Firewall Has 2 Rules</font></label>
+                      <label><input type="checkbox" id="etFirewall2COM" autocomplete="off" onclick="toggleCheckboxes(&#39;etFirewallCOM&#39;)"> AP Firewall Does Not Have 2 Rules</label><br>
+                      <label><input type="checkbox" id="etDiscoveryCOM" autocomplete="off" onclick="toggleCheckboxes(&#39;etDicovery2COM&#39;)"><font color="#ff007f0"> AP Discovery Is ON</font></label>
+                      <label><input type="checkbox" id="etDicovery2COM" autocomplete="off" onclick="toggleCheckboxes(&#39;etDiscoveryCOM&#39;)"> AP Discovery Is OFF</label><br>
+                      <label><input type="checkbox" id="etFramingCOM" autocomplete="off" onclick="toggleCheckboxes(&#39;etFraming2COM&#39;)"><font color="#ff007f0"> CPE Is On Flexible (Legacy)</font></label>
+                      <label><input type="checkbox" id="etFraming2COM" autocomplete="off" onclick="toggleCheckboxes(&#39;etFramingCOM&#39;)"> CPE Is On Flexible (NEW)</label>
+    <br><br>
+    
+    
+                      <input type="text" id="etApprovalCOM" class="mainInputBox" placeholder="Com Account Approval" autocomplete="off">
+                </div>
+              </div>
+    <br><br>
+                Use These As Needed:<br>
+                <input type="text" id="etSMUptimeCOM" class="mainInputBox" placeholder="CPE Up Time: i.e. 14days, 8hrs" autocomplete="off">
+                <input type="text" id="etAPUptimeCOM" class="mainInputBox2" placeholder="AP Up Time: i.e. 14days, 8hrs" autocomplete="off"><br>
+                <input type="text" id="etSMSignalCOM" class="mainInputBox" placeholder="Signal: i.e. -68" autocomplete="off">
+                <input type="text" id="etSMSplitsCOM" class="mainInputBox2" placeholder="Splitchains: i.e. -8" autocomplete="off"><br>
+                <input type="text" id="etSMConnectionTimeCOM" class="mainInputBox" placeholder="AP Connection Time (Shown On CPE)" autocomplete="off">
+                <input type="text" id="etSMAPFrequencyCOM" class="mainInputBox2" placeholder="AP Frequency" autocomplete="off">
+    <br><br>
+              </div>
+    <br><br>
+            <button class="accordion"><i class="fas fa-plus-circle"></i> &nbsp; LTE Information (LTE Customers Only)</button>
+              <div class="panel"><br>
+                LTE information:<br><br>
+                <label><input type="checkbox" id="etConnectedDevices" autocomplete="off" onclick="toggleCheckboxes(&#39;etNoConnectedDevices&#39;)"><font color="#ff007f0"> Devices showing Connected </font></label>
+    
+                <label><input type="checkbox" id="etNoConnectedDevices" autocomplete="off" onclick="toggleCheckboxes(&#39;etConnectedDevices&#39;)"> No devices showing connected </label>
+    
+                <input type="text" id="etIMSI" class="mainInputBox" placeholder="LTE IMSI:" autocomplete="off">
+                <input type="text" id="etIMEI" class="mainInputBox2" placeholder="LTE UE/IMEI:" autocomplete="off">
+                <input type="text" id="etLteUptime" class="mainInputBox" placeholder="System Uptime:" autocomplete="off">
+                <input type="text" id="etRSSI" class="mainInputBox2" placeholder="RSSI:" autocomplete="off">
+                <input type="text" id="etPCI" class="mainInputBox" placeholder="PCI:" autocomplete="off">
+                <input type="text" id="etBTSID" class="mainInputBox2" placeholder="BTSID:" autocomplete="off">
+                <input type="text" id="etSector" class="mainInputBox" placeholder="Sector:" autocomplete="off">
+    
+    </div>
+    <br><br>
+            <button class="accordion"><i class="fas fa-plus-circle"></i> &nbsp; Fiber Information (Fiber Customers Only)</button>
+              <div class="panel"><br>
+                Fiber information:<br>
+                <input type="text" id="etFAS" class="mainInputBox" placeholder="Switch Name: (FAS4)" autocomplete="off">
+                <input type="text" id="etSwitchPort" class="mainInputBox2" placeholder="Switch Port: (1/15)" autocomplete="off">
+    <br><br>
+                <input type="text" id="etLightLevel" class="mainInputBox" placeholder="Light Level: (Less than 5, over 13)" autocomplete="off">
+                <input type="text" id="etFiberRouterIP" class="mainInputBox2" placeholder="FCR IP: (10.17.0.5)" autocomplete="off">
+              </div>
+    <br><br>
+              <button class="accordion"><i class="fas fa-plus-circle"></i> &nbsp; Plan Upgrade / Downgrade Notes</button>
+                <div class="panel"><br>
+                  <fieldset class="fieldsetTop">
+                    <legend><i class="fa-regular fa-lightbulb fa-beat-fade"></i>  Things to know:</legend>
+                    <p></p><center><font color="#ff007f0"><h2>***Please Remember***</h2></font></center>
+                      If someone with a <font color="#ff007f0">Static IP</font> upgrades their plan, the ticket needs to be <font color="#ff007f0">escalated to STS</font> so they can change the Static IP queues.
+                      <p></p>
+                    <p>
+                      Only upgrade <font color="#ff007f0">Res</font>. Com and Bus need to go to Com sales. <font color="#ff007f0">All hundo plan requests must now be escalated or warm transferred to residential sales for plan availability and cost explanation.</font></p>
+                  </fieldset>
+    
+                    <fieldset class="fieldsetTop2">
+                      <legend><i class="fas fa-upload"></i>  Upgrade Template:</legend>
+                    <input type="text" id="etSpeedPlan" class="mainInputBox" placeholder="Plan preferred:" autocomplete="off">
+                    <input type="text" id="etSpeedAP" class="mainInputBox" placeholder="AP usage:" autocomplete="off">
+                    <input type="text" id="etSpeedCount" class="mainInputBox" placeholder="Current total cx on AP:" autocomplete="off">
+                    <br><br><br><br><br><br><br><br><br><br>
+                    <select id="etSpeedRadio" class="smallDropdown" autocomplete="off">
+                      <option value="">-- Radio Type --</option>
+                      <option value="3k Cam">3k Cambium</option>
+                      <option value="1K Cam">1k Cambium</option>
+                      <option value="AC Mixed">AC gear (mixed mode 8.5 or less)</option>
+                      <option value="AC Mixed 8.7.1">AC gear (mixed mode 8.7.1)</option>
+                      <option value="AC Max">AC gear MAX</option>
+                      <option value="M5">M5</option>
+                      <option value="other">Other</option>
+                    </select><br><br>
+                    <select id="etSpeedMHz" class="smallDropdown" autocomplete="off">
+                      <option value="">-- AP Equipment MHz --</option>
+                      <option value="10">10</option>
+                      <option value="20">20</option>
+                      <option value="30">30</option>
+                      <option value="40">40</option>
+                    </select><br><br>
+    
+                    <input type="text" id="etSpeedComCount" class="mainInputBox" placeholder="Current total Com cx on AP:" autocomplete="off">
+                    <input type="text" id="etSpeedBusCount" class="mainInputBox" placeholder="Current total Bus cx on AP:" autocomplete="off">
+                    <input type="text" id="etSpeedApproved" class="mainInputBox" placeholder="Cx currently approved for:" autocomplete="off"><br><br><br><br><br><br><br>
+                    </fieldset>
+                <div id="tsCheckboxes">
+                    <br><br>
+                    Plan Upgrade / Downgrade Notes:<br>
+                    <label><input type="checkbox" id="etPlanBM" autocomplete="off"><font color="#ff007f0"> Changed Plan In Billmax</font></label>
+                    <label><input type="checkbox" id="etSMPlanName" autocomplete="off"> Changed CPE Name To Reflect Plan</label><br>
+                    <label><input type="checkbox" id="etPcSM" autocomplete="off"><font color="#ff007f0"> Power-cycled CPE Remotely</font></label>
+                    <label><input type="checkbox" id="etPcRTR" autocomplete="off"> Power-cycled Router Remotely</label><br>
+                    <label><input type="checkbox" id="etProRate" autocomplete="off"><font color="#ff007f0"> Explained Pro-Rated Charge</font></label>
+                    <label><input type="checkbox" id="etBillCharge" autocomplete="off"> Explained Charge At Midnight</label><br><br>
+    
+                  </div>
+                </div>
+      </fieldset>
+    
+      <fieldset class="fieldsetTop">
+                <legend>Agent Resolution Notes</legend>
+    <br>
+                Resolution: <br> <textarea id="etResolution" accesskey="R" placeholder="Power-cycle brought the connection back up, issue persisted, added router to BM, etc" autocomplete="off"></textarea>
+                Next Step: <br> <input type="text" class="textboxInput" id="etNextStep" placeholder="Closing ticket, pending review, etc" name="Next" autocomplete="off">
+
+                <select id="etNextStepQuick" onchange="checkval(&#39;Other&#39;,this.value,&#39;etNextStepOther&#39;)" class="dropdownLeft" autocomplete="off">
+                  <option value="">-- Next Step --</option>
+                  <option value="Closing">Closing</option>
+                  <option value="Sending to lead for further review.">Sending to lead for further review.</option>
+                  <option value="Sending to Billing for a credit request.">Sending to Billing for a credit request.</option>
+                  <option value="Scheduled service call.">Scheduled service call.</option>
+                  <option value="Other">Other</option>
+                </select>
+               
+            <input type="text" id="etNextStepOther" class="mainInputBox" placeholder="Other:" style="display:none" autocomplete="off">
+
+    <br><br>
+              </fieldset>
+      <fieldset class="fieldsetTop">
+        <legend>Ticket Notes</legend>
+                <button id="etButton" class="generateNote hoverme" onclick="javascript:everyTicketFunction();"><i class="far fa-check-square"></i>  GENERATE TICKET</button><br><br>
+    
+                <center><font color="#ff007f0"><p id="etError"></p></font></center><br>
+                <center><font color="#ff007f0"><p id="etErrorPW"></p></font></center><br>
+    
+                <div>Subject Line: <button class="btn-copy" autocomplete="off" onclick="CopyFunction(&#39;etSubject&#39;)"><i class="far fa-copy"></i>  COPY</button><br>
+                <input type="text" class="textboxInput" id="etSubject" autocomplete="off"><br></div>
+    
+                Ticket Display: <button class="btn-copy" autocomplete="off" onclick="CopyFunction(&#39;etBody&#39;)"><i class="far fa-copy"></i>  COPY</button><br>
+                <textarea class="inputText" id="etBody" autocomplete="off"></textarea>
+    
+                <button class="btn-sc" onclick="javascript:prefillInputs();"><i class="fas fa-truck"></i>  PRE-FILL RELEVANT FIELDS TO ALL TICKETS</button><br>
+      </fieldset>
+    </div>
+<!-- **************************** Service Call Ticket **************************** -->
+
+  <div id="ServiceCall" class="tabcontent" style="display: none;">
+    <fieldset class="fieldsetTop">
+      <legend><i class="fas fa-truck"></i>  Service Call Ticket:</legend>
+      <button class="btn-prefill" onclick="javascript:preSC();">PRE-FILL FROM EVERY TICKET</button><br><br>
+
+          <input type="text" id="scName" class="mainInputBox" placeholder="Name:" autocomplete="off">
+          <input type="text" id="scCallID" placeholder="Call ID:" name="cxCallID" class="mainInputBox4" autocomplete="off">
+          <input type="text" id="scNumber" placeholder="Best Callback?" name="cxNumber" class="mainInputBox4" autocomplete="off" style="margin-right: 10px"><br><br>
+          <input type="text" id="scAccountNumber" class="mainInputBox" placeholder="Account Number:" autocomplete="off">
+          <input type="text" id="scApproval" class="mainInputBox2" placeholder="Service Call Approved By:" autocomplete="off">
+          <select id="scQueue" class="dropdownLeft" autocomplete="off">
+            <option value="">-- Select Queue --</option>
+            <option value="Add On">Add On</option>
+            <option value="Equipment Removal">Equipment Removal</option>
+            <option value="Installation">Installation</option>
+            <option value="Modification">Modification</option>
+            <option value="Service Call">Service Call</option>
+          </select>
+
+          <select id="scQueueResult" class="dropdownRight" name="scQueueResult" autocomplete="off">
+            <option value="">-- Select Queue --</option>
+          </select>
+
+          <fieldset class="fieldsetTop">
+          <legend><i class="fa-solid fa-satellite-dish"></i>  Does SVC require two techs?:</legend>
+
+          <input type="radio" id="scTower" name="scTower" value="Yes" autocomplete="off"><font color="#ff8000"> Yes
+          <input type="radio" id="scTower" name="scTower" value="No" checked="" autocomplete="off"> No</font>
+           &nbsp; Does the account have a note about requiring two techs?<br>
+          <input type="radio" id="scTower1" name="scTower1" value="Yes" autocomplete="off"><font color="#ff8000"> Yes
+          <input type="radio" id="scTower1" name="scTower1" value="No" checked="" autocomplete="off"> No</font>
+           &nbsp; Does customer have a 30' mast or higher?<br>
+          <input type="radio" id="scTower2" name="scTower2" value="Yes" autocomplete="off"><font color="#ff8000"> Yes
+          <input type="radio" id="scTower2" name="scTower2" value="No" checked="" autocomplete="off"> No</font>
+           &nbsp; Does customer have a 10' tripod or higher?<br>
+          <input type="radio" id="scTower3" name="scTower3" value="Yes" autocomplete="off"><font color="#ff8000"> Yes
+          <input type="radio" id="scTower3" name="scTower3" value="No" checked="" autocomplete="off"> No</font>
+           &nbsp; Does customer have a personal tower?<br>
+          <input type="radio" id="scTower4" name="scTower4" value="Yes" autocomplete="off"><font color="#ff8000"> Yes
+          <input type="radio" id="scTower4" name="scTower4" value="No" checked="" autocomplete="off"> No</font>
+           &nbsp; Has customer install or past SVC required two techs?<br><br><br>
+
+          If any of the above are checked yes does the SVC job require two techs?<br>
+          <input type="radio" id="scTower5" name="scTower5" value="Yes" autocomplete="off"><font color="#ff8000"> Yes - Schedule as two tech job.<br>
+          <input type="radio" id="scTower5" name="scTower5" value="No" checked="" autocomplete="off"> No - Verify with lead svc does not require two techs for job.</font>
+          <br><br>
+
+          If yes please use the correct zone supervisor in ASAP:
+          <!--Drop down just for info-->
+          <select id="scSupApproval" class="dropdown" autocomplete="off">
+            <option value="">-- Zone supervisor --</option>
+            <option value="Austin Strickland">TX-001 Austin Strickland</option>
+            <option value="Scott Surber">TX-002 Scott Surber</option>
+            <option value="Justin Neighbors">TX-003 Justin Neighbors</option>
+            <option value="Brandon Neighbors">TX-004 Brandon Neighbors</option>
+            <option value="Jeremy Rodriguez">TX-005 Jeremy Rodriguez</option>
+            <option value="Jeff Eddy">TX-006 Jeff Eddy</option>
+            <option value="Kevin Avila">TX-007 Kevin Avila</option>
+            <option value="Adrian Gonzales">TX-008 Adrian Gonzales</option>
+            <option value="Adrian Gonzales">TX-009 Adrian Gonzales</option>
+            <option value="Austin Strickland">TX-010 Austin Strickland</option>
+            <option value="Jeremy Rodriguez">TX-011 Jeremy Rodriguez</option>
+            <option value="Jesse Rios">TX-012 Jesse Rios</option>
+            <option value="Alex Hickey">TX-013 Alex Hickey</option>
+            <option value="Jesse Rios">TX-014 Jesse Rios</option>
+            <option value="Blake Crawford">TX-015 Blake Crawford</option>
+            <option value="Alex Hickey">TX-016 Alex Hickey</option>
+            <option value="Blake Crawford">TX-017 Blake Crawford</option>
+            <option value="Ryan Moore">TX-018 Ryan Moore</option>
+            <option value="Jacob Shaw">TX-019 Jacob Shaw</option>
+            <option value="Ryan Moore">TX-020 Ryan Moore </option>
+            <option value="Jacob Shaw">TX-021 Jacob Shaw</option>
+            <option value="Jason Brown">TX-022 Jason Brown</option>
+            <option value="Jason Brown">TX-023 Jason Brown</option>
+            <option value="Jason Brown">TX-023/Fiber Jason Brown</option>
+            <option value="Darren Alsabrook">TX-024 Darren Alsabrook</option>
+            <option value="Ryan Moore">TX-025 Ryan Moore</option>
+            <option value="Jesse Rios">TX-026 Jesse Rios</option>
+            <option value="Kevin Avila">TX-027 Kevin Avila</option>
+            <option value="Brendan Schrader">TX-Fiber Brendan Schrader</option>
+            <option value="Brendan Douglas">OK-102 Brendan Douglas</option>
+            <option value="Brendan Douglas">OK-103 Brendan Douglas</option>
+            <option value="Matthew Edwards">OK-104 Matthew Edwards</option>
+            <option value="TJ Armstrong">KS-201 TJ Armstrong</option>
+            <option value="TJ Armstrong">KS-202 TJ Armstrong</option>
+            <option value="TJ Armstrong">KS-203 TJ Armstrong</option>
+            <option value="TJ Armstrong">KS-204 TJ Armstrong</option>
+            <option value="Konner Gibson">NE-301 Konner Gibson</option>
+            <option value="Konner Gibson">NE-302 Konner Gibson</option>
+            <option value="Konner Gibson">NE-303 Konner Gibson</option>
+            <option value="Konner Gibson">NE-304 Konner Gibson</option>
+            <option value="Miah Haller">NE-305 Miah Haller</option>
+            <option value="Miah Haller">NE-306 Miah Haller</option>
+            <option value="Miah Haller">NE-307 Miah Haller</option>
+            <option value="Miah Haller">NE-309 Miah Haller</option>
+            <option value="Miah Haller">NE-310 Miah Haller</option>
+            <option value="Miah Haller">NE-311 Miah Haller</option>
+            <option value="Miah Haller">NE-312 Miah Haller</option>
+            <option value="Miah Haller">NE-313 Miah Haller</option>
+            <option value="Justin Tatum">NE-Fiber Justin Tatum</option>
+            <option value="Konner Gibson">IA-401 Konner Gibson</option>
+            <option value="Konner Gibson">IA-402 Konner Gibson</option>
+            <option value="Konner Gibson">IA-403 Konner Gibson</option>
+            <option value="Henry Mueller">IL-501 Henry Mueller</option>
+            <option value="Henry Mueller">IL-502 Henry Mueller</option>
+            <option value="Henry Mueller">IL-503 Henry Mueller</option>
+
+
+          </select>
+
+            </fieldset>
+          <select id="scAccount" class="dropdown" autocomplete="off">
+            <option value="">-- Account Type --</option>
+            <option value="Res">Residential</option>
+            <option value="Bus">Business</option>
+            <option value="Com">Commercial</option>
+            <option value="Ent">Enterprise</option>
+            <option value="Tower Host">Tower Host</option>
+          </select>
+
+          <input type="text" id="scSMIP" class="mainInputBox" placeholder="Last Known SM IP:" autocomplete="off">
+          <input type="text" id="scAPIP" class="mainInputBox2" placeholder="Last Known AP IP:" autocomplete="off">
+          <input type="text" id="scAPSSID" class="textboxInput" placeholder="Last Known AP SSID:" autocomplete="off"><br><br><br><br><br><br><br>
+<br>
+          <input type="radio" id="scAddress" name="scAddress" value="Yes" autocomplete="off"><font color="#ff8000"> Yes &nbsp;
+          <input type="radio" id="scAddress" name="scAddress" value="No" checked="" autocomplete="off"> No</font>
+          &nbsp; Is the address on the apt ticket the location of the equipment?<br>
+
+          <input type="radio" id="scFee" name="scFee" value="Yes" autocomplete="off"><font color="#ff8000"> Yes &nbsp;
+          <input type="radio" id="scFee" name="scFee" value="No" checked="" autocomplete="off"> No</font>
+          &nbsp; Does a fee need to be charged?<br>
+
+          <input type="radio" id="scStatement" name="scStatement" value="Yes" autocomplete="off"><font color="#ff8000"> Yes &nbsp;
+          <input type="radio" id="scStatement" name="scStatement" value="No" checked="" autocomplete="off"> No</font>
+          &nbsp; Has anyone onsite been quarantined in the past 14 days?<br>
+
+          <input type="radio" id="scTimeFrame" name="scTimeFrame" value="8-12" autocomplete="off"><font color="#ff8000"> 8-12
+          <input type="radio" id="scTimeFrame" name="scTimeFrame" value="1-5" checked="" autocomplete="off"> 1-5</font>
+          &nbsp;What time-frame was picked?<br><br>
+
+          <div>Service Call Date: &nbsp; &nbsp; &nbsp; <input type="text" class="mainInputBox3 hasDatepicker" id="scDate" placeholder="MM/DD/YY" autocomplete="off"></div><br>
+          <div>Is the customer aware they could be charged: &nbsp;
+          <select id="scChargeDropdown" class="smallerDropdown" autocomplete="off">
+            <option value="">-- Selection --</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+            <option value="Not Applicable">N/A (Not Applicable)</option>
+            <option value="To Be Determined">To Be Determined</option>
+          </select></div>
+  </fieldset>
+
+  <fieldset class="fieldsetTop">
+    <legend>Special Instructions</legend>
+<br>
+      Special Instructions: <br>
+      <select id="scSpecialInstructions" class="dropdown" autocomplete="off">
+        <option value="">-- Choose option if needed --</option>
+        <option value="Call Ahead | ">Call Ahead</option>
+        <option value="Read Notes | ">Read Notes</option>
+        <option value="Gate Code | ">Gate Code</option>
+      </select>
+<br><br>
+        <label for="scInstructions">Notes for technician (If <font color="#ff8000">Read Notes</font> is selected):<br></label>
+          <input type="text" id="scInstructions" class="textboxInput" placeholder="Dogs on property, last house on the left, yellow house, etc" autocomplete="off">
+<br><br>
+  </fieldset>
+
+  <fieldset class="fieldsetTop">
+    <legend>Summary &amp; Troubleshooting Steps</legend>
+    <textarea id="scSummary" autocomplete="off" placeholder="Summary and troubleshooting steps are required."></textarea><br>
+  </fieldset>
+
+        <fieldset class="fieldsetTop">
+          <legend>Service Call Ticket Notes:</legend>
+            <button class="generateNote" onclick="javascript:serviceCallFunction();"><i class="far fa-check-square"></i>  GENERATE TICKET</button><br><br>
+
+            <center><font color="#ff8000"><p id="scError"></p></font></center><br>
+
+            Ticket Display: <button class="btn-copy" onclick="CopyFunction(&#39;scServiceOut&#39;)"><i class="far fa-copy"></i> COPY</button><br>
+            <textarea class="textarea200" id="scServiceOut" autocomplete="off"></textarea><br>
+
+<br><br><br>
+        </fieldset>
+  
+</div>
+
+<!-- **************************** Billing Ticket **************************** -->
+
+  <div id="createBillingTicket" class="tabcontent" style="display: none;">
+
+        <fieldset class="fieldsetTop">
+              <legend>Service Call Charge - Billing Ticket:</legend>
+              <button class="btn-prefill2" onclick="javascript:preBillingTicket2();">PRE-FILL FROM SERVICE CALL</button>
+              <button class="btn-prefill" onclick="javascript:preBillingTicket();">PRE-FILL FROM EVERY TICKET</button>
+          <br><br>
+
+                <input type="text" id="billingName" class="mainInputBox" placeholder="Name:" autocomplete="off">
+                <input type="text" id="billingCallID" placeholder="Call ID:" name="cxCallID" class="mainInputBox4" autocomplete="off">
+                <input type="text" id="billingNumber" placeholder="Best Callback?" name="cxNumber" class="mainInputBox4" autocomplete="off" style="margin-right: 10px">
+
+                <select id="billingAccount" class="dropdown" autocomplete="off">
+                  <option value="">-- Account Type --</option>
+                  <option value="Res">Residential</option>
+                  <option value="Bus">Business</option>
+                  <option value="Com">Commercial</option>
+                </select><br>
+
+                <select id="billingQueue" class="dropdownLeft" autocomplete="off">
+                  <option value="">-- Select Queue --</option>
+                  <option value="Add On">Add On</option>
+                  <option value="Equipment Removal">Equipment Removal</option>
+                  <option value="Installation">Installation</option>
+                  <option value="Modification">Modification</option>
+                  <option value="Service Call">Service Call</option>
+                </select>
+
+                <select id="billingQueueResult" class="dropdownRight" name="scQueueResult" autocomplete="off">
+                  <option value="">-- Select Queue --</option>
+                </select>
+
+                <div>Service Call Date: &nbsp; &nbsp; &nbsp; <input type="text" class="mainInputBox3 hasDatepicker" id="billingSCDate" placeholder="MM/DD/YY" autocomplete="off"></div>
+
+                    How Much Is The Billing Fee:
+                        <input type="radio" id="billingFee" name="billingFee" value="$70" autocomplete="off"><font color="#ff8000"> $70
+                        <input type="radio" id="billingFee" name="billingFee" value="$100" autocomplete="off"> $100</font><br><br>
+                    Are They Aware Of The Fee:
+                        <input type="radio" id="billingApprove" name="billingApprove" value="Yes" autocomplete="off"><font color="#ff8000"> Yes
+                        <input type="radio" id="billingApprove" name="billingApprove" value="No" autocomplete="off"> No</font><br><br>
+                    Customer Approved Payment Form On File:
+                        <input type="radio" id="billingFile" name="billingFile" value="Yes" autocomplete="off"><font color="#ff8000"> Yes
+                        <input type="radio" id="billingFile" name="billingFile" value="No" autocomplete="off"> No</font><br><br>
+                    Charge Payment Immediately:
+                        <input type="radio" id="billingImmediate" name="billingImmediate" value="Yes" autocomplete="off"><font color="#ff8000"> Yes
+                        <input type="radio" id="billingImmediate" name="billingImmediate" value="No" autocomplete="off"> No</font><br><br>
+
+                    Extra Notes <font color="#ff8000">(If Needed)</font>: <br>
+                          <input type="text" id="scBillingNotes" class="textboxInput" autocomplete="off"><br><br>
+
+                      <button class="btn-sc" onclick="javascript:billingTicketFunction();"><i class="fas fa-file-invoice"></i>  GENERATE BILLING TICKET</button><br><br>
+
+                      <center><font color="#ff8000"><p id="scError2"></p></font></center><br>
+
+                      Billing Ticket Subject Line: <button class="btn-copy" onclick="CopyFunction(&#39;billingSubject&#39;)"><i class="far fa-copy"></i> COPY</button><br>
+                      <input type="text" class="textboxInput" id="billingSubject" autocomplete="off"><br>
+                      Billing Ticket Display: <button class="btn-copy" onclick="CopyFunction(&#39;billingBody&#39;)"><i class="far fa-copy"></i> COPY</button><br>
+                      <textarea id="billingBody" class="textarea200" autocomplete="off"></textarea><br>
+                <!-- </div> -->
+        </fieldset>
+  
+</div>
+
+<!-- **************************** Outage Ticket **************************** -->
+
+<div id="Outage" class="tabcontent" style="display: none;">
+  <fieldset class="fieldsetTop">
+    <legend><i class="fas fa-exclamation-triangle"></i>  Outage Ticket:</legend>
+    <button class="btn-prefill" onclick="javascript:preOutage();">PRE-FILL FROM EVERY TICKET</button>
+<br><br>
+        <input type="text" id="outageName" class="mainInputBox" placeholder="Who&#39;s Calling:" autocomplete="off" required="">
+        <input type="text" id="outageCallID" placeholder="Call ID:" name="cxCallID" class="mainInputBox4" autocomplete="off">
+        <input type="text" id="outageNumber" placeholder="Best Callback?" name="cxNumber" class="mainInputBox4" autocomplete="off" style="margin-right: 10px">
+<br>
+        <select id="outageAccount" class="dropdown" autocomplete="off">
+          <option value="">-- Account Type --</option>
+          <option value="Res">Residential</option>
+          <option value="Bus">Business</option>
+          <option value="Com">Commercial</option>
+         <option value="Ent">Enterprise</option>
+          <option value="Tower Host">Tower Host</option>
+        </select>
+
+            <input type="text" id="outageSMIP" class="mainInputBox" placeholder="SM IP:" autocomplete="off">
+            <input type="text" id="outageAPIP" class="mainInputBox2" placeholder="AP IP:" autocomplete="off">
+            <input type="text" id="outageAPSSID" class="mainInputBox" placeholder="AP SSID:" autocomplete="off">
+            <input type="text" id="outageTicketNumber" class="mainInputBox2" placeholder="Outage Ticket Number:" autocomplete="off"><br><br>
+
+          <div><label for="outageCallback"> Do they request notification of outage resolved?:</label>
+            <input type="radio" id="outageCallback" name="callbackCX" value="YES" autocomplete="off"><font color="#ff8000"> Yes
+            <input type="radio" id="outageCallback" name="callbackCX" value="NO" checked="" autocomplete="off"> No</font></div><br>
+
+          <div><label for="outageCallback"> Did the customer ask for a credit request?:</label>
+            <input type="radio" id="outageCreditRequest" name="outageCreditRequest" value="YES" autocomplete="off"><font color="#ff8000"> Yes
+            <input type="radio" id="outageCreditRequest" name="outageCreditRequest" value="NO" checked="" autocomplete="off"> No</font></div><br>
+
+          <div><label for="outageDocumentation"> Did the customer request outage documentation?:</label>
+            <input type="radio" id="outageDocumentationRequest" name="outageDocumentationRequest" value="YES" autocomplete="off"><font color="#ff8000"> Yes
+            <input type="radio" id="outageDocumentationRequest" name="outageDocumentationRequest" value="NO" checked="" autocomplete="off"> No</font></div><br>
+  </fieldset>
+  <fieldset class="fieldsetTop">
+    <legend>Outage Ticket Notes:</legend>
+      <button class="generateNote" onclick="javascript:outageText();"><i class="far fa-check-square"></i>  GENERATE OUTAGE TICKET</button><br><br>
+
+      <center><font color="#ff8000"><p id="outageError"></p></font></center><br>
+
+      Subject Line: <button class="btn-copy" onclick="CopyFunction(&#39;outageSubject&#39;)"><i class="far fa-copy"></i> COPY</button><br>
+      <input type="text" class="textboxInput" id="outageSubject" autocomplete="off"><br>
+
+      <div>Ticket Display: <button class="btn-copy" onclick="CopyFunction(&#39;outageOut&#39;)"><i class="far fa-copy"></i> COPY</button></div>
+      <textarea class="scinputText" id="outageOut" autocomplete="off"></textarea>
+  </fieldset>
+</div>
+
+<!-- **************************** Credit Request Ticket **************************** -->
+
+  <div id="CreditRequest" class="tabcontent" style="display: none;">
+    <fieldset class="fieldsetTop">
+      <legend><i class="fas fa-money-check-alt"></i>  Credit Request:</legend>
+      <button class="btn-prefill" onclick="javascript:preCR();">PRE-FILL FROM EVERY TICKET</button>
+<br><br>
+<br>
+<br>
+<p class="blink" style="text-align:center;"><font color="#ff8000"><b>***Must advise request may take 2-4 weeks to process.***</b></font></p>
+          <input type="text" id="crRequestName" class="mainInputBox" placeholder="Who&#39;s Calling:" autocomplete="off" required="">
+          <input type="text" id="crRequestCallID" placeholder="Call ID:" name="cxCallID" class="mainInputBox4" autocomplete="off">
+          <input type="text" id="crRequestNumber" placeholder="Best Callback?" name="cxNumber" class="mainInputBox4" autocomplete="off" style="margin-right: 10px">
+          <br>
+          Account Phone Number <br><font color="#ff8000">(Leave Blank If Same As Callback)</font>:<br>
+          <input type="text" id="crRequestAccountNumber" class="textboxInput" placeholder="Phone number listed on Billmax" autocomplete="off">
+          Reason for Credit Request:<br>
+          <select id="crReason" class="dropdown" autocomplete="off">
+            <option value="">-- Reason For Credit Request --</option>
+            <option value="Downtime">Downtime</option>
+            <option value="Slow Speeds">Slow Speeds</option>
+            <option value="Outage">Outage</option>
+            <option value="Other">Other</option>
+          </select><br>
+
+          <div>Reported Issue Date:</div>
+          <input type="text" class="textboxInput hasDatepicker" id="crReportedDate" placeholder="MM-DD-YY" autocomplete="off">
+<br>
+          <div>Date Resolved, If Resolved:</div>
+          <input type="text" class="textboxInput hasDatepicker" id="crResolvedDate" placeholder="MM-DD-YY - Leave Blank If Unresolved" autocomplete="off">
+<br>
+          <div>Amount Of Days Requested:</div>
+          <input type="text" id="crAmount" class="textboxInput" placeholder="Example: 5" autocomplete="off">
+<br>
+          <div>Total Monthly Bill With Taxes From Billmax <font color="#ff8000">($ is added)</font>:</div>
+          <input type="text" id="crbillAmount" class="textboxInput" placeholder="Example: 82.16" autocomplete="off">
+<br><br>
+          <div>Extra Notes (If Needed):</div>
+          <textarea class="textarea200" id="crextraNotes" autocomplete="off" placeholder="Credit must be justified with ticket numbers and dates/times."></textarea>
+   </fieldset>
+
+  <fieldset class="fieldsetTop">
+    <legend>Credit Request Notes:</legend>
+
+      <button class="generateNote" onclick="javascript:creditRequestTicket();"><i class="far fa-check-square"></i>  GENERATE TICKET</button><br><br>
+
+      <center><font color="#ff8000"><p id="crError"></p></font></center><br>
+
+      Subject Line: <button class="btn-copy" onclick="CopyFunction(&#39;crTicketSubject&#39;)"><i class="far fa-copy"></i>  COPY</button><br>
+      <input type="text" class="textboxInput" id="crTicketSubject" autocomplete="off">
+
+      <div>Ticket Display: <button class="btn-copy" onclick="CopyFunction(&#39;crTicketBody&#39;)"><i class="far fa-copy"></i>  COPY</button></div>
+      <textarea class="textarea300" id="crTicketBody" autocomplete="off"></textarea>
+  </fieldset>
+</div>
+
+<!-- **************************** VoIP Troubleshooting Ticket **************************** -->
+
+<div id="VoIP" class="tabcontent" style="display: none;">
+  <fieldset class="fieldsetTop">
+    <legend><i class="fas fa-phone-volume"></i>  VoIP Troubleshooting:</legend>
+    <button class="btn-prefill" onclick="javascript:preVoIP();">PRE-FILL FROM EVERY TICKET</button><br><br>
+
+        <input type="text" id="voipName" class="mainInputBox" placeholder="Who&#39;s Calling:" name="cxName" autocomplete="off">
+        <input type="text" id="voipCallID" placeholder="Call ID:" name="cxCallID" class="mainInputBox4" autocomplete="off">
+        <input type="text" id="voipNumber" placeholder="Best Callback?" name="cxNumber" class="mainInputBox4" autocomplete="off" style="margin-right: 10px">
+        <input type="text" id="voipLine" class="textboxInput" placeholder="VoIP Line Phone Number They Are Calling About:" name="voipLine" autocomplete="off"><br><br>
+
+      <select id="voipAccount" class="dropdown" autocomplete="off">
+        <option value="">-- Account Type --</option>
+        <option value="Res">Residential</option>
+        <option value="Bus">Business</option>
+        <option value="Com">Commercial</option>
+        <option value="Ent">Enterprise</option>
+        <option value="Tower Host">Tower Host</option>
+      </select>
+
+        <input type="text" id="voipSMIP" class="mainInputBox" placeholder="SM IP:" autocomplete="off">
+        <input type="text" id="voipAPIP" class="mainInputBox2" placeholder="AP IP:" autocomplete="off">
+        <input type="text" id="voipAPSSID" class="mainInputBox" placeholder="AP SSID:" autocomplete="off">
+        <input type="text" id="voipTRIP" class="mainInputBox2" placeholder="Tower Router IP:" autocomplete="off">
+
+        <select id="voipRouterType" class="dropdown" required="" autocomplete="off">
+          <option value="">-- Router Type --</option>
+          <option value="Calix">Calix</option>
+          <option value="MikroTik">MikroTik</option>
+          <option value="Zyxel">Zyxel</option>
+          <option value="Velop">Linksys Velop</option>
+          <option value="Personal">Personal</option>
+          <option value="MikroTik hAP ac2 -&gt; Calix">MikroTik hAP ac2 + Calix</option>
+          <option value="MikroTik hAP ac2 -&gt; Personal Router">MikroTik hAP ac2 + Personal Router</option>
+          <option value="NE - Personal Router">NE - Personal Router</option>
+          <option value="NE - Provided Router">NE - Provided Router</option>
+        </select><br><br>
+
+        What issue is the phone having?: <br><textarea id="voipProblem" rows="3" cols="50" autocomplete="off"></textarea><br>
+        How long has it been going on?: <br><input type="text" id="voipTimeframe" class="textboxInput" autocomplete="off"><br><br>
+
+        <div>Is the internet having issues? Or is it just the phone?:</div>
+        <select id="voipIssueType" class="dropdown" required="" autocomplete="off">
+          <option value="">-- Please choose an option --</option>
+          <option value="Just the VoIP line">Issue is just the VoIP line</option>
+          <option value="Internet and Phone">Issue affecting Internet and Phone</option>
+        </select><br><br>
+  </fieldset>
+
+  <fieldset class="fieldsetTop">
+    <legend>Summary &amp; Troubleshooting</legend>
+    <ul class="checkbox-grid">
+      Select all steps you completed during troubleshooting:<br><br>
+      <label><input type="checkbox" id="vtsPOE" autocomplete="off"><font color="#ff8000"> Power-cycled POE</font></label> &nbsp; &nbsp;
+      <label><input type="checkbox" id="vtsRouter" autocomplete="off"> Power-cycled Router </label><br>
+      <label><input type="checkbox" id="vtsAuthenticated" autocomplete="off"><font color="#ff8000"> Power-cycled ATA</font></label> &nbsp;&nbsp;&nbsp;
+      <label><input type="checkbox" id="vtsCabling" autocomplete="off"> Verified cabling</label><br>
+      <label><input type="checkbox" id="vtsPOELight" autocomplete="off"><font color="#ff8000"> Verified ATA light</font></label> &nbsp; &nbsp;&nbsp;
+      <label><input type="checkbox" id="vtsReseated" autocomplete="off"> Confirmed Ringer Volume</label><br>
+      <label><input type="checkbox" id="vtsDND" autocomplete="off"><font color="#ff8000"> Confirmed DND (Do Not Disturb) not active</font></label> &nbsp; <br>
+      <label><input type="checkbox" id="vtsInternet" autocomplete="off"><font color="#ff8000"> Confirmed Internet is working</font></label><br>
+      <label><input type="checkbox" id="vtsNots" autocomplete="off"> No t/s completed <font color="#ff8000">(Commercial / Enterprise / TWR Host Only)</font></label>
+    
+
+
+    SM Pings (Optional):
+    <textarea id="voipSMPing" rows="4" cols="50" autocomplete="off"></textarea>
+
+    Next Step: <br> <input type="text" class="textboxInput" id="voipNextStep" required="" autocomplete="off">
+  </ul></fieldset>
+
+  <fieldset class="fieldsetTop">
+    <legend>VoIP Ticket Notes:</legend>
+      <button class="generateNote" onclick="javascript:voipTicketFunction();"><i class="far fa-check-square"></i>  GENERATE TICKET</button><br><br>
+
+      <center><font color="#ff8000"><p id="voipError"></p></font></center><br>
+
+      Subject Line: <button class="btn-copy" onclick="CopyFunction(&#39;voipticketSubject&#39;)"><i class="far fa-copy"></i> COPY</button><br>
+      <input type="text" class="textboxInput" id="voipticketSubject" autocomplete="off"><br>
+      <div>Ticket Display: <button class="btn-copy" onclick="CopyFunction(&#39;voipticketOutput&#39;)"><i class="far fa-copy"></i> COPY</button></div>
+      <textarea class="scinputText" id="voipticketOutput" autocomplete="off"></textarea>
+  </fieldset>
+</div>
+
+<!-- **************************** Sooner Service Ticket **************************** -->
+
+<div id="SoonerService" class="tabcontent" style="display: none;">
+  <fieldset class="fieldsetTop">
+    <legend><i class="fas fa-info-circle"></i>  Sooner Service</legend>
+  <p>If no sooner date is available, offer credit for the downtime between when the issue was reported and their service call.<br><br>
+        → If the customer is still insisting on a sooner service call date, we will not apply credit.<br><br>
+      If the customer is not happy with the date available after all offers have been made, a sooner service call request ticket will be sent to the designated escalating agent/lead for escalation to the Dispatch Team.<br><br>
+        → Advise the customer that we are putting in the request, but we cannot guarantee a sooner appointment.<br><br>
+        → If a sooner service call date is not available, we will apply credit for the downtime and let the customer know they will be added to the will-call list.<br><br>
+    </p><h5>For more information, please reference Run book Pgs 42-43</h5>
+  <p></p>
+  </fieldset>
+  <fieldset class="fieldsetTop">
+    <legend><i class="far fa-calendar-alt"></i>  Sooner Service Ticket</legend>
+
+    <button class="btn-prefill2" onclick="javascript:preSoonerService2();">PRE-FILL FROM SERVICE CALL</button>
+    <button class="btn-prefill" onclick="javascript:preSoonerService();">PRE-FILL FROM EVERY TICKET</button><br><br>
+
+      <input type="text" id="ssName" class="mainInputBox" placeholder="Customer Name?" autocomplete="off">
+      <input type="text" id="ssCallID" placeholder="Call ID:" name="cxCallID" class="mainInputBox4" autocomplete="off">
+      <input type="text" id="ssNumber" placeholder="Best Callback?" name="cxNumber" class="mainInputBox4" autocomplete="off" style="margin-right: 10px">
+
+      <select id="ssAccount" class="dropdown" autocomplete="off">
+        <option value="">-- Account Type --</option>
+        <option value="Res">Residential</option>
+        <option value="Bus">Business</option>
+        <option value="Com">Commercial</option>
+        <option value="Ent">Enterprise</option>
+        <option value="Tower Host">Tower Host</option>
+      </select>
+
+      <select id="ssQueue" class="dropdownLeft" autocomplete="off">
+        <option value="">-- Select Queue --</option>
+        <option value="Add On">Add On</option>
+        <option value="Equipment Removal">Equipment Removal</option>
+        <option value="Installation">Installation</option>
+        <option value="Modification">Modification</option>
+        <option value="Service Call">Service Call</option>
+      </select>
+
+      <select id="ssQueueResult" class="dropdownRight" name="scQueueResult" autocomplete="off">
+        <option value="">-- Select Queue --</option>
+      </select>
+
+      <input type="text" id="ssZone" class="mainInputBox" placeholder="ZONE:" autocomplete="off">
+      <input type="text" class="mainInputBox2 hasDatepicker" id="ssServiceDate" placeholder="Service Call Date: MM/DD/YY" autocomplete="off">
+
+<br><br>
+      <label for="ssWillCall"> Did you offer to add them to the Will-Call-List:</label>
+        <input type="radio" id="ssWillCall" name="ssWillCall" value="Yes" autocomplete="off"><font color="#ff8000"> Yes
+        <input type="radio" id="ssWillCall" name="ssWillCall" value="No" checked="" autocomplete="off"> No</font><br><br>
+      <label for="ssCredit"> Did you offer a credit:</label>
+        <input type="radio" id="ssCredit" name="ssCredit" value="Yes" autocomplete="off"><font color="#ff8000"> Yes
+        <input type="radio" id="ssCredit" name="ssCredit" value="No" checked="" autocomplete="off"> No</font><br><br>
+<br>
+      <label for="ssApprovalNotes">Lead or Senior Tech Notes (Approval Notes Required):</label><textarea id="ssApprovalNotes" rows="4" cols="50" autocomplete="off"></textarea>
+      <label for="ssNotes">Extra Notes (If Needed):</label><textarea id="ssNotes" rows="4" cols="50" autocomplete="off"></textarea>
+
+  </fieldset>
+  <fieldset class="fieldsetTop">
+    <legend>Sooner Service Ticket Notes:</legend>
+      <button class="generateNote" onclick="javascript:soonerServiceFunction();"><i class="far fa-check-square"></i>  GENERATE TICKET</button><br><br>
+
+      <center><font color="#ff8000"><p id="ssError"></p></font></center><br>
+
+      Subject Line: <button class="btn-copy" onclick="CopyFunction(&#39;ssTicketSubject&#39;)">COPY</button><br>
+      <input type="text" class="textboxInput" id="ssTicketSubject" autocomplete="off"><br>
+
+      <div>Ticket Display: <button class="btn-copy" onclick="CopyFunction(&#39;ssTicketBody&#39;)">COPY</button></div>
+      <textarea class="scinputText" id="ssTicketBody" autocomplete="off"></textarea>
+  </fieldset>
+</div>
+
+<!-- **************************** Static IP Request Ticket **************************** -->
+
+<div id="StaticIP" class="tabcontent" style="display: none;">
+  <fieldset class="fieldsetTop">
+    <legend><i class="fas fa-wifi"></i>  Static IP Request</legend>
+      Tower Name:<br>
+      <input type="text" class="textboxInput" id="staticTWR" autocomplete="off" required="">
+      <div>Tower IP:</div>
+      <input type="text" class="textboxInput" id="staticTWRIP" autocomplete="off" required=""><br>
+
+      <div>Router Type:</div>
+        <select id="staticRouterType" class="dropdown" required="" autocomplete="off">
+          <option value="">-- Please choose an option --</option>
+          <option value="Calix">Calix</option>
+          <option value="MikroTik">MikroTik</option>
+          <option value="Zyxel">Zyxel</option>
+          <option value="Velop">Linksys Velop</option>
+          <option value="Personal">Personal</option>
+        </select><br><br>
+
+      Router IP Address: <font color="#ff8000">(If Nextlink Managed Router)</font>:<br>
+        <input type="text" class="textboxInput" id="staticRTRIP" placeholder="If Personal Router, leave blank." autocomplete="off"><br>
+      <div>Aware of $10.00 Fee:</div>
+        <input type="radio" id="staticFee" name="staticFee" value="Yes" checked="" autocomplete="off"><font color="#ff8000"> Yes
+        <input type="radio" id="staticFee" name="staticFee" value="No" autocomplete="off"> No<br><br></font>
+      How many IPs does the customer want:<br>
+        <input type="text" class="textboxInput" id="staticIPS" autocomplete="off" required="">
+      <div>Justification form sent:</div>
+        <input type="radio" id="staticJustification" name="staticJustification" value="Yes" autocomplete="off"><font color="#ff8000"> Yes
+        <input type="radio" id="staticJustification" name="staticJustification" value="No" autocomplete="off"> No
+        <input type="radio" id="staticJustification" name="staticJustification" value="Not Applicable" checked="" autocomplete="off"> N/A</font><br><br>
+      Reason for needing IP:<br>
+        <input type="text" class="textboxInput" id="staticReason" placeholder="Home server, VPN Issues, Gaming Issues, Security Cameras, etc" autocomplete="off" required="">
+      <div>Best Callback Number:</div>
+      <input type="text" id="staticNumber" placeholder="Best Callback?" name="cxNumber" class="mainInputBox5" autocomplete="off" style="margin-right: 10px">
+      <input type="text" id="staticCallID" placeholder="Call ID:" name="cxCallID" class="mainInputBox5" autocomplete="off">
+
+
+  </fieldset>
+
+  <fieldset class="fieldsetTop">
+    <legend>Ticket Notes:</legend>
+      <button class="generateNote" onclick="javascript:staticIPFunction();"><i class="far fa-check-square"></i>  GENERATE TICKET</button><br><br>
+
+      Ticket Display: <button class="btn-copy" onclick="CopyFunction(&#39;staticTicketBody&#39;)"><i class="far fa-copy"></i> COPY</button><br>
+      <textarea id="staticTicketBody" class="textarea200" autocomplete="off"></textarea><br>
+  </fieldset>
+</div>
+
+<!-- **************************** Port Forwarding Request Ticket **************************** -->
+
+  <div id="PortForwarding" class="tabcontent" style="display: none;">
+    <fieldset class="fieldsetTop">
+      <legend><i class="fas fa-upload"></i>  Port Forwarding Request Ticket:</legend>
+      <button class="btn-prefill" onclick="javascript:prePF();">PRE-FILL FROM EVERY TICKET</button><br><br>
+
+          <input type="text" id="pfName" class="mainInputBox" placeholder="Authorized User Making Request?" autocomplete="off">
+          <input type="text" id="pfCallID" placeholder="Call ID:" name="cxCallID" class="mainInputBox4" autocomplete="off">
+          <input type="text" id="pfNumber" placeholder="Best Callback?" name="cxNumber" class="mainInputBox4" autocomplete="off" style="margin-right: 10px">
+
+          <select id="pfRouter" class="dropdownLeft" required="" autocomplete="off">
+            <option value="">-- Please choose a Router --</option>
+            <option value="Calix">Calix</option>
+            <option value="MikroTik">MikroTik</option>
+            <option value="Zyxel">Zyxel</option>
+            <option value="Velop">Linksys Velop</option>
+          </select>
+
+          <input type="text" id="pfRouterIP" class="mainInputBox2" placeholder="Router IP Address:" autocomplete="off">
+          <input type="text" id="pfTCP" class="textboxInput" placeholder="TCP Port Numbers: i.e. 3074" autocomplete="off">
+          <input type="text" id="pfUDP" class="textboxInput" placeholder="UDP Port Numbers: i.e. 88500, 3544, 4500" autocomplete="off">
+          <input type="text" id="pfIP" class="textboxInput" placeholder="Internal IP of device: i.e. 192.168.1.38" autocomplete="off">
+          <input type="text" id="pfReason" class="textboxInput" placeholder="Reason for Needing it: i.e. Server, Security cameras" autocomplete="off">
+   </fieldset>
+
+  <fieldset class="fieldsetTop">
+    <legend>Port Forwarding Notes:</legend>
+
+      <button class="generateNote" onclick="javascript:portForwardingFunction();"><i class="far fa-check-square"></i>  GENERATE TICKET</button><br><br>
+
+      <center><font color="#ff8000"><p id="pfError"></p></font></center><br>
+
+      Subject Line: <button class="btn-copy" onclick="CopyFunction(&#39;pfTicketSubject&#39;)"><i class="far fa-copy"></i>  COPY</button><br>
+      <input type="text" class="textboxInput" id="pfTicketSubject" autocomplete="off">
+
+      <div>Ticket Display: <button class="btn-copy" onclick="CopyFunction(&#39;pfTicketBody&#39;)"><i class="far fa-copy"></i>  COPY</button></div>
+      <textarea class="textarea300" id="pfTicketBody" autocomplete="off"></textarea>
+  </fieldset>
+</div>
+
+<!-- **************************** Pick - up or Ship EQ **************************** -->
+
+<div id="RouterShipment" class="tabcontent" style="display: none;">
+  <fieldset class="fieldsetTop">
+    <legend><i class="fas fa-box-open"></i> Pick-up or Ship Equipment</legend><br>
+
+        Is this customer requesting to <font color="#ff8000">Pick-Up </font> or <font color="#ff8000">Ship</font> equipement?&nbsp;
+          <input type="radio" id="routerPickUp" name="routerPickUp" value="Pick-Up" onclick="checkval(&#39;Pick-Up&#39;,this.value,&#39;PickUpText&#39;)" autocomplete="off"><font color="#ff8000"> Pick-Up
+          <input type="radio" id="routerShipping" name="routerPickUp" value="Ship" checked="" onclick="checkval(&#39;Pick-Up&#39;,this.value, &#39;PickUpText&#39;)" autocomplete="off"> Ship</font><br><br>
+
+          <div id="PickUpText" style="display:none;">
+          <div>Pick up Date: &nbsp; &nbsp; &nbsp;
+            <input type="text" class="mainInputBox3 hasDatepicker" id="rsDate" placeholder="MM/DD/YY" autocomplete="off">
+          </div>
+          <br>
+          Pick up window: &nbsp; &nbsp; &nbsp;
+          <select id="rsWindow" class="smallDropdown" autocomplete="off">
+            <option value="">-- Time frame --</option>
+            <option value="9-12">9-12</option>
+            <option value="12-5">12-5</option>
+          </select>
+          <br>
+          <br>
+        </div>
+
+         Does the Warehouse need to include return shipping label? &nbsp;
+          <input type="radio" id="routerWareHouseLabel" name="routerWareHouseLabel" value="Yes" autocomplete="off"><font color="#ff8000"> Yes
+          <input type="radio" id="routerWareHouseLabel" name="routerWareHouseLabel" value="No" checked="" autocomplete="off"> No</font><br><br>
+
+          If shipping a POE what kind of radio does the customer have?<br>
+            <input type="radio" id="routerShipping" name="POEShipping" value="AC"><font color="#ff8000" autocomplete="off"> AC
+            <input type="radio" id="routerShipping" name="POEShipping" value="M5" autocomplete="off"> M5
+            <input type="radio" id="routerShipping" name="POEShipping" value="LTE" autocomplete="off"> LTE
+            <input type="radio" id="routerShipping" name="POEShipping" value="Cambium" autocomplete="off"> Cambium
+            <input type="radio" id="routerShipping" name="POEShipping" value="N/a" checked="" autocomplete="off"> N/a </font><br><br>
+<hr><br>
+
+
+
+<script>
+
+</script>
+
+        Best shipping address:
+        <input type="text" id="rsAddress" class="textboxInput" autocomplete="off" placeholder="Please note: We do not ship to P.O boxes." required=""><br>
+        <div>Square footage of area needing wireless coverage:</div>
+        <input type="text" id="rsSQFT" class="textboxInput" autocomplete="off" required=""><br>
+        <div>Reason for request:</div>
+        <input type="text" id="rsReason" class="textboxInput" autocomplete="off" placeholder="Gaming, Home Server, Security Cameras, " required=""><br><br>
+<hr>
+
+<p style="text-align:center"><font color="#FFFFFF" size="4px"><em>***If a customer is receiving a Nextlink router for the <font color="#e16428">first time</font> please include a <font color="#e16428">UPS</font> with the <font color="#e16428">Router shipment ticket.</font>***</em></font></p>
+
+        <h2>Equipment to be shipped or picked up:</h2>
+        <input type="text" id="rsVelop" class="smallTextbox" value="0" autocomplete="off" required=""> # of Linksys Velop<br><br>
+        <input type="text" id="rsPOE" class="smallTextbox" value="0" autocomplete="off" required=""> # of POE units<br><br>
+        <input type="text" id="rsUPS" class="smallTextbox" value="0" autocomplete="off" required=""> # of UPS Rental <em>(must include if first time receiving a Nextlink Managed Router)</em><br><br>
+        <fieldset class="fieldsetTop">
+          <legend><i class="fa-solid fa-cog fa-spin"></i>  Special cases (Needs approval)</legend>
+          <br>
+            <input type="text" id="rsZyxel" class="smallTextbox" value="0" autocomplete="off" required=""> # of Zyxel Router<br><br>
+            <input type="text" id="rsZyxelMesh" class="smallTextbox" value="0" autocomplete="off" required=""> # of Zyxel Mesh <br><br>
+            <input type="text" id="rsMikroTik" class="smallTextbox" value="0" autocomplete="off" required=""> # of MikroTik RB2011<br><br>
+        </fieldset>
+
+<br>
+          <input type="radio" id="DeclineMeshrs" name="rsDeclineMesh" value="Yes" autocomplete="off"><font color="#ff8000"> Yes
+          <input type="radio" id="DeclineMeshrs" name="rsDeclineMesh" value="No" checked="" autocomplete="off"> No </font>
+        Did the customer decline mesh units for a location with over 2,000 sq ft?<br><br>
+
+
+          <input type="radio" id="VoIPrs" name="rsVoIP" value="Yes"><font color="#ff8000" autocomplete="off"> Yes
+          <input type="radio" id="VoIPrs" name="rsVoIP" value="No" checked="" autocomplete="off"> No</font>
+        Does the customer currently have VoIP service?<br><br>
+
+
+          <input type="radio" id="CxCallrs" name="rsCxCall" value="Yes" autocomplete="off"><font color="#ff8000"> Yes
+          <input type="radio" id="CxCallrs" name="rsCxCall" value="No" checked="" autocomplete="off"> No </font>
+        Is the customer aware to call us for static IP or port forwarding setup?<br><br>
+
+
+          <input type="radio" id="Termsrs" name="rsTerms" value="Yes" autocomplete="off"><font color="#ff8000"> Yes
+          <input type="radio" id="Termsrs" name="rsTerms" value="No" checked="" autocomplete="off"> No</font>
+        All managed router terms and shipping details discussed with customer?<br><br>
+
+          <input type="radio" id="rsStatement" class="asdfaqsd" name="rsStatement" value="Yes" autocomplete="off"><font color="#ff8000"> Yes
+          <input type="radio" id="rsStatement1" class="asdfaqsd1" name="rsStatement" value="No" checked="" autocomplete="off"> No</font>
+          <legend id="myclass2" class="asdf">  Router Mac address: </legend>
+          <input type="text" id="myclass1" class="asdf textboxInput" required="" autocomplete="off">
+        Has anyone in the home been quarantined in the past 14 days?<br><br>
+
+          <input type="radio" id="rsPerspective" name="rsPerspective" value="Yes" autocomplete="off"><font color="#ff8000"> Yes
+          <input type="radio" id="rsPerspective" name="rsPerspective" value="No" checked="" autocomplete="off"> No</font>
+        Router package added in Billmax as perspective? (with speeds set?)<br>
+          <br><br>
+
+<script>
+$('input[type=radio][name=rsStatement]').on('change', function() {
+  switch ($(this).val()) {
+    case 'Yes':
+    $( "#myclass1" ).addClass( "asdf1" );
+    $( "#myclass1" ).removeClass( "asdf" );
+    $( "#myclass2" ).addClass( "asdf1" );
+    $( "#myclass2" ).removeClass( "asdf" );
+      break;
+    case 'No':
+    $( "#myclass1" ).addClass( "asdf" );
+    $( "#myclass1" ).removeClass( "asdf1" );
+    $( "#myclass2" ).addClass( "asdf" );
+    $( "#myclass2" ).removeClass( "asdf1" );
+      break;
+  }
+});
+</script>
+          <center><font color="#ff8000" size="4px"> *** DO NOT FORGET TO ADD<br>EQUIPMENT PACKAGE in Billmax ***</font></center><br><br>
+
+<br><br>
+  </fieldset>
+
+  <fieldset class="fieldsetTop">
+    <legend>Ticket Notes</legend>
+          <button class="generateNote" onclick="javascript:routerShipmentFunction();"><i class="far fa-check-square"></i>  GENERATE TICKET</button><br><br>
+          <center><font color="#ff8000"><p id="rsPerspectiveValueError"></p></font></center><br>
+          Subject Line: <button class="btn-copy" onclick="CopyFunction(&#39;rsTicketSubject&#39;)"><i class="far fa-copy"></i> COPY</button><br>
+          <input type="text" class="textboxInput" id="rsTicketSubject" autocomplete="off"><br>
+          <div>Ticket Display: <button class="btn-copy" onclick="CopyFunction(&#39;rsTicketBody&#39;)"><i class="far fa-copy"></i> COPY</button></div>
+          <textarea class="textarea300" id="rsTicketBody" autocomplete="off"></textarea><br>
+  </fieldset>
+</div>
+
+<!-- **************************** Supervisor Request **************************** -->
+
+<div id="supRequest" class="tabcontent" style="display: none;">
+  <fieldset class="fieldsetTop">
+    <legend><i class="fas fa-user-friends"></i>  Supervisor Request</legend>
+
+      <h2>Supervisor Request Communications</h2>
+      There are times a caller will request to speak to a supervisor. Before immediately jumping to send a ticket in be sure to offer assistance as most customers just want their problem fixed and if you can fix it that will save them a lot of time!<br><br>
+
+     <font color="#ff8000"> → </font> Gather contact information and a detailed note of why the customer is requesting a supervisor.<br><br>
+     <font color="#ff8000"> →	</font> Ask the caller if you can have the Customer Care Supervisor contact them back.<br><br>
+
+        <ul>
+          <li>If yes, create a ticket in the <font color="#ff8000">Customer Care Supervisor queue</font> and leave the ticket <font color="#ff8000">unassigned.</font> (if found issues with the customer connection there needs to be a separate ticket escalated for STS)</li>
+          <li>If no, warm transfer the call to the Supervisor extension for the correct department, <font color="#ff8000">Tech Support ext. 8887 | Billing ext. 8886.</font> A ticket will need to be created in the <font color="#ff8000">Customer Care Supervisor queue</font> with the contact information and detailed note of the issue.</li>
+          <li>If there is not a Customer Care Supervisor available, you will inform the customer at moment no one is available, and you will <font color="#ff8000">transfer the call</font> over to leave a <font color="#ff8000">voicemail</font> to have someone reach out to them. At this point the agent can cold transfer the call.</li>
+          </ul>
+
+
+
+<hr>
+        <button class="btn-prefill" onclick="javascript: preSupRequest();">PRE-FILL FROM EVERY TICKET</button><br><br>
+        <input type="text" id="supName" class="mainInputBox" placeholder="Who&#39;s Calling:" autocomplete="off" required="">
+        <input type="text" id="supCallID" placeholder="Call ID:" name="cxCallID" class="mainInputBox4" autocomplete="off">
+        <input type="text" id="supNumber" placeholder="Best Callback?" name="cxNumber" class="mainInputBox4" autocomplete="off" style="margin-right: 10px">
+
+        <select id="supAccount" class="dropdownLeft" autocomplete="off">
+          <option value="">-- Account Type --</option>
+          <option value="Res">Residential</option>
+          <option value="Bus">Business</option>
+          <option value="Com">Commercial</option>
+          <option value="Ent">Enterprise</option>
+          <option value="Tower Host">Tower Host</option>
+        </select>
+
+        <select id="supIssue" class="dropdownRight" autocomplete="off">
+          <option value="">-- Select Request Issue --</option>
+          <option value="Billing Issue">Billing Issue</option>
+          <option value="Dispatch Issue">Dispatch Issue</option>
+          <option value="Intermittent Connection">Intermittent Connection</option>
+          <option value="No Connection">No Connection</option>
+          <option value="No Connection (SM Down)">No Connection (SM Down)</option>
+          <option value="Router Issue">Router Issue</option>
+          <option value="Service Call Issue">Service Call Issue</option>
+          <option value="Slow Speeds">Slow Speeds</option>
+          <option value="Other / User Specific">Other / User Specific</option>
+        </select>
+
+        <textarea id="supNotes" class="textarea200" placeholder="Summary of customer issue:" autocomplete="off"></textarea>
+  </fieldset>
+
+  <fieldset class="fieldsetTop">
+    <legend>Ticket Notes:</legend>
+      <button class="generateNote" onclick="javascript:supRequest();"><i class="far fa-check-square"></i>  GENERATE TICKET</button><br><br>
+
+      Subject Line: <button class="btn-copy" onclick="CopyFunction(&#39;supSubject&#39;)"><i class="far fa-copy"></i> COPY</button><br>
+      <input type="text" class="textboxInput" id="supSubject" autocomplete="off"><br>
+
+      <div>Ticket Display: <button class="btn-copy" onclick="CopyFunction(&#39;supTicket&#39;)"><i class="far fa-copy"></i> COPY</button></div>
+      <textarea id="supTicket" class="textarea200" autocomplete="off"></textarea><br>
+
+  </fieldset>
+</div>
+
+<!-- **************************** Fast Lane Ticket **************************** -->
+
+<div id="FastLane" class="tabcontent" style="display: none;">
+  <fieldset class="fieldsetTop">
+    <legend><i class="fas fa-fighter-jet"></i>  Fast Lane ( SM Down )</legend>
+    <h3 style="text-align:center"> <font color="#ff8000"><b> *** ALL FIELDS ARE REQUIRED AND <u>MUST</u> BE FILLED IN *** </b></font></h3>
+     <h4 style="text-align:center"><font color="#ff8000"><em><b>** AP/Tower logs are <u>OPTIONAL</u> ** </b></em></font></h4>
+     <p style="text-align:center"><font color="#f6e9e9"><em><b>This template takes the place of an <font color="#ff8000">"Every Ticket Template"</font><br> an additional <font color="#ff8000">"Every Ticket Template"</font> is <u>NOT</u> necessary.</b></em></font><br></p>
+    <button class="btn-prefill" onclick="javascript:preFastLane();">PRE-FILL FROM EVERY TICKET</button><br><br>
+
+        <input type="text" id="flName" accesskey="F" placeholder="Who is calling?" name="cxName" class="mainInputBox" autocomplete="off">
+        <input type="text" id="flCallID" placeholder="Call ID:" name="cxCallID" class="mainInputBox4" autocomplete="off">
+        <input type="text" id="flNumber" placeholder="Best Callback?" name="cxNumber" class="mainInputBox4" autocomplete="off" style="margin-right: 10px">
+<br><br>
+          <select id="flAccount" class="dropdown">
+            <option value="">-- Account Type --</option>
+            <option value="Res">Residential</option>
+            <option value="Bus">Business</option>
+            <option value="Com">Commercial</option>
+            <option value="Ent">Enterprise</option>
+            <option value="Tower Host">Tower Host</option>
+
+          </select>
+
+            <input type="text" id="flSMIP" class="mainInputBox" placeholder="Last known SM IP:" autocomplete="off">
+            <input type="text" id="flAPIP" class="mainInputBox2" placeholder="Last known AP IP:" autocomplete="off">
+            <input type="text" id="flAPSSID" class="mainInputBox" placeholder="Last known AP SSID:" autocomplete="off">
+            <input type="text" id="flRouterIP" class="mainInputBox2" placeholder="Last known Customer Router IP:" autocomplete="off">
+  <fieldset class="fieldsetTop">
+
+  <legend>Blind Troubleshooting:</legend>
+  <div id="tsCheckboxes">
+
+      <!-- ************* Trouble shooting ************* -->
+
+  <ul id="tsCheckbox" class="checkbox-grid">
+    Select all of the following steps you completed during troubleshooting:<br><br>
+    Basic troubleshooting:<br>
+
+    <label><input type="checkbox" id="flPOE"><font color="#ff8000">Power-cycled POE</font></label> <br>
+
+    <label><input type="checkbox" id="flPOELight"><font color="#ff8000">Verified POE light (On/Solid)</font></label> <br>
+
+    <label><input type="checkbox" id="flDhcp"><font color="#ff8000">DHCP Server / No CPE</font></label><br>
+    </ul>
+  <br>
+
+Cabling:<br>
+<label><input type="checkbox" id="flCabling"><font color="#ff8000">Verified cabling</font></label> <br>
+<select id="flSwap" class="dropdown">
+            <option value="">-- Pick One --</option>
+            <option value="Swapped POE/Router Cabling">Swapped POE/Router Cabling</option>
+            <option value="SM cable Goes Through Wall">SM cable Goes Through Wall</option>
+
+          </select><br>
+
+<label><input type="checkbox" id="flReseated"><font color="#ff8000">Reseated cables</font></label> <br>
+
+
+  <br><br>
+
+
+Service Call:<br>
+
+  <label><input type="checkbox" id="flSvc"><font color="#ff8000">SVC has been added to the service call scheduler </font></label><font color="#ff8000"><br>
+  <label><input type="checkbox" id="flPSub"><font color="#ff8000">Sub recovery pre truck roll appt ticket has been created</font></label><font color="#ff8000"><br>
+
+
+  <label><textarea id="APLog" class="textarea200" placeholder=" **Paste relevant logs from the AP/Tower here** (optional)" autocomplete="off"></textarea><br><br>
+
+
+
+
+  <br>
+  </label></font></font></div><font color="#ff8000"><font color="#ff8000">
+  </font></font></fieldset><font color="#ff8000"><font color="#ff8000">
+
+
+      <!-- ************* Fast lane Ticket Generator ************* -->
+  <fieldset class="fieldsetTop">
+    <legend>Ticket Notes:</legend>
+    <button class="generateNote" id="flTicketGen"><i class="far fa-check-square"></i> GENERATE TICKET</button><br><br>
+
+    <center><font color="#ff8000"><p id="blankTicketPrompt"></p></font></center><br>
+
+    <div>Subject Line: <button class="btn-copy" autocomplete="off" onclick="CopyFunction(&#39;flSubjectOutput&#39;)"><i class="far fa-copy"></i>  COPY</button><br>
+    <input type="text" class="textboxInput" id="flSubjectOutput"><br></div>
+
+
+
+    <div>Ticket Display: <button class="btn-copy" onclick="CopyFunction(&#39;flTicketText&#39;)"><i class="far fa-copy"></i> COPY</button></div>
+    <textarea id="flTicketText" class="textarea200" autocomplete="off"></textarea><br>
+
+  </fieldset>
+
+
+  </font></font></fieldset><font color="#ff8000"><font color="#ff8000">
+</font></font></div><font color="#ff8000"><font color="#ff8000">
+
+<!-- **************************** Email Template Ticket **************************** -->
+
+<div id="EmailTemplate" class="tabcontent" style="display: none;">
+  <fieldset class="fieldsetTop">
+    <legend><i class="fas fa-envelope"></i>  Email Templates:</legend>
+    <select id="emailTemplateType" class="dropdown" autocomplete="off">
+      <option value="">-- Email Type --</option>
+      <option value="1">Further Troubleshooting Needed</option>
+      <option value="2">Service Call Needed</option>
+      <option value="3">Issue Resolved</option>
+      <option value="4">Outage Resolved</option>
+    </select>
+        <input type="text" minlength="4" id="emailTemplateLastFour"  class="mainInputBox" placeholder="Last Four of Phone Number:" autocomplete="off" required="">
+        <input type="text" id="emailTemplateNumber" class="mainInputBox2" placeholder="Ticket Number:" autocomplete="off" required="">
+<br>
+        <select id="emailTemplateTime" class="dropdown" autocomplete="off">
+          <option value="">-- Time of Day --</option>
+          <option value="Morning">Morning</option>
+          <option value="Afternoon">Afternoon</option>
+          <option value="Evening">Evening</option>
+        </select>
+        <select id="emailTemplateClosing" class="dropdown" autocomplete="off">
+          <option value="">-- Closing --</option>
+          <option value="Best Regards">Best Regards</option>
+          <option value="Warm Regards">Warm Regards</option>
+        </select>
+<br><br>
+</fieldset>
+<fieldset class="fieldsetTop">
+  <legend>Email Template:</legend>
+    <button class="generateNote" onclick="javascript:emailTemplateText();"><i class="far fa-check-square"></i>  GENERATE OUTAGE TICKET</button><br><br>
+
+      <center><font color="#ff8000"><p id="emailTemplateError"></p></font></center><br>
+
+      Subject Line: <button class="btn-copy" onclick="CopyFunction(&#39;emailTemplateSubject&#39;)"><i class="far fa-copy"></i> COPY</button><br>
+      <input type="text" class="textboxInput" id="emailTemplateSubject" autocomplete="off"><br>
+
+      <div>Ticket Display: <button class="btn-copy" onclick="CopyFunction(&#39;emailTemplateOut&#39;)"><i class="far fa-copy"></i> COPY</button></div>
+      <textarea class="scinputText" id="emailTemplateOut" autocomplete="off"></textarea>
+  </fieldset>
+</div>
+
+<!-- **************************** Recovery Ticket **************************** -->
+
+<div id="Recovery" class="tabcontent" style="display: none;">
+  <fieldset class="fieldsetTop">
+    <legend><i class="fas fa-magnet"></i>  Sub Recovery Ticket:</legend>
+        <input type="text" id="recoveryCurrentSubject" class="textboxInput" placeholder="Current Subject" autocomplete="off">
+        <input type="text" id="recoveryTarget" class="mainInputBox" placeholder="Target Sub:" autocomplete="off" required="">
+        <input type="text" id="recoveryNumber" class="mainInputBox2" placeholder="Subs on AP:" name="recoverySubs" class="mainInputBox4" autocomplete="off">
+<br>
+        <select id="recoveryMhz" class="dropdown" autocomplete="off">
+          <option value="">-- Channel Width --</option>
+          <option value="20 MHz">20 MHz</option>
+          <option value="40 MHz">40 MHz</option>
+        </select>
+
+            <input type="text" id="recoverySMIP" class="mainInputBox" placeholder="SM IP:" autocomplete="off">
+            <input type="text" id="recoveryAPIP" class="mainInputBox2" placeholder="AP IP:" autocomplete="off">
+            <input type="text" id="recoveryAPSSID" class="mainInputBox" placeholder="AP SSID:" autocomplete="off">
+            <input type="text" id="recoveryFreq" class="mainInputBox2" placeholder="AP Frequency:" name="recoveryFreq" class="mainInputBox4" autocomplete="off">
+            
+          <div><label for="recoveryAPConnected"> <font color="#FFFFFF">Are there AP logs showing this sub was connected?:</font></label>
+            <input type="radio" id="recoveryAPConnected" name="recoveryAPConnected" value="YES" autocomplete="off"><font color="#ff8000"> Yes
+            <input type="radio" id="recoveryAPConnected" name="recoveryAPConnected" value="NO" checked="" autocomplete="off"> No</font></div><br>
+
+          <div><label for="recoveryTRConnected"> <font color="#FFFFFF">Are there TR logs showing this sub was connected?:</font></label>
+            <input type="radio" id="recoveryTRConnected" name="recoveryTRConnected" value="YES" autocomplete="off"><font color="#ff8000"> Yes
+            <input type="radio" id="recoveryTRConnected" name="recoveryTRConnected" value="NO" checked="" autocomplete="off"> No</font></div><br>
+
+            <input type="text" id="recoveryAPLogs" class="textboxInput" placeholder="AP Logs:" autocomplete="off">
+            
+            <input type="text" id="recoveryTRLogs" class="textboxInput" placeholder="TR Logs:" autocomplete="off">
+            
+            <font color="#FFFFFF">Other APS on the tower: <br> <textarea id="recoveryOtherAP" accesskey="recoveryOtherAP" placeholder="AP-UAP5-060.KNOBHILL,10.7.80.12,5780,40..." autocomplete="off"></textarea>
+<br><br>
+  </fieldset>
+  <fieldset class="fieldsetTop">
+    <legend>Sub Recovery Ticket Notes:</legend>
+      <button class="generateNote" onclick="javascript:recoveryText();"><i class="far fa-check-square"></i>  GENERATE OUTAGE TICKET</button><br><br>
+
+      <center><font color="#ff8000"><p id="recoveryError"></p></font></center><br>
+
+      Subject Line: <button class="btn-copy" onclick="CopyFunction(&#39;recoverySubject&#39;)"><i class="far fa-copy"></i> COPY</button><br>
+      <input type="text" class="textboxInput" id="recoverySubject" autocomplete="off"><br>
+
+      <div>Ticket Display: <button class="btn-copy" onclick="CopyFunction(&#39;recoveryOut&#39;)"><i class="far fa-copy"></i> COPY</button></div>
+      <textarea class="scinputText" id="recoveryOut" autocomplete="off"></textarea>
+  </fieldset>
+</div>
+
+<!-- **************************** Spectrum Ticket **************************** -->
+
+<div id="Spectrum" class="tabcontent" style="display: none;">
+  <fieldset class="fieldsetTop">
+    <legend><i class="fas fa-magnifying-glass-chart"></i>  Spectrum Ticket:</legend>
+        <input type="text" id="spectrumCurrentSubject" class="textboxInput" placeholder="Current Subject" autocomplete="off">
+        <input type="text" id="spectrumTicketNumber" class="mainInputBox" placeholder="Customer Ticket Number:" autocomplete="off" required="">
+        <input type="text" id="spectrumTowerTicketNumber" class="mainInputBox2" placeholder="Spectrum Ticket Number:" autocomplete="off"
+<br>
+
+            <input type="text" id="spectrumTarget" class="mainInputBox" placeholder="Target Sub:" autocomplete="off" required="">
+            <input type="text" id="spectrumNumber" class="mainInputBox2" placeholder="Subs on AP:" name="spectrumSubs" class="mainInputBox4" autocomplete="off">
+
+        <select id="spectrumMhz" class="dropdown" autocomplete="off">
+          <option value="">-- Channel Width --</option>
+          <option value="20 MHz">20 MHz</option>
+          <option value="40 MHz">40 MHz</option>
+        </select>
+
+            <input type="text" id="spectrumSMIP" class="mainInputBox" placeholder="SM IP:" autocomplete="off">
+            <input type="text" id="spectrumAPIP" class="mainInputBox2" placeholder="AP IP:" autocomplete="off">
+            <input type="text" id="spectrumAPSSID" class="mainInputBox" placeholder="AP SSID:" autocomplete="off">
+            <input type="text" id="spectrumFreq" class="mainInputBox2" placeholder="AP Frequency:" name="spectrumFreq" class="mainInputBox4" autocomplete="off">
+
+          <div><label for="spectrumUpstream"> <font color="#FFFFFF">Is the MTR showing to be clear upstream?:</font></label>
+            <input type="radio" id="spectrumUpstream" name="spectrumUpstream" value="YES" autocomplete="off"><font color="#ff8000"> Yes
+            <input type="radio" id="spectrumUpstream" name="spectrumUpstream" value="NO" checked="" autocomplete="off"> No</font></div><br>
+
+            <font color="#FFFFFF">Other Info: <br> <textarea id="spectrumOtherInfo" accesskey="spectrumOtherInfo" placeholder="Put additional information here." autocomplete="off"></textarea>
+            <font color="#FFFFFF">Other APS on the tower: <br> <textarea id="spectrumOtherAP" accesskey="spectrumOtherAP" placeholder="AP-UAP5-060.KNOBHILL,10.7.80.12,5780,40..." autocomplete="off"></textarea>
+<br><br>
+  </fieldset>
+  <fieldset class="fieldsetTop">
+    <legend>Sub Spectrum Ticket Notes:</legend>
+      <button class="generateNote" onclick="javascript:spectrumText();"><i class="far fa-check-square"></i>  GENERATE OUTAGE TICKET</button><br><br>
+
+      <center><font color="#ff8000"><p id="spectrumError"></p></font></center><br>
+
+      Tower Subject Line: <button class="btn-copy" onclick="CopyFunction(&#39;spectrumSubject&#39;)"><i class="far fa-copy"></i> COPY</button><br>
+      <input type="text" class="textboxInput" id="spectrumSubject" autocomplete="off"><br>
+      
+      Customer Subject Line: <button class="btn-copy" onclick="CopyFunction(&#39;spectrumCustomerSubject&#39;)"><i class="far fa-copy"></i> COPY</button><br>
+      <input type="text" class="textboxInput" id="spectrumCustomerSubject" autocomplete="off"><br>
+
+      <div>Ticket Display: <button class="btn-copy" onclick="CopyFunction(&#39;spectrumOut&#39;)"><i class="far fa-copy"></i> COPY</button></div>
+      <textarea class="scinputText" id="spectrumOut" autocomplete="off"></textarea>
+  </fieldset>
+</div>
+
+<!-- **************************** MAC Lookup Tool **************************** -->
+
+<div id="MacLookup" class="tabcontent" style="display: none;">
+  <fieldset class="fieldsetTop">
+    <legend><i class="fas fa-file-alt"></i>  MAC Lookup Tool</legend>
+        <div id="OUI">
+          <h3>OUI Lookup Tool:</h3>
+            <p> Type or paste in a list of OUIs, MAC addresses, or descriptions below.<br><br>
+              OUIs and MAC addresses may be seperated by:<br><br>
+              Colon :<br>
+              Hyphen -<br>
+              Period .</p>
+<br><hr>
+
+      <form method="POST">
+        <h3>OUI search:</h3>
+        <textarea id="ffentry" oninput="lookup()" autocomplete="off"></textarea>
+      </form>
+
+<br><hr><br>
+
+        <h4>Results:</h4>
+      <div id="matches"> <i>No matches</i><br><br></div>
+    </div>
+    <br><hr><br>
+            <h4>Nextlink Equipment Results:</h4>
+            <ul>
+              <li>Calix	Calix Inc.</li>
+              <li>Routerbo	Routerboard.com</li>
+              <li>Ubiquiti	Ubiquiti Networks Inc.</li>
+              <li>Cisco	Cisco Systems, Inc</li>
+              </ul>
+
+  </fieldset></div>
+
+<!-- **************************** Notes Generator **************************** -->
+
+<div id="NotesGenerator" class="tabcontent" style="display: none;">
+  <fieldset class="fieldsetTop">
+    <legend><i class="fas fa-file-alt"></i>  Outbound Outage Call</legend>
+          Customer Number:<br>
+            <input type="text" id="ocOutageNumber" class="textboxInput" autocomplete="off" required=""><br>
+          Was The SM Accessible <font color="#ff8000">(**REQUIRED**)</font>:
+            <input type="radio" id="ocOutageSM" name="OutageSM" value="Yes"><font color="#ff8000"> Yes
+            <input type="radio" id="ocOutageSM" name="OutageSM" value="No"> No</font><br><br>
+          SM Stats (If Accessible):<br>
+            <textarea class="textarea200" id="ocSM" autocomplete="off"></textarea>
+
+          <button class="generateNote" onclick="javascript:ngOutageNotes();"><i class="far fa-check-square"></i>  GENERATE TICKET</button>
+          <br><br>
+
+          Ticket Display: <button class="btn-copy" onclick="outagenotesCopy()">COPY</button><br>
+          <textarea class="textarea200" id="outagenotesOutput" autocomplete="off"></textarea><br>
+  </fieldset>
+</div>
+
+<!-- **************************** Things To Know **************************** -->
+
+<div id="ThingsToKnow" class="tabcontent" style="display: none;">
+  <fieldset class="fieldsetTop">
+    <legend><i class="far fa-sticky-note"></i>  Things To Know</legend><br>
+
+    <h3>For the most accurate and up to date <font color="#f6e9e9">information/policies/procedures and proper troubleshooting</font> please reference your runbook. <a href="https://nxlink.sharepoint.com/:w:/r/_layouts/15/Doc.aspx?sourcedoc=%7B01DEAAD5-E316-4922-ADC5-CCB91BD9A04E%7D&amp;file=Technical%20Support%20Run%20Book%20v2.docx&amp;action=default&amp;mobileredirect=true&amp;cid=0d23f878-0627-4b5a-b59b-8c888509cae7" target="_blank"><font color="#f6e9e9">Runbook Link</font></a></h3><br>
+<hr>
+
+            <font color="#f6e9e9"> <h2>Nextlink Information</h2>
+            <font color="#ff8000"><strong>Hudson Oaks Location:</strong><br></font> Equipment returns between 9am-5pm<br>Address:
+            <font color="#ff8000"><strong>95 Parker Oaks Lane, Hudson Oaks, TX 76087</strong></font><br> Phone Number:
+            <font color="#ff8000"><strong>(855) 698-5465</strong></font><br><br>
+
+            <font color="#ff8000"><strong>Oklahoma Office Location:</strong></font><br>Address:
+            <font color="#ff8000"><strong>2901 N. Van Buren, Enid, OK 73701</strong></font><br>
+            <font color="#ff8000"><strong>(580) 237-4810</strong></font><br>
+
+            <br> <h2><strong>New Applicants:</strong></h2>
+            <u>Email Addresses and Phone numbers:</u><br><br>
+            <font color="#ff8000"> → </font> Employment verification calls: <font color="#ff8000"><strong> HumanResources@team.nxlink.com</strong></font><br>
+            <font color="#ff8000"> → </font>Payroll:  <font color="#ff8000"><strong> kneighbors@team.nxlink.com</strong></font><br>
+            <font color="#ff8000"> → </font>Recruitment office:
+            <font color="#ff8000"> <strong>682-882-5059</strong></font><br><br>
+            If you receive a call from someone checking on the status of their application,
+            <font color="#ff8000">you can cold transfer them</font> to the recruitment office.<br><p></p> Instruct the caller to <font color="#ff8000">leave a message</font> if no one answers.<br>
+
+<hr>
+      <button class="accordion"><i class="fas fa-plus-circle"></i> &nbsp; Ticket Assignment Process (Billing/Sales)</button>
+        <div class="panel"><br><font color="#f6e9e9">
+          <h2>Ticket Assignment Process</h2>
+            <ul>
+              <li><font color="#ff8000"><strong>Residential Sales</strong></font> – Place the ticket in the Residential Sales queue and leave it un-assigned.</li><br>
+              <li><font color="#ff8000"><strong>Commercial (Business/Commercial) Sales</strong></font> – Place the ticket unassigned in the Commercial Sales queue.</li><br>
+              <li><font color="#ff8000"><strong>Billing</strong></font> – Place the ticket unassigned in the Billing queue unless there is a credit over 500 dollars, or there is a refund.&nbsp; In that case assign the ticket to your designated lead.</li><br>
+              <li><font color="#ff8000"><strong>Network Operations (NOC)</strong></font> – Place ticket unassigned in the Network Tier 1 queue.</li><br>
+              <li><font color="#ff8000"><strong>VoIP</strong></font> – Please assign to lead after blind troubleshooting for no connection issue. Place the ticket unassigned in the <font color="#ff8000">VoIP Issues queue </font> and<font color="#ff8000"> warm transfer</font> to VOIP if customer is having issues other than <font color="#ff8000">no connection / no dial-tone.<font></font></font></li><font color="#ff8000"><font>
+                </font></font></ul><font color="#ff8000"><font>
+            </font>
+        </font></font></div><font color="#f6e9e9"><font color="#ff8000">
+<hr>
+      <button class="accordion"><i class="fas fa-plus-circle"></i> &nbsp; Equipment Being Moved</button>
+        <div class="panel"><br><font color="#f6e9e9">
+          <h2>Equipment Being Moved:</h2>
+            <font color="#ff8000">If the customer calls in and wants to do the following then it is<br>
+            considered a move and they need to be send to sales:</font>
+            <ul>
+              <li>Have the radio moved from a pole to a structure<br>
+              </li><li>Have the radio moved from a structure to a pole<br>
+              </li><li>Have the radio moved from one structure to another<br>
+              </li><li>Have their roof replaced and *not* place the radio on the roof<br>
+                </li></ul>
+             </font>
+
+          <font color="#ff8000">If the customer wants to do the following then schedule<br>
+          a regular service call:</font>
+          <ul>
+            <li>Have their roof replaced and place the radio back on the structure<br>
+            </li><li>Move within a RV park, from one spot to another<br>
+              </li></ul>
+
+        </div> </font>
+<br><br>
+</font></font></fieldset><font color="#f6e9e9"><font color="#f6e9e9">
+</font><fieldset class="fieldsetTop"><font color="#f6e9e9">
+  <legend><i class="far fa-sticky-note"></i>  Troubleshooting</legend><br>
+          <font color="#f6e9e9">
+          <h2>Things to look at when troubleshooting:</h2>
+            <ul>
+              <li>Average ping latency should be less than <strong>70ms (Average)</strong></li><br>
+              <li>In the SM/AP signal splichain should be within <strong>+5/-5 dB</strong></li><br>
+              <li>Noisefloor no more than <strong>-100</strong></li><br>
+              </ul>
+            </font>
+<hr>
+
+
+
+<button class="accordion"><i class="fas fa-plus-circle"></i> &nbsp; Lan speed issues</button>
+        <div class="panel"><br>
+          <h2>What are Lan Speed Issues?</h2>
+          The customer may call in complaining about no connection, slow speeds, or intermittent.  The symptoms may be temporarily eased by powercycling the equipment or disconnecting/reconnecting ethernet cables or devices.<br>
+          <h2>What are the visual indicators?</h2>
+          The lan speed entry on the radio may be blank or list something other than 1000 Full or on some equipment 100 Full.  Cambium radios list lan speed as “Ethernet Status” on the status page.  Ubiquity AC list lan speed as “LAN SPEED” bottom left of the main status page.  If you see no indication, “unplugged”, “plugged”, 10 Full, 10 Half, 100 Half, 1000 Half or see the lan speed entry flickering there may be an issue.<br>
+          <h2>What does Lan Speed indicate?</h2>
+          Lan Speed is a negotiation between the radio and the end item, typically a router or less often, a computer.  The radio and end item discuss between them what their max connection speed is, then when determined, they lock it in.  Any part of the physical connection between the radio and the end item may cause a lan speed issue.  If the physical connection is degraded, the lan speed may state a lower transmission speed, or it may indicate Half instead of Full.  If lan speed indicates Half then that means instead of the typical 2 way communication simultaneously, data can only go one way at any given time.
+          <h2>How do I troubleshoot this?</h2>
+            When you have a lan speed issue the cause could be any part of the physical connection including the radio and end item (router/laptop). To troubleshoot you’ll want to swap as many of the links in the chain as you can.  This typically means bypassing the end item and swapping out the ethernet cables.  You may also try things like moving the ethernet from the wan port to a lan port to see if you get a bridge mac where previously you didn’t.  If the customer goes out and purchases a new router you may treat this as bypassing the router and troubleshoot the other links.<br><br>
+
+            1. SM Lan Speed indicates unplugged/plugged/Half (10/Half 100/Half 1000/Half) or is flapping<br><br>
+            2. We have powercycled POE and router<br><br>
+            3. We have swapped out the ethernet cables and also bypassed the end item<br><br>
+            4. We have attempted to force the lan speed to negotiate 100 in the SM and then rebooted the SM to verify the changes stick<br><br>
+            5. If end item is Mikrotik, then attempt to connect to ports 2-5, if any of these ports resolves lan issue then STS can reprogram that port to WAN - escalate to STS<br><br>
+            6. If you have done your best to eliminate possible issues with all the links in the chain, this may require a truck roll.  Please reach out to your leadership.<br><br><br>
+
+            Make sure that if a customer calls in and you resolve the issue by powercycling that you document this thoroughly.  If the customer calls in and we document this process 3 times in a 30-45 day period then we may very well have an issue there on site with a piece of equipment.  Engage your leadership and see about getting this customer a free truck roll.
+
+
+
+          </div>
+       <hr>
+
+<button class="accordion"><i class="fas fa-plus-circle"></i> &nbsp; LTE Guide</button>
+        <div class="panel"><br>
+          <h2>Part 1</h2>
+          <ol>
+            <li>Use PGW lookup to get the baseline information including provisioned speeds for the UE, and the management and cx IPs</li><br>
+
+
+            <li>Hidden under the LTE Specific Tab is the LTE KMZ, import this into your GEarth to be able to see the LTE deployments
+            and the sectors. Each tower has 3 sectors, ALPHA, BETA, GAMMA. Each sector, when clicked on in the KMZ shows 2 PCI numbers.
+            PCI=Physical Cell ID. If a cx geographical location and sector connection don't match, that's a problem.</li><br>
+
+            <li>Cx info shows up in the lookup, but it says NO Management APN. Make sure authentication lookup says they are authed.
+            Start by closing the IMEI and IMSI packages in BM and making new ones with the same info. If you are speaking with the cx,
+            have them p/.c. It should come up with a management APN 50 ish seconds after it first starts displaying. this will also
+            fix the issue with people showing as provisioned for 0x0 on the PGW lookup.</li><br>
+
+            <li>Bouncing: Bouncing is a last resort, if nothing above or anything else you've tried has worked to restore management
+            APN or provisioning, bounce.</li><br>
+
+            <li>Shaping lookup is useful when the UE pulls speeds, but a router can't, this checks what procera has
+            listed for the router's queues. if this is wrong and a package refresh and total p/c does not fix this, send it up.</li><br>
+          </ol>
+
+          <h2>Part 2</h2>
+          <h3>BEC</h3>
+          <ol>
+
+          	<li>When looking up an IMSI in BEC, the useful info can be attained by clicking the listing,
+          clicking the "Device" dropdown, and selecting analysis. On the analysis page, you'll see a variety of options.
+          First thing to check will always be the "4g LTE" section. This holds the RF Conditions for the Cx UE.
+          Generally these should fall under into the following ranges:<br>
+<br>
+          		RSRP: -70 to -100<br>
+          		SINR: 5 to 30<br>
+          		RSRQ: -3 to -12<br>
+          		RSSI: -45 to -75
+
+            </li><br>
+
+	<li>Network Info this shows a few tidbits, but the really important one is going to be the PCI.
+the PCI or Physical Cell ID is the numerical ID of the Sector the cx is connected to.(see Part 1's LTETOOL section 2)</li><br>
+
+	<li>GPS LAT and LONG are very useful to get the precise location of the UE.</li><br>
+
+	<li>RF HISTORY is a great way to see the changes in the CX RF conditions over time.</li><br>
+
+	<li>the speed report tab: this allows you to run speedtests to the CX UE.
+		Warning, this does not take into account the traffic use from the cx router.</li><br>
+</ol>
+<h3>Management Page</h3>
+<ol>
+    <li>On the UE's management page, you can do everything you can do in BEC and More.
+    	Status &gt; 3G/4G-LTE status This is where you'll find the RF conditions for the radio, the current PCI,
+    		and the channel and width of the LTE connection.</li><br>
+
+    	<li>Status &gt; GPS Status <br><br>This is where you'll find the coordinates for the LTE radio both in Degrees Minutes Seconds,
+    		and Decimal Degrees.</li><br>
+
+    	<li>Status &gt; Statistics <br><br>This is where you'll find the tools to watch traffic both thru the Ethernet port
+    		and the radio link.</li><br>
+
+    	<li>Status &gt; DHCP Table <br><br>This is where you can find the cx router MAC and 100.</li><br>
+
+    	<li>Status &gt; ARP Table <br><br>See DHCP Table.</li><br>
+
+    	<li>Configuration &gt; Interface Setup &gt; Internet &gt; LTE PCI Lock<br><br>
+    		This is where you can check if LTE engineering has PCI locked a Cx UE to a specific sector. If a cx is on the wrong
+    		sector and this is not set up(ex: Cx on KNOBHILL@GAMMA when they should be on SPRINGTOWNREGEN@GAMMA)</li><br>
+
+      <li>Configuration &gt; Maintenance &gt; Diagnostic Tool <br><br>This is where you can find tools like pings, Traceroutes,
+    		and the speedtest function.</li><br>
+</ol>
+          </div>
+       <hr>
+
+
+<button class="accordion"><i class="fas fa-plus-circle"></i> &nbsp; Fiber and NE Routers</button>
+        <div class="panel"><br>
+          <li> OK tower router: 10.32.4.1</li>
+          <li><font color="#ff8000"> Nebraska (Gemini):</font> 10.251.0.1 </li>
+          <li><font color="#ff8000"> Nebraska (new):</font> 10.254.249.4 and .5</li>
+          <li> Kansas: 10.248.0.3 or 10.248.0.4</li>
+          <li> Cowboy Church (Venus): 10.1.0.47</li>
+          <li> Cowboy Church (Ponder): 10.3.0.45</li>
+          <li> Cottonwood Creek: 10.6.0.140</li>
+          <li> Eagle Mountain: 10.0.0.224</li>
+          <li> Crossroads (Ponder): 10.0.0.235</li>
+          <li> FCR1.HO: 10.17.0.5</li>
+          <li> FCR2.HO: 10.17.0.6</li>
+          <li> SPringtown: 10.0.0.233</li>
+          <li> Lampasas (Ponder): 10.39.0.7</li>
+          <li> Creek view apts:
+            <ul> <li>10.7.254.196 Building 300</li>
+                 <li>10.7.254.198 Building 200</li>
+                 <li>10.7.254.199 Building 100</li>
+                 </ul>
+            </li>
+          <h1>Nebraska Default Cx Router WiFi Password: <font color="#e16428">1a2b3c4d5e</font></h1>
+
+
+          </div>
+       <hr>
+
+      <button class="accordion"><i class="fas fa-plus-circle"></i> &nbsp; Calix / Zyxel / Velop</button>
+        <div class="panel"><br>
+          <font color="#f6e9e9">
+
+            <h2>Calix Things:</h2>
+            Calix Stop Stealth Mode:<br>
+            Advanced → Security → Firewall → Stealth Mode
+
+<hr>
+           <h2>Zyxel Mesh Unit Quick Start Guide:</h2>
+           <a href="https://www.truestreamfiber.com/wp-content/uploads/2020/08/Zyxel-extender-quick-start-guide.pdf" target="_blank"><font color="#f6e9e9"> Zyxel Mesh Unit Quick start Guide</font></a><br>
+<br><hr>
+
+          <h2>Velop Things:</h2>
+          Velops can only be accessed through NISC.<br>
+          Currently we cannot add a static into them remotely, this can only be done onsite by a technician or by the customer through the Linksys App.
+
+<br>
+
+</font>
+        </div>
+<hr>
+      <button class="accordion"><i class="fas fa-plus-circle"></i> &nbsp; Burstable Speeds</button>
+        <div class="panel"><br>
+          <font color="#f6e9e9">
+          <h2>Burstable Speeds (60% Speeds):</h2>
+            <font color="#f6e9e9">Next10 </font><font color="#ff8000"> ≥ 6 mbps</font>  Download, <font color="#ff8000">≥ 1.2 mbps</font> Upload<br>
+            <font color="#f6e9e9">Next15 </font><font color="#ff8000"> ≥ 9 mbps</font>  Download, <font color="#ff8000">≥ 1.8 mbps</font> Upload<br>
+            <font color="#f6e9e9">Next20 </font><font color="#ff8000"> ≥ 12 mbps</font> Download, <font color="#ff8000">≥ 2.4 mbps</font> Upload<br>
+            <font color="#f6e9e9">Next25 </font><font color="#ff8000"> ≥ 15 mbps</font> Download, <font color="#ff8000">≥ 3 mbps</font> Upload<br>
+            <font color="#f6e9e9">Next35 </font><font color="#ff8000"> ≥ 21 mbps</font> Download, <font color="#ff8000">≥ 4.2 mbps</font> Upload<br>
+            <font color="#f6e9e9">Next50 </font><font color="#ff8000"> ≥ 30 mbps</font> Download, <font color="#ff8000">≥ 6 mbps</font> Upload<br>
+            <font color="#f6e9e9">Next100 </font><font color="#ff8000"> ≥ 60 mbps</font> Download, <font color="#ff8000">≥ 6 mbps</font> Upload<br><br>
+        </font></div><font color="#f6e9e9"> </font>
+<hr>
+        <button class="accordion"><i class="fas fa-plus-circle"></i> &nbsp; LAN Trick</button>
+          <div class="panel"><br>
+            <font color="#f6e9e9">
+            <center><a href="./ct2_files/lantrick.jpg" target="_blank"> <img src="./ct2_files/lantrick.jpg" width="250px"></a></center>
+            <h2>SM IP Unusual? Try the LAN Trick.</h2>
+            <p>In the event that a customer calls in with no internet connection and the AP shows the SM having a 192. IP ADDRESS or anything not a 10. IP ADDRESS, you should perform the "LAN Trick" before escalating this to another department.</p>
+            <ol>
+              <li>Have the customer unplug the POE and Router power cables.</li>
+              <li>Have the customer unplug BOTH Ethernet cables from the POE. (POE/LAN Cables)</li>
+              <li>Once the SM shows no longer connected to the AP, have the customer connect the Ethernet cable that comes from the wall (SM) back into the POE port on the POE, and then connect the power cable back into the POE. The LAN port should have nothing connected.</li>
+              <li>Once the radio has established connection and pulls a valid IP, power-cycle the router and reconnect the LAN cable to the POE.</li>
+              <li>Verify this connection has been fully restored.</li>
+            </ol>
+            <p>The SM should connect again to the AP and show a 10. IP ADDRESS.</p>
+            <ol>
+              <li>If it continues to pull a 192. or anything else, unplug the LAN cable from the POE again.</li>
+              <li>Power-cycle the POE one more time.</li>
+              <li>When you see the SM connected on the AP, even if it has a 192. IP, connect the Ethernet back in the LAN on the POE.</li>
+              <li>If it continues to pull anything but a 10. IP ADDRESS, escalate to Lead/Senior Technical Support as needed.</li>
+            </ol>
+          </font></div>
+<hr>
+        <button class="accordion"><i class="fas fa-plus-circle"></i> &nbsp; Buffering Info / Nextlink SLA / Auto Truck-Roll</button>
+          <div class="panel"><br>
+            <font color="#f6e9e9">
+            <h2>Buffering Info</h2>
+              <ul>
+                <li>Buffering has nothing to do with your units Processor speed, Graphics processing power or RAM</li>
+                <li>Buffering has nothing to do with your hardware</li>
+                </ul>
+
+
+            <h3><font color="#ff8000">What causes buffering?</font></h3>
+              <ul>
+                <li>Slow internet speeds on the users end</li>
+                <li>Wifi signal being weak and or degraded by distance or having to go through walls or other obstacles</li>
+                <li>Other users on your internet network hogging bandwidth</li>
+                <li>The stream sources server being overloaded with too many users</li>
+                <li>The stream sources server having internet issues</li>
+                <li>Your internet provider having fluctuations in their internet service</li>
+                </ul>
+
+
+            <h3><font color="#ff8000">How to minimize buffering while streaming:</font></h3>
+              <ul>
+                <li>Have at least 10 Mbps actually getting to the unit. 25 Mbps is preferred</li>
+                <li>Hardwire your unit directly to the internet via an Ethernet cable</li>
+                <li>Power-cycle your router once a week</li>
+                <li>Pause a stream for a minute or two to allow it to build up some data<br></li>
+                </ul>
+
+<hr>
+            <h3>Nextlink SLA (Service Level Agreement)</h3>
+              <ul>
+                <li>Enterprise: 4 hours</li>
+                <li>Commercial: 4 hours</li>
+                <li>Business: 24-48 hours</li>
+                <li>Residential: 72 hours</li>
+                </ul>
+
+            <h3>Auto Truck-Roll</h3>
+            <h5>There are a few circumstances where we are able to do an auto-truck-roll.</h5>
+            <ul>
+              <li>3 or more power-cycles within a 30-45 day period</li>
+              <li>Weather related damage. If there is visable damage to our equipment.</li>
+            </ul>
+
+          </font></div>
+<hr>
+        <button class="accordion"><i class="fas fa-plus-circle"></i> &nbsp; MikroTik Speedtest</button>
+          <div class="panel"><br>
+            <font color="#f6e9e9">
+            <h2>MikroTik Speedtest</h2>
+              </font><ol><font color="#f6e9e9">
+                <li>Login to the <font color="#ff8000">MikroTik</font> Router using <font color="#ff8000">Winbox</font></li>
+                <li>Click <font color="#ff8000">Tools</font> on the left menu</li>
+                <li>Click <font color="#ff8000">Bandwidth Test</font></li>
+                <li>Under "<font color="#ff8000">Test To</font>" add bwtest.nxlink.com</li>
+                <li>Under <font color="#ff8000">User</font>: bwtest - <font color="#ff8000">password</font>: bwtest</li>
+                </font><li><font color="#f6e9e9">Under <font color="#ff8000">Direction</font> click <font color="#ff8000">receive</font> (download) or <font color="#ff8000">send</font> (upload)</font></li>
+                <li>Click <font color="#ff8000">Start</font> to begin speedtest<br><br>
+                <img src="./ct2_files/mikrotik_speedtest.jpg"><br><br>
+              </li></ol>
+          </div></font>
+<hr>
+        <button class="accordion"><i class="fas fa-plus-circle"></i> &nbsp; Flapping LAN0 on SM Trick</button>
+          <div class="panel"><br>
+            <font color="#f6e9e9">
+            <h2>Flapping LAN0 on SM Trick</h2>
+            <font color="#ff8000"> <strong>Flapping/Disconnected</strong></font>: When the LAN0/LAN SPEED is showing no information, disconnected,
+              or showing different mbps speeds, you can try this in order to possibly resolve the issue.<br><br>
+
+            <h2>UBNT AC SM:</h2>
+              <ol>
+                <li>Login to the SM</li>
+                <li>On the left side menu, click on settings (Gear icons)</li>
+                <li>On the top menu, click on <font color="#ff8000"><strong>NETWORK</strong></font></li>
+                <li>Under '<font color="#ff8000"><strong>Configuration Mode</strong>'</font> change the <font color="#ff8000"> CONFIGURATION MODE</font> to <font color="#ff8000">Advanced</font></li>
+                <li>Look for a header that says '<font color="#ff8000"><strong>Interfaces</strong>'</font></li>
+                <li>Under that look for the <font color="#ff8000"><strong>INTERFACE</strong></font> LAN0</li>
+                <li>Click on the pencil all the way to the right</li>
+                <li>Under <font color="#ff8000"><strong>SPEED</strong></font>, change that from Auto to 100 Mbps-Full</li>
+              </ol>
+              <center><a href="./ct2_files/lan0.jpg" target="_blank"> <img src="./ct2_files/lan0.jpg" width="250px"></a><br><br>
+              <font color="#ff8000">**Remember to change it back if it doesn't work**</font></center><br>
+<hr>
+            <h2>PowerBeam M5 400 SM:</h2>
+              <ol>
+                <li>Login to the SM</li>
+                <li>On the top menu, click on <font color="#ff8000">ADVANCED</font></li>
+                <li>Under the <font color="#ff8000"><strong>Advanced Ethernet Settings</strong></font></li>
+                <li>Under that look for the <font color="#ff8000"><strong>LAN0 Speed</strong></font> Dropdown</li>
+                <li>Click and change that from Auto to 100 Mbps-Full</li>
+              </ol>
+            <center><a href="./ct2_files/powerbeam.jpg" target="_blank"> <img src="./ct2_files/powerbeam.jpg" width="250px"></a><br><br>
+            <font color="#ff8000">**Remember to change it back if it doesn't work**</font></center><br>
+        </font></div><font color="#f6e9e9">
+<hr>
+        <button class="accordion"><i class="fas fa-plus-circle"></i> &nbsp; Advanced Troubleshooting (Approval Required)</button>
+          <div class="panel"><br>
+            <h2>Advanced Troubleshooting:</h2>
+
+            AC - SM/AP Latest Firmware: 8.5.12<br>
+            M5 - SM/AP Latest Firmware: 6.1.4<br>
+            Cambium - SM/AP Latest Firmware: 4.5<br><br>
+
+            NTP client server - 10.0.0.1 (SM Time Correction)<br>
+
+            <h2>Calix - Turn Off IPv6</h2>
+            Support &gt; Voice Provisioning &gt; Edit  &gt; Wan Interface = None &gt; Apply<br><br>
+	          Support &gt; Service WAN VLANs &gt; Edit &gt; Version = IPv4<br><br>
+	          Then go back to the Voice Provisioning and set the Wan Interface back.<br><br>
+          </div>
+  </font></fieldset><font color="#f6e9e9">
+</font></font></div><font color="#f6e9e9">
+
+<!-- **************************** Bob's Javascript Script **************************** */ -->
+
+<script type="text/javascript">
+function openTab(evt, tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+}
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+}
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+
+<!-- **************************** Accordion Script ****************************  -->
+
+<script>
+var acc = document.querySelectorAll(".accordion,.accordion2");
+var i;
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
+
+<!-- Billmax Ticket Queues Import jQuery -->
+
+<script type="text/javascript" src="./ct2_files/queues.js"></script>
+
+<!-- Light Theme Javascript Import -->
+
+<script type="text/javascript" src="./ct2_files/light_theme.js"></script> <!-- JS scripts for light theme button -->
+
+<!-- Kachow Mode Javascript Import -->
+
+<script type="text/javascript" src="./ct2_files/kachow_mode.js"></script> <!-- JS scripts for light theme button -->
+
+<!-- Test Kachow Mode Javascript Import -->
+
+<script type="text/javascript" src="./ct2_files/test_kachow_mode.js"></script> <!-- JS scripts for light theme button -->
+
+<!-- Scripts to manipulate Fast-lane ticket -->
+
+<script src="./ct2_files/fastLane.js"></script>
+
+<!-- Scripts to manipulate Sub Recovery ticket -->
+
+<script src="./ct2_files/.js"></script>
+
+<!-- Scripts to add fireworks-->
+
+<script>
+  $('.hoverme').on('click', function(){
+  function random(max){
+      return Math.random() * (max - 0) + 0;
+  }
+
+  var c = document.createDocumentFragment();
+  for (var i=0; i<50; i++) {
+    var styles = 'transform: translate3d(' + (random(500) - 250) + 'px, ' + (random(500) - 150) + 'px, 0) rotate(' + random(360) + 'deg);\
+                  background: hsla('+random(360)+',100%,50%,1);\
+                  animation: bang 1000ms ease-out forwards;\
+                  opacity: 0';
+
+    var e = document.createElement("i");
+    e.classList.add("mystyle11");
+    e.style.cssText = styles.toString();
+    c.appendChild(e);
+}
+  $(this).append(c);
+})
+</script>
+</font></font></font></article><font color="#ff8000"><font color="#f6e9e9">
+</font></font></section><font color="#ff8000"><font color="#f6e9e9">
+
+
+</font></font><div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"><div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all"><a class="ui-datepicker-prev ui-corner-all" data-handler="prev" data-event="click" title="Prev"><span class="ui-icon ui-icon-circle-triangle-w">Prev</span></a><a class="ui-datepicker-next ui-corner-all" data-handler="next" data-event="click" title="Next"><span class="ui-icon ui-icon-circle-triangle-e">Next</span></a><div class="ui-datepicker-title"><select class="ui-datepicker-month" data-handler="selectMonth" data-event="change"><option value="0">Jan</option><option value="1">Feb</option><option value="2">Mar</option><option value="3">Apr</option><option value="4">May</option><option value="5">Jun</option><option value="6" selected="selected">Jul</option><option value="7">Aug</option><option value="8">Sep</option><option value="9">Oct</option><option value="10">Nov</option><option value="11">Dec</option></select><select class="ui-datepicker-year" data-handler="selectYear" data-event="change"><option value="2012">2012</option><option value="2013">2013</option><option value="2014">2014</option><option value="2015">2015</option><option value="2016">2016</option><option value="2017">2017</option><option value="2018">2018</option><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option><option value="2022" selected="selected">2022</option><option value="2023">2023</option><option value="2024">2024</option><option value="2025">2025</option><option value="2026">2026</option><option value="2027">2027</option><option value="2028">2028</option><option value="2029">2029</option><option value="2030">2030</option><option value="2031">2031</option><option value="2032">2032</option></select></div></div><table class="ui-datepicker-calendar"><thead><tr><th scope="col" class="ui-datepicker-week-end"><span title="Sunday">Su</span></th><th scope="col"><span title="Monday">Mo</span></th><th scope="col"><span title="Tuesday">Tu</span></th><th scope="col"><span title="Wednesday">We</span></th><th scope="col"><span title="Thursday">Th</span></th><th scope="col"><span title="Friday">Fr</span></th><th scope="col" class="ui-datepicker-week-end"><span title="Saturday">Sa</span></th></tr></thead><tbody><tr><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2022"><a class="ui-state-default" href="http://csr-templates.nxlink.com/tickets/#">1</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="6" data-year="2022"><a class="ui-state-default" href="http://csr-templates.nxlink.com/tickets/#">2</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="6" data-year="2022"><a class="ui-state-default" href="http://csr-templates.nxlink.com/tickets/#">3</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2022"><a class="ui-state-default" href="http://csr-templates.nxlink.com/tickets/#">4</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2022"><a class="ui-state-default" href="http://csr-templates.nxlink.com/tickets/#">5</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2022"><a class="ui-state-default" href="http://csr-templates.nxlink.com/tickets/#">6</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2022"><a class="ui-state-default" href="http://csr-templates.nxlink.com/tickets/#">7</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2022"><a class="ui-state-default" href="http://csr-templates.nxlink.com/tickets/#">8</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="6" data-year="2022"><a class="ui-state-default" href="http://csr-templates.nxlink.com/tickets/#">9</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="6" data-year="2022"><a class="ui-state-default" href="http://csr-templates.nxlink.com/tickets/#">10</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2022"><a class="ui-state-default" href="http://csr-templates.nxlink.com/tickets/#">11</a></td><td class=" ui-datepicker-days-cell-over  ui-datepicker-current-day ui-datepicker-today" data-handler="selectDay" data-event="click" data-month="6" data-year="2022"><a class="ui-state-default ui-state-highlight ui-state-active ui-state-hover" href="http://csr-templates.nxlink.com/tickets/#">12</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2022"><a class="ui-state-default" href="http://csr-templates.nxlink.com/tickets/#">13</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2022"><a class="ui-state-default" href="http://csr-templates.nxlink.com/tickets/#">14</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2022"><a class="ui-state-default" href="http://csr-templates.nxlink.com/tickets/#">15</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="6" data-year="2022"><a class="ui-state-default" href="http://csr-templates.nxlink.com/tickets/#">16</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="6" data-year="2022"><a class="ui-state-default" href="http://csr-templates.nxlink.com/tickets/#">17</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2022"><a class="ui-state-default" href="http://csr-templates.nxlink.com/tickets/#">18</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2022"><a class="ui-state-default" href="http://csr-templates.nxlink.com/tickets/#">19</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2022"><a class="ui-state-default" href="http://csr-templates.nxlink.com/tickets/#">20</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2022"><a class="ui-state-default" href="http://csr-templates.nxlink.com/tickets/#">21</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2022"><a class="ui-state-default" href="http://csr-templates.nxlink.com/tickets/#">22</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="6" data-year="2022"><a class="ui-state-default" href="http://csr-templates.nxlink.com/tickets/#">23</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="6" data-year="2022"><a class="ui-state-default" href="http://csr-templates.nxlink.com/tickets/#">24</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2022"><a class="ui-state-default" href="http://csr-templates.nxlink.com/tickets/#">25</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2022"><a class="ui-state-default" href="http://csr-templates.nxlink.com/tickets/#">26</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2022"><a class="ui-state-default" href="http://csr-templates.nxlink.com/tickets/#">27</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2022"><a class="ui-state-default" href="http://csr-templates.nxlink.com/tickets/#">28</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="6" data-year="2022"><a class="ui-state-default" href="http://csr-templates.nxlink.com/tickets/#">29</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="6" data-year="2022"><a class="ui-state-default" href="http://csr-templates.nxlink.com/tickets/#">30</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="6" data-year="2022"><a class="ui-state-default" href="http://csr-templates.nxlink.com/tickets/#">31</a></td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td></tr></tbody></table></div></body></html>

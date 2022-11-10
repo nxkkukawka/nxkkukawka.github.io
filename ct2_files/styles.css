@@ -1,0 +1,963 @@
+/***************/
+/* Main Styles */
+/***************/
+@keyframes bang {
+  from {
+    transform: translate3d(0,0,0);
+    opacity: 1;
+  }
+}
+.tablinks.buttonMenu:focus{
+  border: 1px solid var(--input-box-border);
+}
+.asdf{
+  display: none;
+}
+.asdf1{
+  display: block;
+}
+.hoverme {
+  /* width: 240px; */
+  /* margin-top:150px; */
+  text-align: center;
+  padding: 10px 0;
+  cursor: pointer;
+  position: relative;
+  display: block;
+}
+.hoverme > span {
+    color: #333;
+    font-size: .9em;
+  }
+
+.mystyle11 {
+    position: absolute;
+    display: block;
+    left: 50%;
+    top: 0;
+    width: 3px;
+    height: 8px;
+    background: red;
+    opacity: 0;
+  }
+:root {
+  --color: #ffffff;
+  --nav-bg: #202020;
+  --menu-bg: #1a1a1a;
+  --menu-button: #1a1a1a;
+  --menu-button2: #242424;
+  --fieldset-bg: #1a1a1a;
+  --fieldset-border: #ff8000;
+  --input-box-bg: #202020;
+  --input-box-border: #ff8000;
+  --textarea-bg: #202020;
+  --textarea-border: #ff8000;
+  --dropdown-bg: #202020;
+  --dropdown-border: #ff8000;
+  --expand-button-bg: #1a1a1a;
+  --legend-color: #ffffff;
+}
+
+[data-theme="dark"] {
+  --color: #ffffff;
+  --nav-bg: #454545;
+  --menu-bg: #6b6b6b;
+  --menu-button: #6b6b6b;
+  --menu-button2: #797878;
+  --fieldset-bg: #545454;
+  --fieldset-border: #ff8000;
+  --input-box-bg: #6b6b6b;
+  --input-box-border: #ff8000;
+  --textarea-bg: #6b6b6b;
+  --textarea-border: #ff8000;
+  --dropdown-bg: #6b6b6b;
+  --dropdown-border: #ff8000;
+  --expand-button-bg: #6b6b6b;
+  --legend-color: #f6e9e9;
+
+}
+
+body {
+  background-color: #000000;
+  color: #f6e9e9;
+  font-size: 13px;
+  font-family: verdana;
+}
+
+h1 {
+  font-size: 30x;
+  font-family: verdana;
+}
+
+h2 {
+  font-size: 20px;
+  font-family: verdana;
+}
+
+h3 {
+  font-size: 15px;
+  font-family: verdana;
+  font-weight: normal;
+  margin-bottom: 0;
+  padding: 0px;
+}
+
+h4 {
+  font-size: 12px;
+  font-family: verdana;
+  font-weight: normal;
+  margin-bottom: 0;
+  padding: 0px;
+}
+
+h5 {
+  font-size: 11px;
+  font-family: verdana;
+  font-weight: normal;
+  margin-bottom: 0;
+  padding: 0px;
+}
+
+h6 {
+  font-size: 10px;
+  font-family: verdana;
+  font-weight: normal;
+  margin-bottom: 0;
+  padding: 0px;
+}
+
+hr {
+  float: center;
+  text-align: center;
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #e16428;
+  margin: 1em 0;
+  padding: 0;
+}
+
+p {
+  font-family: verdana;
+  font-size: 13px;
+}
+
+article {
+	display:block;
+	grid-area: topper;
+	width:100%;
+	}
+
+article pre {
+	width:100%;
+}
+
+aside{
+	grid-area: bottomer;
+	padding:0;
+	min-height:100px;
+	width:100%;
+}
+
+section{
+	display:grid;
+	height: 100%;
+	grid-template-rows: 1fr max-content;
+	grid-template-columns: 1fr 180px 500px 1fr;
+	grid-template-areas: ". navi topper ."
+						 ". bottomer bottomer .";
+}
+article {
+	min-height: 320px;
+	grid-area: topper;
+	border-right:1px solid #aaa;
+	border-top:1px solid #aaa;
+	border-radius: 0 10px 10px 0;
+	}
+
+article pre {
+	width:100%;
+}
+
+aside{
+	grid-area: bottomer;
+	padding:0;
+	min-height:100px;
+}
+
+/***************/
+/* Input Box Styles */
+/***************/
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.mainInputBox {
+  font-size: 13px;
+  float: left;
+  background-color: var(--input-box-bg);
+  color: #f6e9e9;
+  padding: 8px 4px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  width: 295px;
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid var(--input-box-border);
+}
+
+.mainInputBox2 {
+  font-size: 13px;
+  float: right;
+  background-color: var(--input-box-bg);
+  color: #f6e9e9;
+  padding: 8px 4px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid var(--input-box-border);
+  width: 295px;
+}
+
+.mainInputBox3 {
+  font-size: 13px;
+  background-color: var(--input-box-bg);
+  color: #f6e9e9;
+  padding: 8px 4px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid var(--input-box-border);
+  width: 225px;
+}
+
+.mainInputBox4 {
+  font-size: 13px;
+  float: right;
+  background-color: var(--input-box-bg);
+  color: #f6e9e9;
+  padding: 8px 4px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid var(--input-box-border);
+  width: 142.5px;
+}
+
+.mainInputBox5 {
+  font-size: 13px;
+  float: left;
+  background-color: var(--input-box-bg);
+  color: #f6e9e9;
+  padding: 8px 4px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid var(--input-box-border);
+  width: 294px;
+}
+
+.mainInputBox6 {
+  font-size: 13px;
+  float: right;
+  background-color: var(--input-box-bg);
+  color: #f6e9e9;
+  padding: 8px 0px;
+  margin: 8px 150px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid var(--input-box-border);
+  width: 294px;
+}
+
+.textboxInput {
+  font-size: 13px;
+  float: left;
+  background-color: var(--input-box-bg);
+  color: #f6e9e9;
+  padding: 8px 4px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid var(--input-box-border);
+  width: 100%;
+}
+
+.smallTextbox {
+  text-align: center;
+  font-size: 12px;
+  background-color: var(--input-box-bg);
+  color: #f6e9e9;
+  padding: 6px 6px;
+  margin: 0px 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid var(--input-box-border);
+  width: 50px;
+}
+
+.inputText {
+  height: 400px;
+}
+
+.scinputText {
+  height: 250px;
+}
+
+input:focus {
+  background-color: white;
+  color: black;
+}
+
+select:focus {
+  background-color: white;
+  color: black;
+}
+
+select:focus > option:checked { 
+  background: var(--input-box-border) !important;
+  color: white;
+}
+
+input:focus::placeholder
+{
+  color: black;
+  background-color: white;
+}
+
+textarea:focus::placeholder{
+  color: black;
+  background-color: #f6e9e9;
+}
+
+fieldset {
+  border-color: var(--fieldset-border);
+  background-color: var(--fieldset-bg);
+  width: 95%;
+}
+
+.fieldsetTop {
+  border-color: var(--fieldset-border);
+  background-color: var(--fieldset-bg);
+  padding: 10px 8px 8px 8px;
+  width: 95%;
+  margin: auto;
+  border: 0;
+  outline: 0;
+  border-top: 1px solid var(--input-box-border);
+  padding-bottom: 20px;
+}
+.fieldsetTop2 {
+  border-color: var(--fieldset-border);
+  background-color: var(--fieldset-bg);
+  padding: 10px 0px 0px 150px;
+  width: 72.5%;
+  margin: 0 auto;
+  border: 0;
+  outline: 0;
+  border-top: 1px solid var(--input-box-border);
+  padding-bottom: 20px;
+}
+.fieldsetTop3 {
+  border-color: var(--fieldset-border);
+  background-color: var(--fieldset-bg);
+  padding: 10px 8px 8px 8px;
+  width: 95%;
+  margin: auto;
+  border: 0;
+  outline: 0;
+  border-top: 1px solid var(--input-box-border);
+  border-right: 1px solid var(--input-box-border);
+  border-left: 1px solid var(--input-box-border);
+  border-bottom: 1px solid var(--input-box-border);
+  padding-bottom: 20px;
+}
+
+legend {
+  font-family: Copperplate, "Copperplate Gothic Light";
+	font-size: 18px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 600;
+  color: var(--legend-color);
+}
+
+input[type=checkbox] {
+  font-size: 14px;
+  color: #e16428;
+  cursor: pointer;
+}
+
+.checkbox-grid {
+  font-size: 12.5px;
+  padding: 0px 0px 0px 0px;
+  cursor: pointer;
+}
+
+input[type=radio] {
+  font-size: 14px;
+  color: #e16428;
+  cursor: pointer;
+}
+
+/***************/
+/* Textarea Styles */
+/***************/
+
+textarea {
+  height: 120px;
+  width: 100%;
+  font-size: 13px;
+  padding: 12px 4px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid var(--input-box-border);
+  background-color: var(--textarea-bg);
+  color: #f6e9e9;
+  margin: 8px 0;
+}
+
+.textarea200 {
+  height: 200px;
+  width: 100%;
+  font-size: 13px;
+  padding: 12px 4px;
+  box-sizing: border-box;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid var(--input-box-border);
+  background-color: var(--textarea-bg);
+  color: #f6e9e9;
+  margin: 8px 0;
+}
+
+.textarea300 {
+  height: 300px;
+  width: 100%;
+  font-size: 13px;
+  padding: 12px 4px;
+  box-sizing: border-box;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid var(--input-box-border);
+  background-color: var(--textarea-bg);
+  color: #f6e9e9;
+  margin: 8px 0;
+}
+
+textarea:focus {
+  background: #f6e9e9;
+  color: black;
+}
+
+/***************/
+/* Dropdown Styles */
+/***************/
+
+
+ .dropdown {
+  border: 2px solid black;
+  border-radius: 4px;
+  background-color: var(--dropdown-bg);
+  color: #ffffff;
+  padding: 7px 4px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  font-size: 12px;
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid var(--input-box-border);
+  width: 100%;
+}
+
+.dropdownLeft {
+  float: left;
+  border: 2px solid black;
+  border-radius: 4px;
+  background-color: var(--dropdown-bg);
+  color: #ffffff;
+  padding: 7px 4px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  width: 295px;
+  font-size: 12px;
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid var(--input-box-border);
+}
+
+.dropdownRight {
+  float: right;
+  border: 2px solid black;
+  border-radius: 4px;
+  background-color: var(--dropdown-bg);
+  color: #ffffff;
+  padding: 7px 4px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  width: 295px;
+  font-size: 12px;
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid var(--input-box-border);
+}
+
+.smallDropdown {
+  border-radius: 5px;
+  background-color: var(--dropdown-bg);
+  color: #ffffff;
+  padding: 6px 6px;
+  width: 175px;
+  font-size: 12px;
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid var(--input-box-border);
+}
+
+.smallerDropdown {
+  border-radius: 4px;
+  background-color: var(--dropdown-bg);
+  color: #ffffff;
+  padding: 6px 6px;
+  width: 125px;
+  font-size: 12px;
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid var(--input-box-border);
+}
+
+/***************/
+/* Placeholder Text Styles */
+/***************/
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  font-size: 12px;
+  opacity: 2; /* Firefox */
+}
+
+/***************/
+/* Button Styles */
+/***************/
+
+button{
+  border-radius: 4px;
+  border: none;
+  background-color: #e16428;
+  color: #f6e9e9;
+}
+
+.generateNote {
+  font-size: 15px;
+  color: #f6e9e9;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  width: 100%;
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid var(--input-box-border);
+}
+
+.redButton {
+  font-size: 15px;
+  background-color: #FF5733;
+  border-radius: 4px;
+  border:none;
+  padding: 12px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.btn-sc {
+  font-size: 15px;
+  background-color: #e16428;
+  color: #f6e9e9;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.btn-prefill {
+  font-size: 11px;
+  background-color: #517a87;
+  color: #f6e9e9;
+  padding: 2px 2px;
+  text-decoration: none;
+  margin: 4px 2px;
+  width: 49%;
+  height: 25px;
+  cursor: pointer;
+  float: right;
+}
+
+.btn-prefill2 {
+  font-size: 11px;
+  background-color: #517a87;
+  color: #f6e9e9;
+  padding: 2px 2px;
+  text-decoration: none;
+  margin: 4px 2px;
+  width: 49%;
+  height: 25px;
+  cursor: pointer;
+  float: left;
+}
+
+.btn-timer {
+  font-size: 14px;
+  padding: 4px 0px;
+  text-decoration: none;
+  margin: 2px 2px;
+  width: 45%;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.btn-copy {
+  font-size: 12px;
+  background-color: #e16428;
+  border: none;
+  color: #f6e9e9;
+  padding: 4px 0px;
+  text-decoration: none;
+  margin: 4px 2px;
+  width: 18%;
+  cursor: pointer;
+}
+
+/***************/
+/* Menu Styles */
+/***************/
+
+.tab {
+  display: inline-block;
+  margin-left: 40px;
+}
+
+.tabcontent {
+  display: none;
+  padding: 0px 10px;
+  }
+
+.mainMenu {
+  /*Far Back Menu*/
+  grid-area: navi;
+  padding:0px 10px;
+  background-color: var(--menu-bg);
+  display:flex;
+  flex-direction: column;
+  border-radius: 4px;
+}
+
+nav{
+	/* Front Menu */
+  margin-top: 10px;
+	padding:20px 10px 8px 10px;
+	background-color: var(--nav-bg);
+	display:flex;
+	flex-direction: column;
+	border-radius: 4px;
+  position:sticky;
+  top:10px;
+}
+
+nav img{
+  margin-bottom:15px;
+}
+
+
+.buttonMenu {
+  background-color: var(--menu-button);
+  color: var(--menu-color);
+  text-align: center;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  margin-top: 6px;
+  padding: 7px 6px;
+  transition: 0.1s;
+  font-size: 14px;
+
+}
+
+.buttonMenu2 {
+  background-color: var(--menu-button2);
+  color: var(--menu-color);
+  text-align: center;
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid var(--input-box-border);
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  margin-top: 6px;
+  padding: 7px 6px;
+  transition: 0.1s;
+  font-size: 14px;
+
+}
+
+/* Change background color of buttons on hover */
+button:hover {
+  border-right: 1px solid var(--input-box-border);
+  border-left: 1px solid var(--input-box-border);
+  color:#ddd;
+  border-radius: 4px;
+}
+
+/* Create an active/current tablink class */
+button.active {
+  border-radius: 4px;
+}
+
+.menuEraseButton {
+  font-size: 14px;
+  background-color: #e16428;
+  border: none;
+  color: #f6e9e9;
+  padding: 7px 0px;
+  text-decoration: none;
+  margin: 4px 2px;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/********************************************* Timer Styles *********************************************/
+
+div.timer {
+  align-content:center;
+  border:1px #e16428 solid;
+  width:130px;
+  height:35px;
+  line-height:40px;
+  font-size:30px;
+  font-family:"Courier New", Courier, monospace;
+  text-align:center;
+  margin:5px;
+
+}
+
+/********************************************* Accordion Styles *********************************************/
+
+.accordion {
+  background-color: var(--expand-button-bg);
+  color: #fff;
+  cursor: pointer;
+  padding: 8px;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid var(--input-box-border);
+  text-align: left;
+  outline: none;
+  font-size: 14px;
+  transition: 0.1s;
+}
+
+.accordion2 {
+  background-color: var(--expand-button-bg);
+  color: #fff;
+  float: right;
+  cursor: pointer;
+  padding: 8px;
+  width: 80%;
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid var(--input-box-border);
+  text-align: left;
+  outline: none;
+  font-size: 14px;
+  transition: 0.1s;
+}
+
+.accordion:hover {
+  background-color: #e16428;
+  color: #ffffff;
+}
+
+.accordion2:hover {
+  background-color: #e16428;
+  color: #ffffff;
+}
+
+.panel {
+  padding: 0px;
+  display: none;
+  overflow: hidden;
+}
+.panel2 {
+  padding-left:50px;
+  display: none;
+  overflow: hidden;
+  float:right;
+}
+
+/********************************************* Scrollbar Styles *********************************************/
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #e16428;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #e16428;
+}
+
+/********************************************* Light Theme Button *********************************************/
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  /* em {
+    margin-left: 10px;
+    font-size: 1rem;
+  } */
+}
+.theme-switch {
+  display: inline-block;
+  height: 20px;
+  position: relative;
+  width: 50px;
+}
+
+.theme-switch input {
+  display:none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: -10px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .6s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 2px;
+  content: "";
+  height: 16px;
+  left: 0px;
+  position: absolute;
+  transition: .4s;
+  width: 16px;
+}
+
+input:checked + .slider {
+  background-color: #e16428;
+}
+
+input:checked + .slider:before {
+  transform: translateX(22px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+/********************************************* Info Hover *********************************************/
+
+<style>
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  top: -5px;
+  right: 105%;
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  opacity: 0;
+  transition: opacity 1s;
+
+  
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+</style>
+
+<div class="tooltip">Hover over me
+  <span class="tooltiptext">Tooltip text</span>
+</div>
+
+/* Adds an arrow pointing towards the hoverable text */
+.tooltip .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  right: 100%; /* To the left of the tooltip */
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+}
