@@ -15,6 +15,7 @@ function everyTicketFunction()
   var etPingCheckboxes = "";
   var etBypassResults = "";
   var etRanPings = "";
+  var etTaranaStats = "";
   var etLteStats = "";
   var etStatsCOM = "";
   var etStats = "";
@@ -97,6 +98,14 @@ function everyTicketFunction()
   var etSMConnectionTimeCOM = $('#etSMConnectionTimeCOM').val() || "";
   var etSMAPFrequencyCOM = $('#etSMAPFrequencyCOM').val() || "";
 
+  // Tarana Stats
+  var etTaranaSN = $('#etTaranaSN').val() || "";
+  var etTaranaSector = $('#etTaranaSector').val() || "";
+  var etTaranaMGMTIP = $('#etTaranaMGMTIP').val() || "";
+  var etTaranaCurrentBN = $('#etTaranaCurrentBN').val() || "";
+  var etTaranaPrimaryBN = $('#etTaranaPrimaryBN').val() || "";
+  var etTaranaUptime = $('#etTaranaUptime').val() || "";
+  
   // LTE Stats
   var etIMSI = $('#etIMSI').val() || "";
   var etIMEI = $('#etIMEI').val() || "";
@@ -192,6 +201,15 @@ function everyTicketFunction()
   if (etSMAPFrequencyCOM == ""){etSMAPFrequencyCOM = "";} else {etSMAPFrequencyCOM = "\n- AP Frequency: " + etSMAPFrequencyCOM;}
   if (etSMUptimeCOM == "" && etAPUptimeCOM == "" && etSMSignalCOM == "" && etSMSplitsCOM == "" && etSMConnectionTimeCOM == "" && etSMAPFrequencyCOM == ""){etStatsCOM = "";}
   else {etStatsCOM = "\n\nCommercial Stats:";}
+
+  //Tarana stats
+  if (etTaranaSN == ""){etTaranaSN = "";} else {etTaranaSN = "\n- Serial number: " + etTaranaSN;}
+  if (etTaranaSector == ""){etetTaranaSectorIMEI = "";} else {etTaranaSector = "\n- Sector: " + etTaranaSector;}
+  if (etTaranaMGMTIP == ""){etTaranaMGMTIP = "";} else {etTaranaMGMTIP = "\n- Managment IP: " + etTaranaMGMTIP;}
+  if (etTaranaCurrentBN == ""){etTaranaCurrentBN = "";} else {etTaranaCurrentBN = "\n- Current BN: " + etTaranaCurrentBN;}
+  if (etTaranaPrimaryBN == ""){etTaranaPrimaryBN = "";} else {etTaranaPrimaryBN = "\n- Primary BN: " + etTaranaPrimaryBN;}
+  if (etTaranaUptime == ""){etTaranaUptime = "";} else {etTaranaUptime = "\n- Uptime: " + etTaranaUptime;}
+  if (etTaranaSN == "" && etTaranaSector == "" && etTaranaMGMTIP == "" && etTaranaCurrentBN == "" && etTaranaPrimaryBN == "" && etTaranaUptime == ""){etTaranaStats = "";} else {etTaranaStats = "\n\nTarana Stats:";}
 
   //LTE stats
   if (etIMSI == ""){etIMSI = "";} else {etIMSI = "\n- IMSI: " + etIMSI;}
@@ -314,8 +332,12 @@ function everyTicketFunction()
 
   //Check boxes past t/s
   etExtraCheckBoxes =
+  //Tarana Information
+  ($('#etTaranaGrant2')[0].checked ? "\n- RN is getting 2 or more grants" : "")
+  + ($('#etTaranaGrant')[0].checked ? "\n- Grantss Failed" : "")
+
   //LTE Information
-  ($('#etConnectedDevices')[0].checked ? "\n- LTE Network is showing device connected" : "")
+  + ($('#etConnectedDevices')[0].checked ? "\n- LTE Network is showing device connected" : "")
   + ($('#etNoConnectedDevices')[0].checked ? "\n- LTE Network is NOT showing device connected" : "")
 
   //Plan Upgrade
@@ -384,14 +406,15 @@ function everyTicketFunction()
   + etSMIP + etAPIP + etAPSSID
   + etFAS + etSwitchPort + etLightLevel + etFiberRouterIP
   + etRouterIP + etRouterType + etZyxelPW + etIssue + etTimeFrame + etSummary
-  + etStats + etLteStats + etSMUptime + etAPUptime
-  + etIMSI + etIMEI + etPCI + etRSSI + etBTSID + etSector
-  + etSMSignal + etAPSignal + etLteUptime + etSMSplits
+  + etStats + etTaranaStats + etTaranaSN + etTaranaSector + etTaranaMGMTIP + etTaranaCurrentBN + etTaranaPrimaryBN + etTaranaUptime
+  + etLteStats + etSMUptime + etAPUptime + etIMSI + etIMEI + etPCI + etRSSI + etBTSID + etSector + etSMSignal + etAPSignal + etLteUptime + etSMSplits
   + etStatsCOM + etSMUptimeCOM + etAPUptimeCOM + etSMSignalCOM + etSMSplitsCOM + etSMConnectionTimeCOM + etSMAPFrequencyCOM
   + etCheckboxesTS + etCheckboxes + etLanStatus + etAttemptedAP + etPCMAC + etRTRMAC + etRanPings + etPingCheckboxes
   + etExtraCheckBoxes + etBypassResults + etSpeedBody
   + etSMPing + etRTRPing + etAPPing + etMTRPing
-  + etResolution + etNextStep + etNextStepQuick + NextStepOther;
+  + etResolution + etNextStep;
+
+  // + etNextStepQuick
 
   //if tcs communication method is not selected remove the formatting for the tcs method from the subject line
   if(etTCSMethod == '')
@@ -400,7 +423,19 @@ function everyTicketFunction()
     etAPSSIDSubject = etAPSSIDSubject.replace(/^\s+/g, '');
   }
 
-  //Adds LTE sector inplace of ap sside
+  //Adds Tarana BN inplace of ap ssid
+  if(etTaranaCurrentBN != "")
+  {
+    etAPSSIDSubject = "Tarana " + ($('#etTaranaCurrentBN').val() || "");
+  }
+  var subjectTimeFrame = $('#etTimeFrame').val() || "";
+  if(etTimeFrame != "")
+  {
+    subjectTimeFrame = " | Peak Times: " + subjectTimeFrame;
+    etTimeFrame = " | " + etTimeFrame + " ";
+  }
+
+  //Adds LTE sector inplace of ap ssid
   if(etSector != "")
   {
     etAPSSIDSubject = "LTE " + ($('#etSector').val() || "");

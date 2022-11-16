@@ -190,6 +190,7 @@
           <option value="Peak Time Issue: No Connection">Peak Time Issue: No Connection</option>
           <option value="Line drop request">Line drop request</option>
           <option value="Router Shipment">Router Shipment</option>
+          <option value="Tarana Issues (Internet Down)">Tarana Issues (Internet Down)</option>
           <option value="LTE Issues (Internet Down)">LTE Issues (Internet Down)</option>
           <option value="No Connection (Internet Down)">No Connection (Internet Down)</option>
           <option value="No Connection (CPE Down)">No Connection (CPE Down)</option>
@@ -298,34 +299,34 @@ Does this mainly happen in the evenings/prime time?" autocomplete="off"></textar
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                 <button class="accordion"><i class="fas fa-plus-circle"></i> &nbsp; Advanced Troubleshooting</button>
                   <div class="panel"><br>
-    
+                    
                     Advanced Troubleshooting:<br>
-                    <label><input type="checkbox" id="etRouterGood" autocomplete="off" onclick="toggleCheckboxes(&#39;etRouterBad&#39;)"><font color="#ff007f0"> Router speeds set correct in BM</font></label>
-                    <label><input type="checkbox" id="etRouterBad" autocomplete="off" onclick="toggleCheckboxes(&#39;etRouterGood&#39;)"> Router speeds incorrect in BM</label><br>
-                    <label><input type="checkbox" id="etQueuesGood" autocomplete="off" onclick="toggleCheckboxes(&#39;etQueuesBad&#39;)"><font color="#ff007f0"> Checked queues / Correct</font></label>
-                    <label><input type="checkbox" id="etQueuesBad" autocomplete="off" onclick="toggleCheckboxes(&#39;etQueuesGood&#39;)"> Checked queues / Incorrect</label><br>
-                    <label><input type="checkbox" id="etDHCPcpe2" autocomplete="off" onclick="toggleCheckboxes(&#39;etDHCPcpe&#39;)"><font color="#ff007f0"> DHCP Server / Shows CPE</font></label>
-                    <label><input type="checkbox" id="etDHCPcpe" autocomplete="off" onclick="toggleCheckboxes(&#39;etDHCPcpe2&#39;)"> DHCP Server / No CPE</label><br>
-                    <label><input type="checkbox" id="etDHCProuter2" autocomplete="off" onclick="toggleCheckboxes(&#39;etDHCProuter&#39;)"><font color="#ff007f0"> DHCP Server / Shows Router</font></label>
-                    <label><input type="checkbox" id="etDHCProuter" autocomplete="off" onclick="toggleCheckboxes(&#39;etDHCProuter2&#39;)"> DHCP Server / No Router</label><br>
+                    <label><input type="checkbox" id="etRouterGood" autocomplete="off" onclick="toggleCheckboxes(&#39;etRouterBad&#39;)"><font color="#bbff96"> Router speeds set correct in BM</font></label>
+                    <label><input type="checkbox" id="etRouterBad" autocomplete="off" onclick="toggleCheckboxes(&#39;etRouterGood&#39;)"><font color="#fa5252"> Router speeds incorrect in BM</font></label><br>
+                    <label><input type="checkbox" id="etQueuesGood" autocomplete="off" onclick="toggleCheckboxes(&#39;etQueuesBad&#39;)"><font color="#bbff96"> Checked queues / Correct</font></label>
+                    <label><input type="checkbox" id="etQueuesBad" autocomplete="off" onclick="toggleCheckboxes(&#39;etQueuesGood&#39;)"><font color="#fa5252">Checked queues / Incorrect</font></label><br>
+                    <label><input type="checkbox" id="etDHCPcpe2" autocomplete="off" onclick="toggleCheckboxes(&#39;etDHCPcpe&#39;)"><font color="#bbff96"> DHCP Server / Shows CPE</font></label>
+                    <label><input type="checkbox" id="etDHCPcpe" autocomplete="off" onclick="toggleCheckboxes(&#39;etDHCPcpe2&#39;)"><font color="#fa5252">DHCP Server / No CPE</font></label><br>
+                    <label><input type="checkbox" id="etDHCProuter2" autocomplete="off" onclick="toggleCheckboxes(&#39;etDHCProuter&#39;)"><font color="#bbff96"> DHCP Server / Shows Router</font></label>
+                    <label><input type="checkbox" id="etDHCProuter" autocomplete="off" onclick="toggleCheckboxes(&#39;etDHCProuter2&#39;)"><font color="#fa5252">DHCP Server / No Router</font></label><br>
+                    <label><input type="checkbox" id="etPushing" autocomplete="off" onclick="toggleCheckboxes(&#39;etPushing2&#39;)"><font color="#bbff96"> Pushed 100mbps on CPE / Successful</font></label>
+                    <label><input type="checkbox" id="etPushing2" autocomplete="off" onclick="toggleCheckboxes(&#39;etPushing&#39;)"><font color="#fa5252"> 100mbps / Unsuccessful</font></label><br>
+                    <label><input type="checkbox" id="etLAN" autocomplete="off" onclick="toggleCheckboxes(&#39;etLAN2&#39;)"><font color="#bbff96"> LAN Trick / Successful</font></label>
+                    <label><input type="checkbox" id="etLAN2" autocomplete="off" onclick="toggleCheckboxes(&#39;etLAN&#39;)"><font color="#fa5252"> LAN Trick / Unsuccessful</font></label><br>
+                    <label><input type="checkbox" id="etFirmwareCOM" autocomplete="off" onclick="toggleCheckboxes(&#39;etFirmware2COM&#39;)"><font color="#bbff96"> CPE/AP Firmware Match</font></label>
+                    <label><input type="checkbox" id="etFirmware2COM" autocomplete="off" onclick="toggleCheckboxes(&#39;etFirmwareCOM&#39;)"><font color="#fa5252"> CPE/AP Firmware Different</font></label><br>
+                    <label><input type="checkbox" id="etFirmware3COM" autocomplete="off" onclick="toggleCheckboxes(&#39;etFirmware4COM&#39;)"><font color="#bbff96"> CPE Firmware Up To Date</font></label>
+                    <label><input type="checkbox" id="etFirmware4COM" autocomplete="off" onclick="toggleCheckboxes(&#39;etFirmware3COM&#39;)"><font color="#fa5252"> CPE Firmware Needs Update</font></label><br>
                     <label><input type="checkbox" id="etVerifiedSpeeds" autocomplete="off" onclick="toggleCheckboxes(#39;etVerifiedSpeeds)"> Verified speedstest speeds through CPE</label><br> 
-                    <label><input type="checkbox" id="etVerifiedSpeeds2" autocomplete="off" onclick="toggleCheckboxes(#39;etVerifiedSpeeds2)"> Verified speedtest speeds through TR -> Queues -> Traffic</label><br> 
-                    <label><input type="checkbox" id="etPushing" autocomplete="off" onclick="toggleCheckboxes(&#39;etPushing2&#39;)"><font color="#ff007f0"> Pushed 100mbps on CPE / Successful</font></label>
-                    <label><input type="checkbox" id="etPushing2" autocomplete="off" onclick="toggleCheckboxes(&#39;etPushing&#39;)"> 100mbps / Unsuccessful</label><br>
-                    <label><input type="checkbox" id="etLAN" autocomplete="off" onclick="toggleCheckboxes(&#39;etLAN2&#39;)"><font color="#ff007f0"> LAN Trick / Successful</font></label>
-                    <label><input type="checkbox" id="etLAN2" autocomplete="off" onclick="toggleCheckboxes(&#39;etLAN&#39;)"> LAN Trick / Unsuccessful</label><br>
-                    <label><input type="checkbox" id="etFirmwareCOM" autocomplete="off" onclick="toggleCheckboxes(&#39;etFirmware2COM&#39;)"><font color="#ff007f0"> CPE/AP Firmware Match</font></label>
-                    <label><input type="checkbox" id="etFirmware2COM" autocomplete="off" onclick="toggleCheckboxes(&#39;etFirmwareCOM&#39;)"> CPE/AP Firmware Different</label><br>
-                    <label><input type="checkbox" id="etFirmware3COM" autocomplete="off" onclick="toggleCheckboxes(&#39;etFirmware4COM&#39;)"><font color="#ff007f0"> CPE Firmware Up To Date</font></label>
-                    <label><input type="checkbox" id="etFirmware4COM" autocomplete="off" onclick="toggleCheckboxes(&#39;etFirmware3COM&#39;)"> CPE Firmware Needs Update</label><br><br>
+                    <label><input type="checkbox" id="etVerifiedSpeeds2" autocomplete="off" onclick="toggleCheckboxes(#39;etVerifiedSpeeds2)"> Verified speedtest speeds through TR -> Queues -> Traffic</label><br><br> 
                     Cambium Troubleshooting:<br>
-                    <label><input type="checkbox" id="etPreferredAPCOM" autocomplete="off" onclick="toggleCheckboxes(&#39;etPreferredAP2COM&#39;)"><font color="#ff007f0"> CPE Has Preferred AP</font></label>
-                    <label><input type="checkbox" id="etPreferredAP2COM" autocomplete="off" onclick="toggleCheckboxes(&#39;etPreferredAPCOM&#39;)"> CPE Does Not Have Preferred AP</label><br>
-                    <label><input type="checkbox" id="etMhzSelectedCOM" autocomplete="off" onclick="toggleCheckboxes(&#39;etMhzSelected2COM&#39;)"><font color="#ff007f0"> All 20/40 Mhz Selected</font></label>
-                    <label><input type="checkbox" id="etMhzSelected2COM" autocomplete="off" onclick="toggleCheckboxes(&#39;etMhzSelectedCOM&#39;)"> All 20/40 Mhz Not Selected</label><br>
-                    <label><input type="checkbox" id="etFraming3COM" autocomplete="off" onclick="toggleCheckboxes(&#39;etFraming4COM&#39;)"><font color="#ff007f0"> AP Framing 50/50</font></label>
+                    <label><input type="checkbox" id="etPreferredAPCOM" autocomplete="off" onclick="toggleCheckboxes(&#39;etPreferredAP2COM&#39;)"><font color="#bbff96"> CPE Has Preferred AP</font></label>
+                    <label><input type="checkbox" id="etPreferredAP2COM" autocomplete="off" onclick="toggleCheckboxes(&#39;etPreferredAPCOM&#39;)"><font color="#fa5252"> CPE Does Not Have Preferred AP</font></label><br>
+                    <label><input type="checkbox" id="etMhzSelectedCOM" autocomplete="off" onclick="toggleCheckboxes(&#39;etMhzSelected2COM&#39;)"><font color="#bbff96"> All 20/40 Mhz Selected</font></label>
+                    <label><input type="checkbox" id="etMhzSelected2COM" autocomplete="off" onclick="toggleCheckboxes(&#39;etMhzSelectedCOM&#39;)"><font color="#fa5252"> All 20/40 Mhz Not Selected</font></label><br>
+                    <label><input type="checkbox" id="etFraming3COM" autocomplete="off" onclick="toggleCheckboxes(&#39;etFraming4COM&#39;)"> AP Framing 50/50</label>
                     <label><input type="checkbox" id="etFraming4COM" autocomplete="off" onclick="toggleCheckboxes(&#39;etFraming3COM&#39;)"> AP Framing 75/25</label><br>
-                    <label><input type="checkbox" id="etPresub" autocomplete="off"><font color="#ff007f0"> Scheduled presub</font></label><br><br>
+                    <label><input type="checkbox" id="etPresub" autocomplete="off"><font color="#fa5252"> Scheduled presub</font></label><br><br>
     
     
               </div>
@@ -336,10 +337,10 @@ Does this mainly happen in the evenings/prime time?" autocomplete="off"></textar
                     <hr>
                     <center>
                       <h3>** Avoid cable company servers available on speedtest servers<br>
-                        Choose a server local to the customer like a <font color="#ff007f0">Dallas/Fort Worth</font> server for a <br>fort worth customer,that is not <font color="#ff007f0">Sprint, CableOne, etc.</font> **</h3>
+                        Choose a server local to the customer like a <font color="#bbff96">Dallas/Fort Worth</font> server for a <br>fort worth customer,that is not <font color="#fa5252">Sprint, CableOne, etc.</font> **</h3>
                         <br><br>
                         <div id="tsCheckboxes">
-                          <label><input type="checkbox" id="etBypassedYes1" autocomplete="off" onclick="toggleCheckboxes(&#39;etBypassedNo1&#39;)"><font color="#ff007f0"> Ran bypassed speedtests</font></label>
+                          <label><input type="checkbox" id="etBypassedYes1" autocomplete="off" onclick="toggleCheckboxes(&#39;etBypassedNo1&#39;)"><font color="#bbff96"> Ran bypassed speedtests</font></label>
                           <label><input type="checkbox" id="etBypassedNo1" autocomplete="off" onclick="toggleCheckboxes(&#39;etBypassedYes1&#39;)"> No bypass device available</label><br>
                         </div>
                     </center>
@@ -347,7 +348,7 @@ Does this mainly happen in the evenings/prime time?" autocomplete="off"></textar
     
                           <h2>SpeedTests:</h2>
                           <hr>
-                          <h4><i><center><strong><font color="#ff007f0">***Be advised STS requires at least 3 seperate bypass speed tests to escalate for issues***</font></strong></center></i></h4>
+                          <h4><i><center><strong><font color="#fa5252">***Be advised STS requires at least 3 seperate bypass speed tests to escalate for issues***</font></strong></center></i></h4>
                           <br>
                           <div id="additionalSpeedTestsButton">
                               <button class="tablinks buttonMenu" onclick="createSpeedTests()"> &nbsp; <i class="fas fa-tachometer-alt"></i> &nbsp; Add Additional Tests &nbsp; </button>
@@ -364,6 +365,7 @@ Does this mainly happen in the evenings/prime time?" autocomplete="off"></textar
                               <option value="Speedtest.net:">Speedtest.net (Bypassed)</option>
                               <option value="nperf.com:">Nperf.com (Bypassed)</option>
                               <option value="Other: (Bypassed)">Other (Bypassed)</option>
+                              <option value=""> </option>
                               <option value="">--- Wireless options ---</option>
                               <option value="Speedtest.GoogleFiber.net:">Speedtest.GoogleFiber.net (Wireless)</option>
                               <option value="Speedtest.Xfinity.com:">Speedtest.Xfinity.com (Wireless)</option>
@@ -371,6 +373,7 @@ Does this mainly happen in the evenings/prime time?" autocomplete="off"></textar
                               <option value="Speedtest.net:">Speedtest.net (Wireless)</option>
                               <option value="nperf.com:">Nperf.com (Wireless)</option>
                               <option value="Other: (Wireless)">Other (Wireless)</option>
+                              <option value=""> </option>
                               <option value="">--- Special options ---</option>
                               <option value="LTE Speed Test (BEC website):">LTE speed Test</option>
                               <option value="MikroTik Bandwidth Test:">MikroTik Bandwidth Test</option>
@@ -400,22 +403,22 @@ Does this mainly happen in the evenings/prime time?" autocomplete="off"></textar
                     <div id="tsCheckboxes">
     <br><br>
                       CPE Pings:
-                      <label><input type="checkbox" id="etSMgood" autocomplete="off" onclick="toggleCheckboxes(&#39;etSMbad&#39;)"><font color="#ff007f0"> CPE Pings Within Spec</font></label>
+                      <label><input type="checkbox" id="etSMgood" autocomplete="off" onclick="toggleCheckboxes(&#39;etSMbad&#39;)"><font color="#bbff96"> CPE Pings Within Spec</font></label>
                       <label><input type="checkbox" id="etSMbad" autocomplete="off" onclick="toggleCheckboxes(&#39;etSMgood&#39;)"> CPE Pings Not Within Spec</label><br>
                       <textarea id="etSMPing" rows="4" cols="50" autocomplete="off"></textarea>
     
                       AP Pings:
-                      <label><input type="checkbox" id="etAPgood" autocomplete="off" onclick="toggleCheckboxes(&#39;etAPbad&#39;)"><font color="#ff007f0"> AP Pings Within Spec</font></label>
+                      <label><input type="checkbox" id="etAPgood" autocomplete="off" onclick="toggleCheckboxes(&#39;etAPbad&#39;)"><font color="#bbff96"> AP Pings Within Spec</font></label>
                       <label><input type="checkbox" id="etAPbad" autocomplete="off" onclick="toggleCheckboxes(&#39;etAPgood&#39;)"> AP Pings Not Within Spec</label><br>
                       <textarea id="etAPPing" rows="4" cols="50" autocomplete="off"></textarea>
     
                       MTR:
-                      <label><input type="checkbox" id="etMTRgood" autocomplete="off" onclick="toggleCheckboxes(&#39;etMTRbad&#39;)"><font color="#ff007f0"> MTR Within Spec</font></label>
+                      <label><input type="checkbox" id="etMTRgood" autocomplete="off" onclick="toggleCheckboxes(&#39;etMTRbad&#39;)"><font color="#bbff96"> MTR Within Spec</font></label>
                       <label><input type="checkbox" id="etMTRbad" autocomplete="off" onclick="toggleCheckboxes(&#39;etMTRgood&#39;)"> MTR Not Within Spec</label>
                       <textarea id="etMTRPing" rows="4" cols="50" autocomplete="off"></textarea>
     
                       RTR Pings:
-                      <label><input type="checkbox" id="etRTRgood" autocomplete="off" onclick="toggleCheckboxes(&#39;etRTRbad&#39;)"><font color="#ff007f0"> RTR Pings Within Spec</font></label>
+                      <label><input type="checkbox" id="etRTRgood" autocomplete="off" onclick="toggleCheckboxes(&#39;etRTRbad&#39;)"><font color="#bbff96"> RTR Pings Within Spec</font></label>
                       <label><input type="checkbox" id="etRTRbad" autocomplete="off" onclick="toggleCheckboxes(&#39;etRTRgood&#39;)"> RTR Pings Not Within Spec</label><br>
                       <textarea id="etRTRPing" rows="4" cols="50" placeholder="***These are just for t/s not to be used for sending tickets up***" autocomplete="off"></textarea>
                     </div>
@@ -425,26 +428,26 @@ Does this mainly happen in the evenings/prime time?" autocomplete="off"></textar
               <div class="panel"><br>
                 <div id="tsCheckboxes">
                   Commercial Accounts Troubleshooting:<br>
-                  <label><input type="checkbox" id="etCOMSMGoodCOM" autocomplete="off" onclick="toggleCheckboxes(&#39;etCOMSMBadCOM&#39;)"><font color="#ff007f0"> CPE is accessible</font></label>
+                  <label><input type="checkbox" id="etCOMSMGoodCOM" autocomplete="off" onclick="toggleCheckboxes(&#39;etCOMSMBadCOM&#39;)"><font color="#bbff96"> CPE is accessible</font></label>
                   <label><input type="checkbox" id="etCOMSMBadCOM" autocomplete="off" onclick="toggleCheckboxes(&#39;etCOMSMGoodCOM&#39;)"> CPE is not accessible</label><br>
-                  <label><input type="checkbox" id="etCOMSMAPCOM" autocomplete="off" onclick="toggleCheckboxes(&#39;etCOMSMAP2COM&#39;)"><font color="#ff007f0"> CPE is on AP Station List</font></label>
+                  <label><input type="checkbox" id="etCOMSMAPCOM" autocomplete="off" onclick="toggleCheckboxes(&#39;etCOMSMAP2COM&#39;)"><font color="#bbff96"> CPE is on AP Station List</font></label>
                   <label><input type="checkbox" id="etCOMSMAP2COM" autocomplete="off" onclick="toggleCheckboxes(&#39;etCOMSMAPCOM&#39;)"> CPE is not on AP Station List</label><br>
-                  <label><input type="checkbox" id="etCOMAuthenticatedCOM" autocomplete="off" onclick="toggleCheckboxes(&#39;etCOMAuthenticated2COM&#39;)"><font color="#ff007f0"> RTR is on CPE Bridge Table</font></label>
+                  <label><input type="checkbox" id="etCOMAuthenticatedCOM" autocomplete="off" onclick="toggleCheckboxes(&#39;etCOMAuthenticated2COM&#39;)"><font color="#bbff96"> RTR is on CPE Bridge Table</font></label>
                   <label><input type="checkbox" id="etCOMAuthenticated2COM" autocomplete="off" onclick="toggleCheckboxes(&#39;etCOMAuthenticatedCOM&#39;)"> RTR is not on CPE Bridge Table</label><br><br>
     
                     <button class="accordion"><i class="fas fa-plus-circle"></i> &nbsp; Advanced Commercial Troubleshooting</button>
                       <div class="panel"><br>
     
-                      <center><font color="red">**Do not use this section without prior commercial up training**</font></center><br>
+                      <center><font color="fa5252">**Do not use this section without prior commercial up training**</font></center><br>
     
                       Advanced Commercial Troubleshooting:<br>
-                      <label><input type="checkbox" id="etPermissionCOM" autocomplete="off" onclick="toggleCheckboxes(&#39;etPermission2COM&#39;)"><font color="#ff007f0"> Permission To Power-Cycle</font></label>
+                      <label><input type="checkbox" id="etPermissionCOM" autocomplete="off" onclick="toggleCheckboxes(&#39;etPermission2COM&#39;)"><font color="#bbff96"> Permission To Power-Cycle</font></label>
                       <label><input type="checkbox" id="etPermission2COM" autocomplete="off" onclick="toggleCheckboxes(&#39;etPermissionCOM&#39;)"> Denied Power-Cycle</label><br>
-                      <label><input type="checkbox" id="etFirewallCOM" autocomplete="off" onclick="toggleCheckboxes(&#39;etFirewall2COM&#39;)"><font color="#ff007f0"> AP Firewall Has 2 Rules</font></label>
+                      <label><input type="checkbox" id="etFirewallCOM" autocomplete="off" onclick="toggleCheckboxes(&#39;etFirewall2COM&#39;)"><font color="#bbff96"> AP Firewall Has 2 Rules</font></label>
                       <label><input type="checkbox" id="etFirewall2COM" autocomplete="off" onclick="toggleCheckboxes(&#39;etFirewallCOM&#39;)"> AP Firewall Does Not Have 2 Rules</label><br>
-                      <label><input type="checkbox" id="etDiscoveryCOM" autocomplete="off" onclick="toggleCheckboxes(&#39;etDicovery2COM&#39;)"><font color="#ff007f0"> AP Discovery Is ON</font></label>
+                      <label><input type="checkbox" id="etDiscoveryCOM" autocomplete="off" onclick="toggleCheckboxes(&#39;etDicovery2COM&#39;)"><font color="#bbff96"> AP Discovery Is ON</font></label>
                       <label><input type="checkbox" id="etDicovery2COM" autocomplete="off" onclick="toggleCheckboxes(&#39;etDiscoveryCOM&#39;)"> AP Discovery Is OFF</label><br>
-                      <label><input type="checkbox" id="etFramingCOM" autocomplete="off" onclick="toggleCheckboxes(&#39;etFraming2COM&#39;)"><font color="#ff007f0"> CPE Is On Flexible (Legacy)</font></label>
+                      <label><input type="checkbox" id="etFramingCOM" autocomplete="off" onclick="toggleCheckboxes(&#39;etFraming2COM&#39;)"><font color="#bbff96"> CPE Is On Flexible (Legacy)</font></label>
                       <label><input type="checkbox" id="etFraming2COM" autocomplete="off" onclick="toggleCheckboxes(&#39;etFramingCOM&#39;)"> CPE Is On Flexible (NEW)</label>
     <br><br>
     
@@ -460,13 +463,32 @@ Does this mainly happen in the evenings/prime time?" autocomplete="off"></textar
                 <input type="text" id="etSMSplitsCOM" class="mainInputBox2" placeholder="Splitchains: i.e. -8" autocomplete="off"><br>
                 <input type="text" id="etSMConnectionTimeCOM" class="mainInputBox" placeholder="AP Connection Time (Shown On CPE)" autocomplete="off">
                 <input type="text" id="etSMAPFrequencyCOM" class="mainInputBox2" placeholder="AP Frequency" autocomplete="off">
+
+    </div>
     <br><br>
-              </div>
+            <button class="accordion"><i class="fas fa-plus-circle"></i> &nbsp; Tarana Information (Tarana Customers Only)</button>
+              <div class="panel"><br>
+                <div id="taranaCheckboxes">
+                  Tarana information:<br>
+                  <input type="text" id="etTaranaSN" class="mainInputBox" placeholder="Serial Number:" autocomplete="off">
+                  <input type="text" id="etTaranaSector" class="mainInputBox2" placeholder="Sector:" autocomplete="off">
+                  <input type="text" id="etTaranaMGMTIP" class="mainInputBox" placeholder="Managment IP:" autocomplete="off">
+                  <input type="text" id="etTaranaCurrentBN" class="mainInputBox2" placeholder="Current BN:" autocomplete="off">
+                  <input type="text" id="etTaranaPrimaryBN" class="mainInputBox" placeholder="Primary BN:" autocomplete="off">
+                  <input type="text" id="etTaranaUptime" class="mainInputBox2" placeholder="System Uptime:" autocomplete="off">
+
+                  
+                  <label><input type="checkbox" value="etTaranaGrantText" id="etTaranaGrant2" onclick="toggleCheckbox(etTaranaGrant)" autocomplete="off"><font color="#bbff96"> RN is getting 2 or more grants</font>
+                  <label><input type="checkbox" value="etTaranaGrantText2" id="etTaranaGrant" onclick="toggleCheckbox(etTaranaGrant2)" autocomplete="off"><font color="#fa5252"> Grantss Failed</font></Site></label>
+                      <br><br>
+                </div>
+    
+    </div>
     <br><br>
             <button class="accordion"><i class="fas fa-plus-circle"></i> &nbsp; LTE Information (LTE Customers Only)</button>
               <div class="panel"><br>
                 LTE information:<br><br>
-                <label><input type="checkbox" id="etConnectedDevices" autocomplete="off" onclick="toggleCheckboxes(&#39;etNoConnectedDevices&#39;)"><font color="#ff007f0"> Devices showing Connected </font></label>
+                <label><input type="checkbox" id="etConnectedDevices" autocomplete="off" onclick="toggleCheckboxes(&#39;etNoConnectedDevices&#39;)"><font color="#bbff96"> Devices showing Connected </font></label>
     
                 <label><input type="checkbox" id="etNoConnectedDevices" autocomplete="off" onclick="toggleCheckboxes(&#39;etConnectedDevices&#39;)"> No devices showing connected </label>
     
@@ -494,11 +516,11 @@ Does this mainly happen in the evenings/prime time?" autocomplete="off"></textar
                 <div class="panel"><br>
                   <fieldset class="fieldsetTop">
                     <legend><i class="fa-regular fa-lightbulb fa-beat-fade"></i>  Things to know:</legend>
-                    <p></p><center><font color="#ff007f0"><h2>***Please Remember***</h2></font></center>
-                      If someone with a <font color="#ff007f0">Static IP</font> upgrades their plan, the ticket needs to be <font color="#ff007f0">escalated to STS</font> so they can change the Static IP queues.
+                    <p></p><center><font color="#fa5252"><h2>***Please Remember***</h2></font></center>
+                      If someone with a <font color="#fa5252">Static IP</font> upgrades their plan, the ticket needs to be <font color="#fa5252">escalated to STS</font> so they can change the Static IP queues.
                       <p></p>
                     <p>
-                      Only upgrade <font color="#ff007f0">Res</font>. Com and Bus need to go to Com sales. <font color="#ff007f0">All hundo plan requests must now be escalated or warm transferred to residential sales for plan availability and cost explanation.</font></p>
+                      Only upgrade <font color="#fa5252">Res</font>. Com and Bus need to go to Com sales. <font color="#fa5252">All hundo plan requests must now be escalated or warm transferred to residential sales for plan availability and cost explanation.</font></p>
                   </fieldset>
     
                     <fieldset class="fieldsetTop2">
@@ -532,11 +554,11 @@ Does this mainly happen in the evenings/prime time?" autocomplete="off"></textar
                 <div id="tsCheckboxes">
                     <br><br>
                     Plan Upgrade / Downgrade Notes:<br>
-                    <label><input type="checkbox" id="etPlanBM" autocomplete="off"><font color="#ff007f0"> Changed Plan In Billmax</font></label>
+                    <label><input type="checkbox" id="etPlanBM" autocomplete="off"><font color="#bbff96"> Changed Plan In Billmax</font></label>
                     <label><input type="checkbox" id="etSMPlanName" autocomplete="off"> Changed CPE Name To Reflect Plan</label><br>
-                    <label><input type="checkbox" id="etPcSM" autocomplete="off"><font color="#ff007f0"> Power-cycled CPE Remotely</font></label>
+                    <label><input type="checkbox" id="etPcSM" autocomplete="off"><font color="#bbff96"> Power-cycled CPE Remotely</font></label>
                     <label><input type="checkbox" id="etPcRTR" autocomplete="off"> Power-cycled Router Remotely</label><br>
-                    <label><input type="checkbox" id="etProRate" autocomplete="off"><font color="#ff007f0"> Explained Pro-Rated Charge</font></label>
+                    <label><input type="checkbox" id="etProRate" autocomplete="off"><font color="#bbff96"> Explained Pro-Rated Charge</font></label>
                     <label><input type="checkbox" id="etBillCharge" autocomplete="off"> Explained Charge At Midnight</label><br><br>
     
                   </div>
@@ -549,7 +571,7 @@ Does this mainly happen in the evenings/prime time?" autocomplete="off"></textar
                 Resolution: <br> <textarea id="etResolution" accesskey="R" placeholder="Power-cycle brought the connection back up, issue persisted, added router to BM, etc" autocomplete="off"></textarea>
                 Next Step: <br> <input type="text" class="textboxInput" id="etNextStep" placeholder="Closing ticket, pending review, etc" name="Next" autocomplete="off">
 
-                <select id="etNextStepQuick" onchange="checkval(&#39;Other&#39;,this.value,&#39;etNextStepOther&#39;)" class="dropdownLeft" autocomplete="off">
+<!--            <select id="etNextStepQuick" onchange="checkval(&#39;Other&#39;,this.value,&#39;etNextStepOther&#39;)" class="dropdownLeft" autocomplete="off">
                   <option value="">-- Next Step --</option>
                   <option value="Closing">Closing</option>
                   <option value="Sending to lead for further review.">Sending to lead for further review.</option>
@@ -557,17 +579,17 @@ Does this mainly happen in the evenings/prime time?" autocomplete="off"></textar
                   <option value="Scheduled service call.">Scheduled service call.</option>
                   <option value="Other">Other</option>
                 </select>
-               
-            <input type="text" id="etNextStepOther" class="mainInputBox" placeholder="Other:" style="display:none" autocomplete="off">
-
+              
+            <input type="text" id="etNextStepOther" class="mainInputBox2" placeholder="Other:" style="display:none" autocomplete="off">
+-->
     <br><br>
               </fieldset>
       <fieldset class="fieldsetTop">
         <legend>Ticket Notes</legend>
                 <button id="etButton" class="generateNote hoverme" onclick="javascript:everyTicketFunction();"><i class="far fa-check-square"></i>  GENERATE TICKET</button><br><br>
     
-                <center><font color="#ff007f0"><p id="etError"></p></font></center><br>
-                <center><font color="#ff007f0"><p id="etErrorPW"></p></font></center><br>
+                <center><font color="#fa5252"><p id="etError"></p></font></center><br>
+                <center><font color="#fa5252"><p id="etErrorPW"></p></font></center><br>
     
                 <div>Subject Line: <button class="btn-copy" autocomplete="off" onclick="CopyFunction(&#39;etSubject&#39;)"><i class="far fa-copy"></i>  COPY</button><br>
                 <input type="text" class="textboxInput" id="etSubject" autocomplete="off"><br></div>
