@@ -36,6 +36,9 @@ function everyTicketFunction()
   $('#etRouterType').css(bg, "");
   $('#etIssue').css(bg, "");
   $('#etSummary').css(bg, "");
+  $('#etPoETS').css(bg, "");
+  $('#etRouterTS').css(bg, "");
+  $('#etAPTS').css(bg, "");
   $('#etResolution').css(bg, "");
   $('#etNextStep').css(bg, "");
   $('#etZyxelPW').css(bg, "");
@@ -63,6 +66,9 @@ function everyTicketFunction()
   var etRouterType = $('#etRouterType').val() || "";
   var etIssue = $('#etIssue').val() || "";
   var etSummary = $('#etSummary').val() || "";
+  var etPoETS = $('#etPoETS').val() || "";
+  var etRouterTS = $('#etRouterTS').val() || "";
+  var etCPETS = $('#etCPETS').val() || "";
   var etResolution = $('#etResolution').val() || "";
   var etNextStep = $('#etNextStep').val() || "";
   var etZyxelPW = $('#etZyxelPW').val() || "";
@@ -80,6 +86,10 @@ function everyTicketFunction()
   var etRTRPing = $('#etRTRPing').val() || "";
   var etAPPing = $('#etAPPing').val() || "";
   var etMTRPing = $('#etMTRPing').val() || "";
+  
+  //Logs
+  var etCPELogs = $('#etCPELogs').val() || "";
+  var etAPLogs = $('#etAPLogs').val() || "";
 
   // CPE and AP Stats
   var etSMUptime = $('#etSMUptime').val() || "";
@@ -162,6 +172,9 @@ function everyTicketFunction()
   if (etIssue == ""){$('#etIssue').css(bg, nullBgColor);} else {etIssue = "\nIssue: " + etIssue;}
   if (etTCSMethod == ""){$('#etTCSMethod').css(bg, nullBgColor);} else {etTCSMethod = "\nContact Method: " + etTCSMethod;}
   if (etSummary == ""){$('#etSummary').css(bg, nullBgColor);} else {etSummary = "\n\nSummary:\n" + etSummary;}
+  if (etPoETS == ""){$('#etPoETS').css(bg, nullBgColor);} else {etPoETS = "\n\nPoE:\n" + etPoETS;}
+  if (etRouterTS == ""){$('#etRouterTS').css(bg, nullBgColor);} else {etRouterTS = "\n\nRouter:\n" + etRouterTS;}
+  if (etCPETS == ""){$('#etCPETS').css(bg, nullBgColor);} else {etCPETS = "\n\nCPE:\n" + etCPETS;}
   if (etRouterType == ""){$('#etRouterType').css(bg, nullBgColor);} else {etRouterType = "\nRouter Type: " + etRouterType;}
   if (etZyxelPW == ""){$('#etZyxelPW').css(bg, nullBgColor);} else {etZyxelPW = "\nZyxel Password: " + etZyxelPW;}
   if (etNextStepOther == ""){$('#etNextStepOther').css(bg, nullBgColor);} else {etNextStepOther = "\nOther: " + etNextStepOther;}
@@ -179,6 +192,10 @@ function everyTicketFunction()
   if (etAPPing == ""){etAPPing = "";} else {etAPPing = "\n\nAP Pings: \n" + etAPPing;}
   if (etMTRPing == ""){etMTRPing = "";} else {etMTRPing = "\n\nMTR: \n" + etMTRPing;}
   if (etSMPing || etAPPing || etMTRPing || etRTRPing != ""){etRanPings = "\n- Ran Pings";} else {etRanPings = "";}
+  
+  //CPE and AP logs
+  if (etCPELogs == ""){etCPELogs = "";} else {etCPELogs = "\n\nCPE Logs: \n" + etCPELogs;}
+  if (etAPLogs == ""){etAPLogs = "";} else {etAPLogs = "\n\nAP Logs: \n" + etAPLogs;}
 
   //CPE and AP stats
   if (etSMUptime == ""){etSMUptime = "";} else {etSMUptime = "\n- CPE Uptime: " + etSMUptime;}
@@ -259,50 +276,8 @@ function everyTicketFunction()
   if (etFAS != "" || etSwitchPort != "" || etLightLevel != "" || etFiberRouterIP != ""){etSMIP = ""; etAPIP = ""; etAPSSID = ""; etAPSSIDSubject = " | Fiber | " + $('#etFAS').val() || "";}
 
   //Displays error message if any important inputs are blank
-  if (etName == "" || etNumber == "" || etCallID == "" || etAccount == "" || etSMIP == "" || etAPIP == "" || etAPSSID == "" || etRouterIP == "" || etRouterType == "" || etIssue == "" || etSummary == "" || etResolution == "" || etNextStep == "")
+  if (etName == "" || etNumber == "" || etCallID == "" || etAccount == "" || etSMIP == "" || etAPIP == "" || etAPSSID == "" || etRouterIP == "" || etRouterType == "" || etIssue == "" || etSummary == "" || etRouterTS == "" || etPoETS == "" || etCPETS == "" || etResolution == "" || etNextStep == "")
   {document.getElementById("etError").innerHTML = etError;} else {}
-
-  //Troubleshooting checkboxes
-  etCheckboxes =
-  ($('#etSMGoodCOM')[0].checked ? "\n- CPE is accessible" : "")
-  + ($('#etSMBadCOM')[0].checked ? "\n- CPE is not accessible" : "")
-  + ($('#etSMAPCOM')[0].checked ? "\n- CPE shows on AP Station List" : "")
-  + ($('#etSMAP2COM')[0].checked ? "\n- CPE is not on AP Station List" : "")
-  + ($('#etKicked')[0].checked ? "\n- Kicked CPE from AP" : "")
-  + ($('#etRemote')[0].checked ? "\n- Remotely Rebooted CPE" : "")
-  + ($('#etPOE')[0].checked ? "\n- Power-cycled POE" : "")
-  + ($('#etRouter')[0].checked ? "\n- Power-cycled Router" : "")
-  + ($('#etCabling')[0].checked ? "\n- Verified cabling" : "")
-  + ($('#etCabling2')[0].checked ? "\n- Verified and corrected cabling" : "")
-  + ($('#etPOELight')[0].checked ? "\n- Verified POE light was on and not blinking" : "")
-  + ($('#etPOELight2')[0].checked ? "\n- Verified POE light was blinking or off" : "")
-  + ($('#etReseated')[0].checked ? "\n- Reseated Ethernet cables" : "")
-  + ($('#etSwapped')[0].checked ? "\n- Swapped POE to Router Cabling" : "")
-  + ($('#etSwapped2')[0].checked ? "\n- Swapped CPE to POE Cabling" : "")
-  + ($('#etSMeth')[0].checked ? "\n- Could not swap CPE Ethernet / Goes through wall" : "")
-  + ($('#etBypassed')[0].checked ? "\n- Bypassed router / Internet works" : "")
-  + ($('#etBypassed2')[0].checked ? "\n- Bypassed router / No internet" : "")
-  + ($('#etAuthenticated')[0].checked ? "\n- Verified RTR is on CPE bridge table" : "")
-  + ($('#etAuthenticated2')[0].checked ? "\n- Verified RTR is not on CPE bridge table" : "")
-
-  // Advanced Troubleshooting
-  + ($('#etRouterGood')[0].checked ? "\n- Router speeds were set correctly in Billmax" : "")
-  + ($('#etRouterBad')[0].checked ? "\n- Router speeds were incorrect in Billmax" : "")
-  + ($('#etQueuesGood')[0].checked ? "\n- Checked queues and they were set correctly" : "")
-  + ($('#etQueuesBad')[0].checked ? "\n- Checked queues and they need to be corrected" : "")
-  + ($('#etVerifiedSpeeds')[0].checked ? "\n- Verified speedstest speeds through CPE" : "")
-  + ($('#etVerifiedSpeeds2')[0].checked ? "\n- Verified speedtest speeds through TR -> Queues -> Traffic" : "")
-  + ($('#etSurvey')[0].checked ? "\n- Site survey did not reveal a better AP" : "")
-  + ($('#etSurvey2')[0].checked ? "\n- Site survey revealed a better AP, moved cx from outdated AP: " + $('#etAPSSID').val() + " | AP IP: " + $('#etAPIP').val() : "")
-  + ($('#etDHCPcpe2')[0].checked ? "\n- TWR RTR DHCP Server shows CPE" : "")
-  + ($('#etDHCPcpe')[0].checked ? "\n- TWR RTR DHCP Server does not show CPE" : "")
-  + ($('#etDHCProuter2')[0].checked ? "\n- TWR RTR DHCP Server shows Router" : "")
-  + ($('#etDHCProuter')[0].checked ? "\n- TWR RTR DHCP Server does not show Router" : "")
-  + ($('#etPushing')[0].checked ? "\n- Tried pushing 100mbps on CPE and it was successful" : "")
-  + ($('#etPushing2')[0].checked ? "\n- Tried pushing 100mbps on CPE and it was unsuccessful" : "")
-  + ($('#etLAN')[0].checked ? "\n- Tried LAN Trick and it was successful" : "")
-  + ($('#etLAN2')[0].checked ? "\n- Tried LAN Trick and it was unsuccessful" : "")
-  + ($('#etPresub')[0].checked ? "\n- Scheduled presub" : "")
 
   // Commercial Troubleshooting
   + ($('#etCOMSMGoodCOM')[0].checked ? "\n- CPE is accessible" : "")
@@ -311,24 +286,6 @@ function everyTicketFunction()
   + ($('#etCOMSMAP2COM')[0].checked ? "\n- CPE is not on AP Station List" : "")
   + ($('#etCOMAuthenticatedCOM')[0].checked ? "\n- Verified RTR is on CPE bridge table" : "")
   + ($('#etCOMAuthenticated2COM')[0].checked ? "\n- Verified RTR is not on CPE bridge table" : "")
-
-  // Advanced Commercial Troubleshooting
-  + ($('#etFirmwareCOM')[0].checked ? "\n- CPE and AP Firmware match" : "")
-  + ($('#etFirmware2COM')[0].checked ? "\n- CPE and AP Firmware do not match" : "")
-  + ($('#etFirmware3COM')[0].checked ? "\n- CPE Firmware is up to date" : "")
-  + ($('#etFirmware4COM')[0].checked ? "\n- CPE Firmware needs to be updated" : "")
-  + ($('#etFirewallCOM')[0].checked ? "\n- AP Firewall has 2 rules" : "")
-  + ($('#etFirewall2COM')[0].checked ? "\n- AP Firewall does not have 2 rules" : "")
-  + ($('#etDiscoveryCOM')[0].checked ? "\n- AP Discovery is ON" : "")
-  + ($('#etDicovery2COM')[0].checked ? "\n- AP Discovery is OFF" : "")
-  + ($('#etFramingCOM')[0].checked ? "\n- CPE is on Flexible (Legacy)" : "")
-  + ($('#etFraming2COM')[0].checked ? "\n- CPE is on Flexible (NEW)" : "")
-  + ($('#etPreferredAPCOM')[0].checked ? "\n- CPE Has Preferred AP" : "")
-  + ($('#etPreferredAP2COM')[0].checked ? "\n- CPE Does NOT have Preferred AP" : "")
-  + ($('#etMhzSelectedCOM')[0].checked ? "\n- All 20/40 Mhz selected" : "")
-  + ($('#etMhzSelected2COM')[0].checked ? "\n- Not all 20/40 Mhz selected" : "")
-  + ($('#etFraming3COM')[0].checked ? "\n- AP Framing 50/50" : "")
-  + ($('#etFraming4COM')[0].checked ? "\n- AP Framing 75/25" : "");
 
   //Check boxes past t/s
   etExtraCheckBoxes =
@@ -404,14 +361,14 @@ function everyTicketFunction()
   etBody =
   etTitle + etApprovalCOM + etName + etNumber + etCallID + etAccount
   + etSMIP + etAPIP + etAPSSID
+  + etCheckboxesTS + etCheckboxes + etLanStatus + etAttemptedAP + etPCMAC + etRTRMAC + etRanPings + etPingCheckboxes
   + etFAS + etSwitchPort + etLightLevel + etFiberRouterIP
-  + etRouterIP + etRouterType + etZyxelPW + etIssue + etTimeFrame + etSummary
+  + etRouterIP + etRouterType + etZyxelPW + etIssue + etTimeFrame + etSummary + etRouterTS + etPoETS + etCPETS
   + etStats + etTaranaStats + etTaranaSN + etTaranaSector + etTaranaMGMTIP + etTaranaCurrentBN + etTaranaPrimaryBN + etTaranaUptime
   + etLteStats + etSMUptime + etAPUptime + etIMSI + etIMEI + etPCI + etRSSI + etBTSID + etSector + etSMSignal + etAPSignal + etLteUptime + etSMSplits
   + etStatsCOM + etSMUptimeCOM + etAPUptimeCOM + etSMSignalCOM + etSMSplitsCOM + etSMConnectionTimeCOM + etSMAPFrequencyCOM
-  + etCheckboxesTS + etCheckboxes + etLanStatus + etAttemptedAP + etPCMAC + etRTRMAC + etRanPings + etPingCheckboxes
   + etExtraCheckBoxes + etBypassResults + etSpeedBody
-  + etSMPing + etRTRPing + etAPPing + etMTRPing
+  + etSMPing + etRTRPing + etAPPing + etMTRPing + etCPELogs + etAPLogs
   + etResolution + etNextStep;
 
   // + etNextStepQuick
@@ -457,20 +414,6 @@ function everyTicketFunction()
   if (($('#etAPbad')[0].checked ? true : false) && etMTRPing == "") {etSubject = etPingError; etBody = etPingError; document.getElementById("etError").innerHTML = etError; alert(etPingError); $('#etMTRPing').css(bg, nullBgColor);}
 
   if (etCallID == "" && etTCSMethod == ''){alert(etCallIDError); etSubject = etCallIDError; etBody = etCallIDError}
-  if ($('#etSurvey2')[0].checked ? true : false)
-  {
-    var temp = $('#etSiteIP').val() || "";
-    var temp2 = $('#etSiteSSID').val() || "";
-    if(temp == "" || temp2 == "")
-    {
-      alert(etSSError);
-      etSubject = etSSError;
-      etBody = etSSError;
-      $('#etSiteIP').css(bg, nullBgColor);
-      $('#etSiteSSID').css(bg, nullBgColor);
-    }
-
-  }
 
   //Generated notes
   $('#etBody').val(etBody);
